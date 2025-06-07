@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Home, DollarSign, HelpCircle, Calculator, Shield, TrendingUp } from "lucide-react";
+import { Home, DollarSign, HelpCircle, Calculator, Shield, TrendingUp, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -45,6 +45,14 @@ const Mortgage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-sm text-muted-foreground mb-6">
           <span>Home</span> / <span>Financial Calculators</span> / <span className="text-foreground">Mortgage Calculator</span>
+        </div>
+
+        <div className="text-center mb-12">
+          <Home className="h-16 w-16 text-primary mx-auto mb-4" />
+          <h1 className="text-4xl font-bold mb-4">Mortgage Calculator</h1>
+          <p className="text-xl text-muted-foreground">
+            Calculate your monthly mortgage payments and total interest
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
