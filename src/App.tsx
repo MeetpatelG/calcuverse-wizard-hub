@@ -23,6 +23,7 @@ import Personal from "./pages/categories/Personal";
 import Mathematical from "./pages/categories/Mathematical";
 import Business from "./pages/categories/Business";
 import Ecommerce from "./pages/categories/Ecommerce";
+import RealEstate from "./pages/categories/RealEstate";
 
 // Financial Calculators
 import Budget from "./pages/financial/Budget";
@@ -53,6 +54,12 @@ import ProductPricing from "./pages/ecommerce/ProductPricing";
 import ProfitCalculator from "./pages/ecommerce/ProfitCalculator";
 import ConversionRate from "./pages/ecommerce/ConversionRate";
 
+// Real Estate Calculators
+import PropertyValue from "./pages/real-estate/PropertyValue";
+import RentAffordability from "./pages/real-estate/RentAffordability";
+import MortgagePayment from "./pages/real-estate/MortgagePayment";
+import InvestmentAnalysis from "./pages/real-estate/InvestmentAnalysis";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -80,6 +87,7 @@ const App = () => (
           <Route path="/mathematical" element={<Mathematical />} />
           <Route path="/business" element={<Business />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
+          <Route path="/real-estate" element={<RealEstate />} />
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/budget" element={<Budget />} />
@@ -109,6 +117,12 @@ const App = () => (
           <Route path="/ecommerce/product-pricing" element={<ProductPricing />} />
           <Route path="/ecommerce/profit-calculator" element={<ProfitCalculator />} />
           <Route path="/ecommerce/conversion-rate" element={<ConversionRate />} />
+          
+          {/* Real Estate Calculator Routes */}
+          <Route path="/real-estate/property-value" element={<PropertyValue />} />
+          <Route path="/real-estate/rent-affordability" element={<RentAffordability />} />
+          <Route path="/real-estate/mortgage-payment" element={<MortgagePayment />} />
+          <Route path="/real-estate/investment-analysis" element={<InvestmentAnalysis />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
