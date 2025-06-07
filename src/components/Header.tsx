@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Calculator, Menu, X, Search, Globe } from "lucide-react";
@@ -75,7 +76,13 @@ const Header = () => {
         { name: "Property Value", href: "/real-estate/property-value" },
         { name: "Rent Affordability", href: "/real-estate/rent-affordability" },
         { name: "Mortgage Payment", href: "/real-estate/mortgage-payment" },
-        { name: "Investment Analysis", href: "/real-estate/investment-analysis" }
+        { name: "Investment Analysis", href: "/real-estate/investment-analysis" },
+        { name: "Down Payment", href: "/real-estate/down-payment" },
+        { name: "Closing Costs", href: "/real-estate/closing-costs" },
+        { name: "Cap Rate", href: "/real-estate/cap-rate" },
+        { name: "Rental Yield", href: "/real-estate/rental-yield" },
+        { name: "Refinance", href: "/real-estate/refinance" },
+        { name: "Amortization", href: "/real-estate/amortization" }
       ]
     }
   ];

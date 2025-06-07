@@ -59,6 +59,12 @@ import PropertyValue from "./pages/real-estate/PropertyValue";
 import RentAffordability from "./pages/real-estate/RentAffordability";
 import MortgagePayment from "./pages/real-estate/MortgagePayment";
 import InvestmentAnalysis from "./pages/real-estate/InvestmentAnalysis";
+import DownPayment from "./pages/real-estate/DownPayment";
+import ClosingCosts from "./pages/real-estate/ClosingCosts";
+import CapRate from "./pages/real-estate/CapRate";
+import RentalYield from "./pages/real-estate/RentalYield";
+import Refinance from "./pages/real-estate/Refinance";
+import Amortization from "./pages/real-estate/Amortization";
 
 const queryClient = new QueryClient();
 
@@ -123,6 +129,12 @@ const App = () => (
           <Route path="/real-estate/rent-affordability" element={<RentAffordability />} />
           <Route path="/real-estate/mortgage-payment" element={<MortgagePayment />} />
           <Route path="/real-estate/investment-analysis" element={<InvestmentAnalysis />} />
+          <Route path="/real-estate/down-payment" element={<DownPayment />} />
+          <Route path="/real-estate/closing-costs" element={<ClosingCosts />} />
+          <Route path="/real-estate/cap-rate" element={<CapRate />} />
+          <Route path="/real-estate/rental-yield" element={<RentalYield />} />
+          <Route path="/real-estate/refinance" element={<Refinance />} />
+          <Route path="/real-estate/amortization" element={<Amortization />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />

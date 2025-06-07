@@ -1,5 +1,5 @@
 
-import { Home, Calculator, TrendingUp, DollarSign } from "lucide-react";
+import { Home, Calculator, TrendingUp, DollarSign, PiggyBank, FileText, BarChart3, Building, Percent, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -34,6 +34,48 @@ const RealEstate = () => {
       icon: TrendingUp,
       path: "/real-estate/investment-analysis",
       color: "text-orange-600"
+    },
+    {
+      title: "Down Payment Calculator",
+      description: "Calculate how much down payment you need and monthly savings required",
+      icon: PiggyBank,
+      path: "/real-estate/down-payment",
+      color: "text-pink-600"
+    },
+    {
+      title: "Closing Costs Calculator",
+      description: "Estimate total closing costs for buying or selling a property",
+      icon: FileText,
+      path: "/real-estate/closing-costs",
+      color: "text-cyan-600"
+    },
+    {
+      title: "Cap Rate Calculator",
+      description: "Calculate capitalization rate for investment property analysis",
+      icon: BarChart3,
+      path: "/real-estate/cap-rate",
+      color: "text-red-600"
+    },
+    {
+      title: "Rental Yield Calculator",
+      description: "Calculate rental yield and return on investment for rental properties",
+      icon: Building,
+      path: "/real-estate/rental-yield",
+      color: "text-indigo-600"
+    },
+    {
+      title: "Refinance Calculator",
+      description: "Determine if refinancing your mortgage will save you money",
+      icon: Percent,
+      path: "/real-estate/refinance",
+      color: "text-yellow-600"
+    },
+    {
+      title: "Amortization Schedule",
+      description: "View detailed payment schedule showing principal and interest breakdown",
+      icon: Clock,
+      path: "/real-estate/amortization",
+      color: "text-emerald-600"
     }
   ];
 
