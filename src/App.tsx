@@ -11,6 +11,10 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
+// Blog Pages
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+
 // Category Pages
 import Financial from "./pages/categories/Financial";
 import Personal from "./pages/categories/Personal";
@@ -54,6 +58,10 @@ const App = () => (
           {/* Legal Pages */}
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          
+          {/* Blog Pages */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/financial-planning-tools-2024" element={<BlogPost />} />
           
           {/* Category Overview Routes */}
           <Route path="/financial" element={<Financial />} />
