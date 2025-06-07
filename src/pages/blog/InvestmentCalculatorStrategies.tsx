@@ -13,7 +13,7 @@ const InvestmentCalculatorStrategies = () => {
     category: "Investment",
     publishDate: "2024-06-05",
     readTime: "7 min read",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop"
   };
 
   return (
@@ -60,6 +60,15 @@ const InvestmentCalculatorStrategies = () => {
                 </Button>
               </div>
             </header>
+
+            {/* Featured Image */}
+            <div className="mb-8">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
 
             <div className="space-y-8">
               <section>

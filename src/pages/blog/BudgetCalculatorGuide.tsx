@@ -13,7 +13,7 @@ const BudgetCalculatorGuide = () => {
     category: "Budgeting",
     publishDate: "2024-06-06",
     readTime: "6 min read",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop"
   };
 
   return (
@@ -60,6 +60,15 @@ const BudgetCalculatorGuide = () => {
                 </Button>
               </div>
             </header>
+
+            {/* Featured Image */}
+            <div className="mb-8">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
 
             <div className="space-y-8">
               <section>

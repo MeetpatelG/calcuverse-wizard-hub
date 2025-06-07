@@ -15,7 +15,7 @@ const Blog = () => {
       category: "Financial Planning",
       publishDate: "2024-06-07",
       readTime: "8 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",
       featured: true
     },
     {
@@ -25,7 +25,7 @@ const Blog = () => {
       category: "Budgeting",
       publishDate: "2024-06-06",
       readTime: "6 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -35,7 +35,7 @@ const Blog = () => {
       category: "Investment",
       publishDate: "2024-06-05",
       readTime: "7 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -45,7 +45,7 @@ const Blog = () => {
       category: "Real Estate",
       publishDate: "2024-06-04",
       readTime: "9 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -55,7 +55,7 @@ const Blog = () => {
       category: "Tax Planning",
       publishDate: "2024-06-03",
       readTime: "5 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -65,7 +65,7 @@ const Blog = () => {
       category: "Investment",
       publishDate: "2024-06-02",
       readTime: "6 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -75,7 +75,7 @@ const Blog = () => {
       category: "Business",
       publishDate: "2024-06-01",
       readTime: "7 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -85,7 +85,7 @@ const Blog = () => {
       category: "Personal Finance",
       publishDate: "2024-05-31",
       readTime: "8 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -95,7 +95,7 @@ const Blog = () => {
       category: "Mathematics",
       publishDate: "2024-05-30",
       readTime: "6 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -105,7 +105,7 @@ const Blog = () => {
       category: "Mathematics",
       publishDate: "2024-05-29",
       readTime: "4 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop",
       featured: false
     },
     {
@@ -115,7 +115,7 @@ const Blog = () => {
       category: "Retirement Planning",
       publishDate: "2024-05-28",
       readTime: "10 min read",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=400&fit=crop",
       featured: false
     }
   ];

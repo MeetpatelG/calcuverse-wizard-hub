@@ -16,7 +16,7 @@ const BlogPost = () => {
     category: "Financial Planning",
     publishDate: "2024-06-07",
     readTime: "8 min read",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",
     metaDescription: "Master your finances with essential financial planning tools in 2024. Discover calculators for budgeting, investment planning, tax optimization, and wealth building strategies."
   };
 
