@@ -7,6 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Category Pages
+import Financial from "./pages/categories/Financial";
+import Personal from "./pages/categories/Personal";
+import Mathematical from "./pages/categories/Mathematical";
+import Business from "./pages/categories/Business";
+
 // Financial Calculators
 import LoanEMI from "./pages/financial/LoanEMI";
 import Mortgage from "./pages/financial/Mortgage";
@@ -33,6 +39,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Category Overview Routes */}
+          <Route path="/financial" element={<Financial />} />
+          <Route path="/personal" element={<Personal />} />
+          <Route path="/mathematical" element={<Mathematical />} />
+          <Route path="/business" element={<Business />} />
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/loan-emi" element={<LoanEMI />} />
