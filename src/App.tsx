@@ -9,12 +9,16 @@ import NotFound from "./pages/NotFound";
 
 // Financial Calculators
 import LoanEMI from "./pages/financial/LoanEMI";
+import Mortgage from "./pages/financial/Mortgage";
+import Investment from "./pages/financial/Investment";
 
 // Personal Calculators
 import BMI from "./pages/personal/BMI";
+import Age from "./pages/personal/Age";
 
 // Mathematical Calculators
 import Scientific from "./pages/mathematical/Scientific";
+import UnitConverter from "./pages/mathematical/UnitConverter";
 
 // Business Calculators
 import ProfitMargin from "./pages/business/ProfitMargin";
@@ -32,12 +36,16 @@ const App = () => (
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/loan-emi" element={<LoanEMI />} />
+          <Route path="/financial/mortgage" element={<Mortgage />} />
+          <Route path="/financial/investment" element={<Investment />} />
           
           {/* Personal Calculator Routes */}
           <Route path="/personal/bmi" element={<BMI />} />
+          <Route path="/personal/age" element={<Age />} />
           
           {/* Mathematical Calculator Routes */}
           <Route path="/mathematical/scientific" element={<Scientific />} />
+          <Route path="/mathematical/unit-converter" element={<UnitConverter />} />
           
           {/* Business Calculator Routes */}
           <Route path="/business/profit-margin" element={<ProfitMargin />} />
