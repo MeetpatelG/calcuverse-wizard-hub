@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -46,20 +45,20 @@ const Index = () => {
       route: "/business"
     },
     {
-      title: "Real Estate Calculators",
-      icon: HomeIcon,
-      description: "Property and real estate calculation tools",
-      calculators: ["Property Value", "Rent Affordability", "Mortgage Payment", "Investment Analysis"],
-      color: "bg-orange-100 text-orange-700",
-      route: "/real-estate"
-    },
-    {
       title: "E-commerce Calculators",
       icon: ShoppingCart,
       description: "Online business and e-commerce calculation tools",
       calculators: ["Shipping Cost", "Product Pricing", "Profit Calculator", "Conversion Rate"],
       color: "bg-cyan-100 text-cyan-700",
       route: "/ecommerce"
+    },
+    {
+      title: "Real Estate Calculators",
+      icon: HomeIcon,
+      description: "Property and real estate calculation tools",
+      calculators: ["Property Value", "Rent Affordability", "Mortgage Payment", "Investment Analysis"],
+      color: "bg-orange-100 text-orange-700",
+      route: "/real-estate"
     }
   ];
 

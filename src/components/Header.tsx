@@ -60,6 +60,15 @@ const Header = () => {
         { name: "Break-even Point", href: "/business/break-even" },
         { name: "ROI Calculator", href: "/business/roi" }
       ]
+    },
+    {
+      title: "E-commerce",
+      items: [
+        { name: "Shipping Cost", href: "/ecommerce/shipping-cost" },
+        { name: "Product Pricing", href: "/ecommerce/product-pricing" },
+        { name: "Profit Calculator", href: "/ecommerce/profit-calculator" },
+        { name: "Conversion Rate", href: "/ecommerce/conversion-rate" }
+      ]
     }
   ];
 

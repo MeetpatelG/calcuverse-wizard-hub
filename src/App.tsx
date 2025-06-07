@@ -22,6 +22,7 @@ import Financial from "./pages/categories/Financial";
 import Personal from "./pages/categories/Personal";
 import Mathematical from "./pages/categories/Mathematical";
 import Business from "./pages/categories/Business";
+import Ecommerce from "./pages/categories/Ecommerce";
 
 // Financial Calculators
 import Budget from "./pages/financial/Budget";
@@ -45,6 +46,12 @@ import DateCalculator from "./pages/mathematical/Date";
 
 // Business Calculators
 import ProfitMargin from "./pages/business/ProfitMargin";
+
+// E-commerce Calculators
+import ShippingCost from "./pages/ecommerce/ShippingCost";
+import ProductPricing from "./pages/ecommerce/ProductPricing";
+import ProfitCalculator from "./pages/ecommerce/ProfitCalculator";
+import ConversionRate from "./pages/ecommerce/ConversionRate";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +79,7 @@ const App = () => (
           <Route path="/personal" element={<Personal />} />
           <Route path="/mathematical" element={<Mathematical />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/ecommerce" element={<Ecommerce />} />
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/budget" element={<Budget />} />
@@ -95,6 +103,12 @@ const App = () => (
           
           {/* Business Calculator Routes */}
           <Route path="/business/profit-margin" element={<ProfitMargin />} />
+          
+          {/* E-commerce Calculator Routes */}
+          <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
+          <Route path="/ecommerce/product-pricing" element={<ProductPricing />} />
+          <Route path="/ecommerce/profit-calculator" element={<ProfitCalculator />} />
+          <Route path="/ecommerce/conversion-rate" element={<ConversionRate />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
