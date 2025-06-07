@@ -45,12 +45,23 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <Calculator className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">CalcHub</span>
+              <span className="text-xl font-bold">TECHGURUTOOLS</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">
               The ultimate destination for all your calculation needs. From financial planning to scientific computations, 
               we provide accurate, fast, and user-friendly calculators for every situation.
             </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              <h3 className="font-semibold">Contact Us</h3>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Mail className="h-4 w-4" />
+                <a href="mailto:meet03510@gmail.com" className="hover:text-primary transition-colors">
+                  meet03510@gmail.com
+                </a>
+              </div>
+            </div>
             
             {/* Newsletter Subscription */}
             <div className="space-y-3">
@@ -90,7 +101,7 @@ const Footer = () => {
             {/* Copyright and Links */}
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-sm text-muted-foreground">
-                © {currentYear} CalcHub. All rights reserved.
+                © {currentYear} TECHGURUTOOLS. All rights reserved.
               </p>
               <div className="flex space-x-4 text-sm">
                 <Link to="/privacy" className="text-muted-foreground hover:text-primary">
@@ -99,9 +110,9 @@ const Footer = () => {
                 <Link to="/terms" className="text-muted-foreground hover:text-primary">
                   Terms & Conditions
                 </Link>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary">
+                <a href="mailto:meet03510@gmail.com" className="text-muted-foreground hover:text-primary">
                   Contact
-                </Link>
+                </a>
               </div>
             </div>
 
