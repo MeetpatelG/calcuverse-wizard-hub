@@ -1,5 +1,5 @@
 
-import { Calculator, CreditCard, Home, TrendingUp } from "lucide-react";
+import { Calculator, CreditCard, Home, TrendingUp, Percent } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -27,6 +27,13 @@ const Financial = () => {
       icon: TrendingUp,
       path: "/financial/investment",
       color: "text-purple-600"
+    },
+    {
+      title: "Compound Interest Calculator",
+      description: "Calculate the power of compound interest on your investments",
+      icon: Percent,
+      path: "/financial/compound-interest",
+      color: "text-orange-600"
     }
   ];
 

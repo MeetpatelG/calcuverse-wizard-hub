@@ -22,6 +22,7 @@ import LoanEMI from "./pages/financial/LoanEMI";
 import Mortgage from "./pages/financial/Mortgage";
 import Investment from "./pages/financial/Investment";
 import Tax from "./pages/financial/Tax";
+import CompoundInterest from "./pages/financial/CompoundInterest";
 
 // Personal Calculators
 import BMI from "./pages/personal/BMI";
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/financial/mortgage" element={<Mortgage />} />
           <Route path="/financial/investment" element={<Investment />} />
           <Route path="/financial/tax" element={<Tax />} />
+          <Route path="/financial/compound-interest" element={<CompoundInterest />} />
           
           {/* Personal Calculator Routes */}
           <Route path="/personal/bmi" element={<BMI />} />
