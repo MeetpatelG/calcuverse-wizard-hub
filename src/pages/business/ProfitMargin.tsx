@@ -38,6 +38,15 @@ const ProfitMargin = () => {
             </p>
           </div>
 
+          {/* Business Analytics Infographic */}
+          <div className="mb-12">
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" 
+              alt="Business profit analysis and financial charts"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <ProfitMarginForm onCalculate={handleCalculate} />
             <ProfitMarginResults 
@@ -57,6 +66,15 @@ const ProfitMargin = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Understanding your profit margins is crucial for business success and financial sustainability. Our comprehensive profit margin calculator helps you analyze your pricing strategy, evaluate product profitability, and make informed business decisions that drive growth and maximize your bottom line.
                 </p>
+
+                {/* Business Strategy Visualization */}
+                <div className="my-8">
+                  <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" 
+                    alt="Business dashboard with profit metrics and KPIs"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
                   <div className="bg-card p-6 rounded-lg border">

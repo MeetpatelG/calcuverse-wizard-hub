@@ -25,107 +25,40 @@ const DateCalculator = () => {
 
   // Add/subtract days calculation
   const [baseDate, setBaseDate] = useState("");
+  const [daysToAdd, setDaysToAdd] = useState("");
   const [operation, setOperation] = useState("add");
-  const [daysToAddSub, setDaysToAddSub] = useState("");
-  const [addSubResult, setAddSubResult] = useState<Date | null>(null);
+  const [calculatedDate, setCalculatedDate] = useState("");
 
-  // Age calculation
-  const [birthDate, setBirthDate] = useState("");
-  const [ageResult, setAgeResult] = useState<{
-    years: number;
-    months: number;
-    days: number;
-    totalDays: number;
-  } | null>(null);
-
-  const calculateDifference = () => {
+  const calculateDateDifference = () => {
     if (!startDate || !endDate) return;
 
     const start = new Date(startDate);
     const end = new Date(endDate);
+    const timeDiff = Math.abs(end.getTime() - start.getTime());
+    const totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
     
-    const diffTime = Math.abs(end.getTime() - start.getTime());
-    const totalDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-    const years = Math.floor(totalDays / 365.25);
-    const months = Math.floor(totalDays / 30.44);
-    const weeks = Math.floor(totalDays / 7);
-    const days = totalDays;
-
     setDiffResult({
-      days: totalDays % 7,
-      weeks,
-      months,
-      years,
-      totalDays
+      totalDays,
+      days: totalDays % 365 % 30,
+      weeks: Math.floor(totalDays / 7),
+      months: Math.floor(totalDays / 30),
+      years: Math.floor(totalDays / 365)
     });
   };
 
-  const calculateAddSubtract = () => {
-    if (!baseDate || !daysToAddSub) return;
+  const calculateAddSubtractDate = () => {
+    if (!baseDate || !daysToAdd) return;
 
-    const base = new Date(baseDate);
-    const daysNum = parseInt(daysToAddSub);
+    const date = new Date(baseDate);
+    const days = parseInt(daysToAdd);
     
-    const result = new Date(base);
     if (operation === "add") {
-      result.setDate(result.getDate() + daysNum);
+      date.setDate(date.getDate() + days);
     } else {
-      result.setDate(result.getDate() - daysNum);
+      date.setDate(date.getDate() - days);
     }
     
-    setAddSubResult(result);
-  };
-
-  const calculateAge = () => {
-    if (!birthDate) return;
-
-    const birth = new Date(birthDate);
-    const today = new Date();
-    
-    let years = today.getFullYear() - birth.getFullYear();
-    let months = today.getMonth() - birth.getMonth();
-    let days = today.getDate() - birth.getDate();
-
-    if (days < 0) {
-      months--;
-      const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += lastMonth.getDate();
-    }
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    const totalDays = Math.floor((today.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24));
-
-    setAgeResult({
-      years,
-      months,
-      days,
-      totalDays
-    });
-  };
-
-  const resetAll = () => {
-    setStartDate("");
-    setEndDate("");
-    setBaseDate("");
-    setBirthDate("");
-    setDaysToAddSub("");
-    setDiffResult(null);
-    setAddSubResult(null);
-    setAgeResult(null);
-  };
-
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric',
-      weekday: 'long'
-    });
+    setCalculatedDate(date.toISOString().split('T')[0]);
   };
 
   return (
@@ -138,15 +71,23 @@ const DateCalculator = () => {
             <Calendar className="h-16 w-16 text-primary mx-auto mb-4" />
             <h1 className="text-4xl font-bold mb-4">Date Calculator</h1>
             <p className="text-xl text-muted-foreground">
-              Calculate date differences, add/subtract days, and determine ages
+              Calculate date differences and add/subtract days from dates
             </p>
           </div>
 
+          {/* Date and Time Visualization */}
+          <div className="mb-12">
+            <img 
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" 
+              alt="Calendar and time management visualization"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
           <Tabs defaultValue="difference" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="difference">Date Difference</TabsTrigger>
-              <TabsTrigger value="addsub">Add/Subtract Days</TabsTrigger>
-              <TabsTrigger value="age">Age Calculator</TabsTrigger>
+              <TabsTrigger value="add-subtract">Add/Subtract Days</TabsTrigger>
             </TabsList>
 
             <TabsContent value="difference" className="space-y-8">
@@ -154,7 +95,7 @@ const DateCalculator = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Calculator className="h-5 w-5" />
+                      <Clock className="h-5 w-5" />
                       Calculate Date Difference
                     </CardTitle>
                     <CardDescription>
@@ -182,75 +123,60 @@ const DateCalculator = () => {
                       />
                     </div>
 
-                    <Button onClick={calculateDifference} className="w-full">
+                    <Button onClick={calculateDateDifference} className="w-full">
                       Calculate Difference
                     </Button>
-
-                    {diffResult && (
-                      <div className="space-y-4">
-                        <div className="text-center p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
-                          <p className="text-sm text-muted-foreground mb-2">Total Days</p>
-                          <p className="text-4xl font-bold text-primary">{diffResult.totalDays}</p>
-                          <p className="text-sm text-muted-foreground mt-2">days between dates</p>
-                        </div>
-                        
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Years</p>
-                            <p className="text-xl font-bold">{diffResult.years}</p>
-                          </div>
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Months</p>
-                            <p className="text-xl font-bold">{diffResult.months}</p>
-                          </div>
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Weeks</p>
-                            <p className="text-xl font-bold">{diffResult.weeks}</p>
-                          </div>
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Days</p>
-                            <p className="text-xl font-bold">{diffResult.totalDays}</p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Quick Examples</CardTitle>
+                    <CardTitle>Date Difference Results</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Project Duration</p>
-                        <p className="text-sm text-muted-foreground">Calculate how long a project lasted</p>
+                  <CardContent>
+                    {diffResult ? (
+                      <div className="space-y-4">
+                        <div className="text-center p-4 bg-primary/10 rounded-lg">
+                          <div className="text-2xl font-bold text-primary">{diffResult.totalDays}</div>
+                          <div className="text-sm text-muted-foreground">Total Days</div>
+                        </div>
+                        
+                        <div className="grid grid-cols-3 gap-4 text-center">
+                          <div className="p-3 bg-muted rounded">
+                            <div className="font-semibold">{diffResult.years}</div>
+                            <div className="text-xs text-muted-foreground">Years</div>
+                          </div>
+                          <div className="p-3 bg-muted rounded">
+                            <div className="font-semibold">{diffResult.months}</div>
+                            <div className="text-xs text-muted-foreground">Months</div>
+                          </div>
+                          <div className="p-3 bg-muted rounded">
+                            <div className="font-semibold">{diffResult.weeks}</div>
+                            <div className="text-xs text-muted-foreground">Weeks</div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Vacation Planning</p>
-                        <p className="text-sm text-muted-foreground">Find days until your vacation</p>
+                    ) : (
+                      <div className="text-center text-muted-foreground py-8">
+                        <Calendar className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                        <p>Select two dates to calculate the difference</p>
                       </div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Anniversary</p>
-                        <p className="text-sm text-muted-foreground">Calculate years since an important date</p>
-                      </div>
-                    </div>
+                    )}
                   </CardContent>
                 </Card>
               </div>
             </TabsContent>
 
-            <TabsContent value="addsub" className="space-y-8">
+            <TabsContent value="add-subtract" className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Clock className="h-5 w-5" />
+                      <Target className="h-5 w-5" />
                       Add or Subtract Days
                     </CardTitle>
                     <CardDescription>
-                      Calculate a future or past date by adding or subtracting days
+                      Add or subtract days from a specific date
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
@@ -278,137 +204,45 @@ const DateCalculator = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="days-count">Number of Days</Label>
+                      <Label htmlFor="days">Number of Days</Label>
                       <Input
-                        id="days-count"
+                        id="days"
                         type="number"
                         placeholder="30"
-                        value={daysToAddSub}
-                        onChange={(e) => setDaysToAddSub(e.target.value)}
+                        value={daysToAdd}
+                        onChange={(e) => setDaysToAdd(e.target.value)}
                       />
                     </div>
 
-                    <Button onClick={calculateAddSubtract} className="w-full">
+                    <Button onClick={calculateAddSubtractDate} className="w-full">
                       Calculate Date
                     </Button>
-
-                    {addSubResult && (
-                      <div className="text-center p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
-                        <p className="text-sm text-muted-foreground mb-2">Result Date</p>
-                        <p className="text-lg font-bold text-primary">{formatDate(addSubResult)}</p>
-                        <p className="text-sm text-muted-foreground mt-2">
-                          {operation === 'add' ? 'Adding' : 'Subtracting'} {daysToAddSub} days
-                        </p>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Common Use Cases</CardTitle>
+                    <CardTitle>Calculated Date</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Due Dates</p>
-                        <p className="text-sm text-muted-foreground">Calculate when something is due</p>
-                      </div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Business Days</p>
-                        <p className="text-sm text-muted-foreground">Find delivery or completion dates</p>
-                      </div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Event Planning</p>
-                        <p className="text-sm text-muted-foreground">Plan events X days from now</p>
-                      </div>
-                      <div className="p-3 bg-muted rounded-lg">
-                        <p className="font-medium">Deadlines</p>
-                        <p className="text-sm text-muted-foreground">Calculate project milestones</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="age" className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Target className="h-5 w-5" />
-                      Age Calculator
-                    </CardTitle>
-                    <CardDescription>
-                      Calculate exact age in years, months, and days
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="birth-date">Birth Date</Label>
-                      <Input
-                        id="birth-date"
-                        type="date"
-                        value={birthDate}
-                        onChange={(e) => setBirthDate(e.target.value)}
-                        max={new Date().toISOString().split('T')[0]}
-                      />
-                    </div>
-
-                    <Button onClick={calculateAge} className="w-full">
-                      Calculate Age
-                    </Button>
-
-                    {ageResult && (
-                      <div className="space-y-4">
-                        <div className="text-center p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
-                          <p className="text-sm text-muted-foreground mb-2">Your Age</p>
-                          <p className="text-2xl font-bold text-primary">
-                            {ageResult.years} years, {ageResult.months} months, {ageResult.days} days
-                          </p>
+                  <CardContent>
+                    {calculatedDate ? (
+                      <div className="text-center p-8">
+                        <div className="text-3xl font-bold text-primary mb-2">
+                          {new Date(calculatedDate).toLocaleDateString('en-US', { 
+                            weekday: 'long',
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
                         </div>
-                        
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Total Years</p>
-                            <p className="text-xl font-bold">{ageResult.years}</p>
-                          </div>
-                          <div className="text-center p-4 bg-muted rounded-lg">
-                            <p className="text-sm text-muted-foreground">Total Days</p>
-                            <p className="text-xl font-bold">{ageResult.totalDays.toLocaleString()}</p>
-                          </div>
+                        <div className="text-muted-foreground">
+                          {operation === 'add' ? 'Added' : 'Subtracted'} {daysToAdd} days
                         </div>
                       </div>
-                    )}
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Fun Age Facts</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {ageResult && (
-                      <div className="space-y-3">
-                        <div className="p-3 bg-muted rounded-lg">
-                          <p className="font-medium">Hours Lived</p>
-                          <p className="text-sm text-muted-foreground">
-                            {(ageResult.totalDays * 24).toLocaleString()} hours
-                          </p>
-                        </div>
-                        <div className="p-3 bg-muted rounded-lg">
-                          <p className="font-medium">Minutes Lived</p>
-                          <p className="text-sm text-muted-foreground">
-                            {(ageResult.totalDays * 24 * 60).toLocaleString()} minutes
-                          </p>
-                        </div>
-                        <div className="p-3 bg-muted rounded-lg">
-                          <p className="font-medium">Weeks Lived</p>
-                          <p className="text-sm text-muted-foreground">
-                            {Math.floor(ageResult.totalDays / 7).toLocaleString()} weeks
-                          </p>
-                        </div>
+                    ) : (
+                      <div className="text-center text-muted-foreground py-8">
+                        <Calculator className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                        <p>Enter date and days to calculate</p>
                       </div>
                     )}
                   </CardContent>
@@ -417,61 +251,48 @@ const DateCalculator = () => {
             </TabsContent>
           </Tabs>
 
-          <div className="mt-8 flex justify-center">
-            <Button onClick={resetAll} variant="outline" size="lg">
-              Reset All Calculations
-            </Button>
+          {/* Time Management Tips Visualization */}
+          <div className="mt-12 mb-8">
+            <img 
+              src="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=300&q=80" 
+              alt="Time management and scheduling tools"
+              className="w-full h-48 object-cover rounded-lg"
+            />
           </div>
 
-          <div className="mt-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5" />
-                  Date Calculator Help
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>How accurate are these date calculations?</AccordionTrigger>
-                    <AccordionContent>
-                      Our date calculations are very accurate and account for leap years, different month lengths, 
-                      and daylight saving time transitions. The calculations use JavaScript's native Date object 
-                      which handles these complexities automatically.
-                    </AccordionContent>
-                  </AccordionItem>
-                  
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>What about business days vs calendar days?</AccordionTrigger>
-                    <AccordionContent>
-                      This calculator works with calendar days (including weekends and holidays). For business day 
-                      calculations, you would need to manually account for weekends and holidays in your specific region. 
-                      Business days typically exclude Saturdays, Sundays, and public holidays.
-                    </AccordionContent>
-                  </AccordionItem>
+          {/* FAQ Section */}
+          <Card className="mt-12">
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>How accurate are the date calculations?</AccordionTrigger>
+                  <AccordionContent>
+                    Our date calculator provides precise calculations based on the Gregorian calendar system. 
+                    It accounts for leap years and varying month lengths to ensure accurate results for any date range.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Can I calculate business days only?</AccordionTrigger>
+                  <AccordionContent>
+                    Currently, our calculator includes all calendar days including weekends and holidays. 
+                    For business day calculations, you would need to manually account for weekends and holidays in your specific region.
+                  </AccordionContent>
+                </AccordionItem>
 
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger>How do leap years affect calculations?</AccordionTrigger>
-                    <AccordionContent>
-                      Leap years occur every 4 years (with some exceptions for century years). Our calculator automatically 
-                      accounts for leap years when calculating date differences and ages. February 29th only exists in leap years, 
-                      which affects age calculations for people born on that date.
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-4">
-                    <AccordionTrigger>Can I use this for historical dates?</AccordionTrigger>
-                    <AccordionContent>
-                      Yes, this calculator can handle historical dates, but keep in mind that very old dates (before 1582) 
-                      may have calendar system differences (Julian vs Gregorian calendar). For most practical purposes 
-                      involving recent centuries, the calculations will be accurate.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
-          </div>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>What date formats are supported?</AccordionTrigger>
+                  <AccordionContent>
+                    Our calculator uses the standard HTML5 date input format (YYYY-MM-DD). 
+                    This ensures consistency and accuracy across different browsers and devices.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </div>
       </main>
 

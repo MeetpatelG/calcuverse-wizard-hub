@@ -42,6 +42,15 @@ const Budget = () => {
             </p>
           </div>
 
+          {/* Budget Planning Infographic */}
+          <div className="mb-12">
+            <img 
+              src="https://images.unsplash.com/photo-1554224154-26032fced8bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" 
+              alt="Budget planning and financial management visualization"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <BudgetForm onCalculate={handleCalculate} />
             <BudgetResults 
@@ -63,6 +72,15 @@ const Budget = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Effective budget planning is the foundation of financial success and long-term wealth building. Our comprehensive budget calculator helps you track income, categorize expenses, and identify opportunities for savings and investment. Take control of your finances with data-driven budgeting strategies that align with your financial goals.
                 </p>
+
+                {/* Budget Strategy Infographic */}
+                <div className="my-8">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" 
+                    alt="Financial charts and budget analysis tools"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
                   <div className="bg-card p-6 rounded-lg border">
