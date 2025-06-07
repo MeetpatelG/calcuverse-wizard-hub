@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Calculator, Function } from "lucide-react";
+import { Calculator } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -131,7 +130,7 @@ const Scientific = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-2">
-                <Function className="h-6 w-6 text-primary" />
+                <Calculator className="h-6 w-6 text-primary" />
                 <CardTitle>Scientific Calculator</CardTitle>
               </div>
               <CardDescription>
