@@ -217,7 +217,7 @@ const BMI = () => {
                   numerical measure that can be used to categorize individuals into different weight status categories.
                 </p>
                 <p className="mb-4">
-                  The BMI calculation is straightforward: it divides a person's weight in kilograms by the square of their height in meters 
+                  The BMI calculation is straightforward: it divides a person&apos;s weight in kilograms by the square of their height in meters 
                   (kg/m²). For those using imperial measurements, the formula is slightly modified to account for pounds and inches. 
                   This standardized measurement allows healthcare professionals and individuals to quickly assess weight-related health risks.
                 </p>
