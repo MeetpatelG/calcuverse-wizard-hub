@@ -4,6 +4,7 @@ import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as 
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BasicCalculator from "@/components/BasicCalculator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -99,23 +100,32 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Ultimate Calculator Hub</h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Your one-stop destination for all calculation needs. From financial planning to scientific computations, 
-            we've got the perfect calculator for every situation.
-          </p>
-          
-          {/* Search Bar */}
-          <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-            <Input
-              type="text"
-              placeholder="Search calculators..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 py-3 text-lg"
-            />
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-bold mb-6">Ultimate Calculator Hub</h1>
+              <p className="text-xl mb-8 max-w-2xl">
+                Your one-stop destination for all calculation needs. From financial planning to scientific computations, 
+                we've got the perfect calculator for every situation.
+              </p>
+              
+              {/* Search Bar */}
+              <div className="max-w-md mx-auto lg:mx-0 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="Search calculators..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 py-3 text-lg"
+                />
+              </div>
+            </div>
+            
+            {/* Calculator Widget */}
+            <div className="flex justify-center lg:justify-end">
+              <BasicCalculator />
+            </div>
           </div>
         </div>
       </section>
