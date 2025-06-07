@@ -14,6 +14,8 @@ import Terms from "./pages/Terms";
 // Blog Pages
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import BudgetCalculatorGuide from "./pages/blog/BudgetCalculatorGuide";
+import InvestmentCalculatorStrategies from "./pages/blog/InvestmentCalculatorStrategies";
 
 // Category Pages
 import Financial from "./pages/categories/Financial";
@@ -62,6 +64,8 @@ const App = () => (
           {/* Blog Pages */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/financial-planning-tools-2024" element={<BlogPost />} />
+          <Route path="/blog/budget-calculator-guide" element={<BudgetCalculatorGuide />} />
+          <Route path="/blog/investment-calculator-strategies" element={<InvestmentCalculatorStrategies />} />
           
           {/* Category Overview Routes */}
           <Route path="/financial" element={<Financial />} />
