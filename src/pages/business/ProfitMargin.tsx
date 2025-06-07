@@ -1,47 +1,50 @@
 
-import { useState } from "react";
-import { TrendingUp, BarChart3 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import ProfitMarginForm from "@/components/business/ProfitMarginForm";
+import ProfitMarginResults from "@/components/business/ProfitMarginResults";
+import ProfitMarginFAQ from "@/components/business/ProfitMarginFAQ";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const ProfitMargin = () => {
-  const [costPrice, setCostPrice] = useState("");
-  const [sellingPrice, setSellingPrice] = useState("");
   const [profit, setProfit] = useState(0);
   const [profitMargin, setProfitMargin] = useState(0);
   const [markupPercentage, setMarkupPercentage] = useState(0);
   const [calculated, setCalculated] = useState(false);
 
-  const calculateProfitMargin = () => {
-    if (!costPrice || !sellingPrice) return;
-
-    const cost = parseFloat(costPrice);
-    const selling = parseFloat(sellingPrice);
+  // SEO optimization
+  useEffect(() => {
+    document.title = "Profit Margin Calculator - Calculate Business Profit & Markup | Calculator Hub";
     
-    const profitValue = selling - cost;
-    const marginPercentage = (profitValue / selling) * 100;
-    const markupValue = (profitValue / cost) * 100;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Free profit margin calculator. Calculate profit, profit margin percentage, and markup for your business. Includes analysis and tips for improving profitability.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Free profit margin calculator. Calculate profit, profit margin percentage, and markup for your business. Includes analysis and tips for improving profitability.";
+      document.head.appendChild(meta);
+    }
 
-    setProfit(profitValue);
-    setProfitMargin(marginPercentage);
-    setMarkupPercentage(markupValue);
+    const keywords = document.querySelector('meta[name="keywords"]');
+    if (keywords) {
+      keywords.setAttribute("content", "profit margin calculator, markup calculator, profit calculator, business calculator, profit margin formula, markup percentage");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "keywords";
+      meta.content = "profit margin calculator, markup calculator, profit calculator, business calculator, profit margin formula, markup percentage";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
+  const handleCalculate = (data: { profit: number; profitMargin: number; markupPercentage: number }) => {
+    setProfit(data.profit);
+    setProfitMargin(data.profitMargin);
+    setMarkupPercentage(data.markupPercentage);
     setCalculated(true);
-  };
-
-  const getProfitColor = () => {
-    if (profit > 0) return "text-green-600";
-    if (profit < 0) return "text-red-600";
-    return "text-gray-600";
-  };
-
-  const getProfitBgColor = () => {
-    if (profit > 0) return "bg-green-100";
-    if (profit < 0) return "bg-red-100";
-    return "bg-gray-100";
   };
 
   return (
@@ -49,100 +52,93 @@ const ProfitMargin = () => {
       <Header />
       
       <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumb */}
         <div className="text-sm text-muted-foreground mb-6">
-          <span>Home</span> / <span>Business Calculators</span> / <span className="text-foreground">Profit Margin Calculator</span>
+          <Link to="/" className="hover:text-foreground">Home</Link> / 
+          <Link to="/business" className="hover:text-foreground"> Business Calculators</Link> / 
+          <span className="text-foreground"> Profit Margin Calculator</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Hero Section */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <h1 className="text-4xl font-bold">Profit Margin Calculator</h1>
+            <Badge variant="secondary">Free Tool</Badge>
+          </div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Calculate your business profit margins, markup percentages, and analyze profitability. 
+            Make informed pricing decisions with our comprehensive profit analysis tool.
+          </p>
+        </div>
+
+        {/* Calculator Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <ProfitMarginForm onCalculate={handleCalculate} />
+          <ProfitMarginResults 
+            profit={profit}
+            profitMargin={profitMargin}
+            markupPercentage={markupPercentage}
+            calculated={calculated}
+          />
+        </div>
+
+        {/* Information Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <Card>
             <CardHeader>
-              <div className="flex items-center space-x-2">
-                <BarChart3 className="h-6 w-6 text-primary" />
-                <CardTitle>Profit Margin Calculator</CardTitle>
-              </div>
-              <CardDescription>
-                Calculate profit, profit margin, and markup percentage for your business.
-              </CardDescription>
+              <CardTitle>How to Use the Profit Margin Calculator</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="costPrice">Cost Price ($)</Label>
-                <Input
-                  id="costPrice"
-                  type="number"
-                  value={costPrice}
-                  onChange={(e) => setCostPrice(e.target.value)}
-                  placeholder="100"
-                  className="text-lg"
-                />
+                <h4 className="font-semibold">Step 1: Enter Cost Price</h4>
+                <p className="text-sm text-muted-foreground">
+                  Input the total cost to produce or purchase the item, including materials, labor, and overhead costs.
+                </p>
               </div>
-
               <div className="space-y-2">
-                <Label htmlFor="sellingPrice">Selling Price ($)</Label>
-                <Input
-                  id="sellingPrice"
-                  type="number"
-                  value={sellingPrice}
-                  onChange={(e) => setSellingPrice(e.target.value)}
-                  placeholder="150"
-                  className="text-lg"
-                />
+                <h4 className="font-semibold">Step 2: Enter Selling Price</h4>
+                <p className="text-sm text-muted-foreground">
+                  Input the price at which you plan to sell or are currently selling the item.
+                </p>
               </div>
-
-              <Button onClick={calculateProfitMargin} className="w-full" disabled={!costPrice || !sellingPrice}>
-                Calculate Profit Margin
-              </Button>
+              <div className="space-y-2">
+                <h4 className="font-semibold">Step 3: Calculate</h4>
+                <p className="text-sm text-muted-foreground">
+                  Click calculate to see your profit, profit margin percentage, and markup percentage with detailed analysis.
+                </p>
+              </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Profit Analysis</CardTitle>
-              <CardDescription>Your business profit breakdown</CardDescription>
+              <CardTitle>Understanding the Results</CardTitle>
             </CardHeader>
-            <CardContent>
-              {calculated ? (
-                <div className="space-y-4">
-                  <div className={`${getProfitBgColor()} p-4 rounded-lg`}>
-                    <div className="text-sm text-muted-foreground">Profit</div>
-                    <div className={`text-2xl font-bold ${getProfitColor()}`}>
-                      ${profit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-muted p-3 rounded">
-                      <div className="text-xs text-muted-foreground">Profit Margin</div>
-                      <div className={`font-semibold ${getProfitColor()}`}>
-                        {profitMargin.toFixed(2)}%
-                      </div>
-                    </div>
-                    <div className="bg-muted p-3 rounded">
-                      <div className="text-xs text-muted-foreground">Markup</div>
-                      <div className={`font-semibold ${getProfitColor()}`}>
-                        {markupPercentage.toFixed(2)}%
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-muted p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Analysis</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {profit > 0 && "Great! You're making a profit on this item."}
-                      {profit === 0 && "You're breaking even on this item."}
-                      {profit < 0 && "Warning: You're losing money on this item."}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="text-center text-muted-foreground py-8">
-                  <TrendingUp className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                  <p>Enter cost and selling price to calculate profit margin</p>
-                </div>
-              )}
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <h4 className="font-semibold">Profit</h4>
+                <p className="text-sm text-muted-foreground">
+                  The absolute dollar amount you earn: Selling Price - Cost Price
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold">Profit Margin</h4>
+                <p className="text-sm text-muted-foreground">
+                  Percentage of revenue that is profit: (Profit ÷ Selling Price) × 100
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold">Markup</h4>
+                <p className="text-sm text-muted-foreground">
+                  Percentage added to cost price: (Profit ÷ Cost Price) × 100
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
+
+        {/* FAQ Section */}
+        <ProfitMarginFAQ />
       </div>
 
       <Footer />
