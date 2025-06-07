@@ -45,7 +45,7 @@ const Budget = () => {
           {/* Budget Planning Infographic */}
           <div className="mb-12">
             <img 
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=400&fit=crop&crop=center&auto=format&q=80" 
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" 
               alt="Budget planning and financial management visualization"
               className="w-full h-64 object-cover rounded-lg shadow-md"
             />
@@ -76,7 +76,7 @@ const Budget = () => {
                 {/* Budget Strategy Infographic */}
                 <div className="my-8">
                   <img 
-                    src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=400&fit=crop&crop=center&auto=format&q=80" 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" 
                     alt="Financial charts and budget analysis tools"
                     className="w-full h-48 object-cover rounded-lg"
                   />

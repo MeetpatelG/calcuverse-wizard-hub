@@ -58,7 +58,7 @@ const Investment = () => {
         {/* Investment Growth Visualization */}
         <div className="mb-8">
           <img 
-            src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=400&fit=crop&crop=center&auto=format&q=80" 
+            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" 
             alt="Investment growth charts and financial analysis"
             className="w-full h-64 object-cover rounded-lg shadow-md"
           />
