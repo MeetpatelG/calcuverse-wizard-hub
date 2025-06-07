@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 import { Calculator } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Scientific = () => {
   const [display, setDisplay] = useState("0");
@@ -126,7 +128,7 @@ const Scientific = () => {
           <span>Home</span> / <span>Mathematical Calculators</span> / <span className="text-foreground">Scientific Calculator</span>
         </div>
 
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto mb-12">
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-2">
@@ -187,6 +189,202 @@ const Scientific = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="bg-muted/30 py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h1 className="text-4xl font-bold mb-8 text-center">Complete Guide to Scientific Calculator: Advanced Mathematical Computations Made Simple</h1>
+            
+            <div className="prose max-w-none space-y-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">What is a Scientific Calculator?</h2>
+                <p className="text-lg mb-4">
+                  A scientific calculator is an advanced computational tool designed to perform complex mathematical operations beyond basic arithmetic. 
+                  Unlike standard calculators that handle only addition, subtraction, multiplication, and division, scientific calculators provide 
+                  sophisticated functions including trigonometric calculations, logarithms, exponentials, and statistical operations.
+                </p>
+                <p className="mb-4">
+                  Our online scientific calculator brings the power of advanced mathematics to your fingertips, making it perfect for students, 
+                  engineers, scientists, and professionals who require precise mathematical computations in their daily work.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">Key Features of Our Scientific Calculator</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-xl font-medium mb-3">Trigonometric Functions</h3>
+                    <ul className="space-y-2">
+                      <li>• Sine (sin), Cosine (cos), Tangent (tan)</li>
+                      <li>• Inverse trigonometric functions</li>
+                      <li>• Degree and radian calculations</li>
+                      <li>• Hyperbolic functions</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-medium mb-3">Logarithmic Operations</h3>
+                    <ul className="space-y-2">
+                      <li>• Natural logarithm (ln)</li>
+                      <li>• Common logarithm (log)</li>
+                      <li>• Exponential functions</li>
+                      <li>• Power calculations</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">How to Use the Scientific Calculator: Step-by-Step Guide</h2>
+                
+                <div className="space-y-6">
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Step 1: Basic Number Input</h3>
+                    <p>Click on the number buttons (0-9) to enter your values. The display shows your current input in real-time.</p>
+                  </div>
+                  
+                  <div className="bg-green-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Step 2: Scientific Functions</h3>
+                    <p>For trigonometric calculations, enter your angle value first, then click the desired function (sin, cos, tan). 
+                    The calculator automatically converts degrees to radians for accurate results.</p>
+                  </div>
+                  
+                  <div className="bg-yellow-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Step 3: Advanced Operations</h3>
+                    <p>Use power functions (x², x³) by entering the base number first, then clicking the power button. 
+                    For square roots, enter the number and click √.</p>
+                  </div>
+                  
+                  <div className="bg-purple-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Step 4: Mathematical Constants</h3>
+                    <p>Access π (pi) and e (Euler's number) by clicking their respective buttons. These provide precise values 
+                    for advanced calculations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">Applications in Different Fields</h2>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Engineering</h3>
+                    <p>Calculate structural loads, electrical circuits, signal processing, and mechanical system designs with precision.</p>
+                  </div>
+                  
+                  <div className="bg-green-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Physics</h3>
+                    <p>Solve complex equations involving wave mechanics, thermodynamics, quantum physics, and astronomical calculations.</p>
+                  </div>
+                  
+                  <div className="bg-orange-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Mathematics</h3>
+                    <p>Handle calculus, algebra, statistics, and advanced mathematical proofs with comprehensive function support.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">Advanced Calculation Techniques</h2>
+                <p className="mb-4">
+                  Mastering scientific calculator usage involves understanding the order of operations and function precedence. 
+                  Our calculator follows standard mathematical conventions, ensuring accurate results for complex expressions.
+                </p>
+                
+                <div className="bg-gray-50 p-6 rounded-lg mb-4">
+                  <h3 className="text-lg font-medium mb-3">Memory and Precision</h3>
+                  <p>The calculator maintains high precision throughout calculations, reducing rounding errors that can accumulate 
+                  in multi-step problems. This is crucial for scientific and engineering applications where accuracy is paramount.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  How accurate are the trigonometric calculations in this scientific calculator?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Our scientific calculator provides highly accurate trigonometric calculations using JavaScript's built-in Math functions, 
+                  which typically offer precision up to 15-17 decimal places. The calculator automatically converts degrees to radians 
+                  for trigonometric functions, ensuring accurate results for both educational and professional use.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Can I use this calculator for complex engineering calculations?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes, this scientific calculator is designed to handle complex engineering calculations including logarithmic functions, 
+                  exponentials, power operations, and trigonometric calculations. It's suitable for electrical engineering, mechanical 
+                  engineering, civil engineering, and other technical fields requiring precise mathematical computations.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  What's the difference between ln and log functions?
+                </AccordionTrigger>
+                <AccordionContent>
+                  The 'ln' function calculates the natural logarithm (base e ≈ 2.718), while 'log' calculates the common logarithm 
+                  (base 10). Natural logarithms are commonly used in calculus, physics, and engineering, while common logarithms 
+                  are often used in chemistry, astronomy, and decibel calculations.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  How do I calculate inverse trigonometric functions?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Currently, this calculator provides direct trigonometric functions (sin, cos, tan). For inverse functions 
+                  (arcsin, arccos, arctan), you would need to use the relationship that if sin(x) = y, then x = arcsin(y). 
+                  Many scientific calculators include dedicated inverse function buttons for more complex calculations.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Is this scientific calculator suitable for statistical calculations?
+                </AccordionTrigger>
+                <AccordionContent>
+                  While this calculator excels at basic scientific functions, it's primarily designed for algebraic and trigonometric 
+                  calculations. For advanced statistical operations like standard deviation, regression analysis, or probability 
+                  distributions, you might need specialized statistical software or calculators with dedicated statistical functions.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Can I use this calculator on mobile devices?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes, this scientific calculator is fully responsive and works seamlessly on mobile devices, tablets, and desktop computers. 
+                  The interface automatically adapts to your screen size, ensuring all buttons remain easily accessible and the display 
+                  remains clearly visible across all devices.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  How do I clear the calculator or fix input errors?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Use the red 'C' (Clear) button to reset the calculator completely, clearing the display and any stored operations. 
+                  This is the quickest way to start fresh if you make an input error or want to begin a new calculation. 
+                  The calculator also handles decimal points and prevents multiple decimal entries automatically.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </div>
 

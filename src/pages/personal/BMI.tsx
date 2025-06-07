@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const BMI = () => {
   const [height, setHeight] = useState("");
@@ -71,7 +72,7 @@ const BMI = () => {
           <span>Home</span> / <span>Personal Calculators</span> / <span className="text-foreground">BMI Calculator</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Calculator Form */}
           <Card>
             <CardHeader>
@@ -202,36 +203,235 @@ const BMI = () => {
           </Card>
         </div>
 
-        {/* SEO Content */}
-        <div className="mt-12">
-          <Card>
-            <CardHeader>
-              <CardTitle>Understanding Body Mass Index (BMI)</CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <p>
-                Body Mass Index (BMI) is a screening tool used to determine if you are underweight, 
-                normal weight, overweight, or obese. It's calculated using your height and weight 
-                and provides a general indication of whether you have a healthy body weight.
-              </p>
-              
-              <h3 className="text-lg font-semibold mt-6 mb-3">How BMI is Calculated</h3>
-              <p>
-                BMI = weight (kg) / height (m)²
-              </p>
-              <p>
-                For imperial units: BMI = (weight in pounds × 703) / (height in inches)²
-              </p>
+        {/* SEO Content Section */}
+        <div className="bg-muted/30 py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h1 className="text-4xl font-bold mb-8 text-center">Complete BMI Calculator Guide: Understanding Body Mass Index for Better Health</h1>
+            
+            <div className="prose max-w-none space-y-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">What is Body Mass Index (BMI)?</h2>
+                <p className="text-lg mb-4">
+                  Body Mass Index (BMI) is a widely used screening tool that helps determine whether an individual has a healthy body weight 
+                  relative to their height. Developed by Belgian mathematician Adolphe Quetelet in the 19th century, BMI provides a simple 
+                  numerical measure that can be used to categorize individuals into different weight status categories.
+                </p>
+                <p className="mb-4">
+                  The BMI calculation is straightforward: it divides a person's weight in kilograms by the square of their height in meters 
+                  (kg/m²). For those using imperial measurements, the formula is slightly modified to account for pounds and inches. 
+                  This standardized measurement allows healthcare professionals and individuals to quickly assess weight-related health risks.
+                </p>
+              </div>
 
-              <h3 className="text-lg font-semibold mt-6 mb-3">BMI Limitations</h3>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Does not distinguish between muscle and fat mass</li>
-                <li>May not be accurate for athletes with high muscle mass</li>
-                <li>Does not account for age, gender, or ethnicity differences</li>
-                <li>Should be used as a screening tool, not a diagnostic measure</li>
-              </ul>
-            </CardContent>
-          </Card>
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">How to Calculate BMI: Step-by-Step Instructions</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Metric System</h3>
+                    <p className="font-semibold mb-2">Formula: BMI = weight (kg) ÷ height² (m²)</p>
+                    <ol className="space-y-2">
+                      <li>1. Measure your weight in kilograms</li>
+                      <li>2. Measure your height in centimeters, then convert to meters</li>
+                      <li>3. Square your height (multiply by itself)</li>
+                      <li>4. Divide your weight by the squared height</li>
+                    </ol>
+                  </div>
+                  
+                  <div className="bg-green-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-medium mb-3">Imperial System</h3>
+                    <p className="font-semibold mb-2">Formula: BMI = (weight × 703) ÷ height² (inches²)</p>
+                    <ol className="space-y-2">
+                      <li>1. Measure your weight in pounds</li>
+                      <li>2. Measure your height in inches</li>
+                      <li>3. Square your height in inches</li>
+                      <li>4. Multiply weight by 703, then divide by squared height</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">Understanding BMI Categories and Health Implications</h2>
+                
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-blue-50 p-6 rounded-lg">
+                      <h3 className="text-lg font-medium mb-3 text-blue-700">Underweight (BMI < 18.5)</h3>
+                      <p className="mb-3">Individuals in this category may have insufficient body weight for their height.</p>
+                      <p className="text-sm"><strong>Health risks:</strong> Malnutrition, weakened immune system, osteoporosis, fertility issues</p>
+                    </div>
+                    
+                    <div className="bg-green-50 p-6 rounded-lg">
+                      <h3 className="text-lg font-medium mb-3 text-green-700">Normal Weight (BMI 18.5-24.9)</h3>
+                      <p className="mb-3">This range indicates a healthy weight for most adults.</p>
+                      <p className="text-sm"><strong>Health benefits:</strong> Lower risk of chronic diseases, better energy levels, optimal health outcomes</p>
+                    </div>
+                    
+                    <div className="bg-yellow-50 p-6 rounded-lg">
+                      <h3 className="text-lg font-medium mb-3 text-yellow-700">Overweight (BMI 25.0-29.9)</h3>
+                      <p className="mb-3">Weight above the normal range but below obesity levels.</p>
+                      <p className="text-sm"><strong>Health risks:</strong> Increased risk of cardiovascular disease, type 2 diabetes, sleep apnea</p>
+                    </div>
+                    
+                    <div className="bg-red-50 p-6 rounded-lg">
+                      <h3 className="text-lg font-medium mb-3 text-red-700">Obese (BMI ≥ 30.0)</h3>
+                      <p className="mb-3">Significantly increased health risks requiring medical attention.</p>
+                      <p className="text-sm"><strong>Health risks:</strong> Heart disease, stroke, diabetes, certain cancers, sleep disorders</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">BMI Limitations and Alternative Measurements</h2>
+                <p className="mb-4">
+                  While BMI is a useful screening tool, it has several limitations that individuals should understand:
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="font-medium mb-2">Muscle vs. Fat Mass</h3>
+                    <p className="text-sm">BMI doesn't distinguish between muscle and fat. Athletes with high muscle mass may have elevated BMI scores despite low body fat percentages.</p>
+                  </div>
+                  
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="font-medium mb-2">Age and Gender Variations</h3>
+                    <p className="text-sm">BMI standards may not account for natural changes in body composition with age or differences between men and women.</p>
+                  </div>
+                  
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="font-medium mb-2">Ethnic Differences</h3>
+                    <p className="text-sm">Different ethnic groups may have varying health risks at the same BMI levels, particularly Asian populations who may face health risks at lower BMI values.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-semibold mb-4">Healthy Weight Management Strategies</h2>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Nutrition</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li>• Balanced diet with fruits and vegetables</li>
+                      <li>• Appropriate portion control</li>
+                      <li>• Regular meal timing</li>
+                      <li>• Adequate hydration</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-green-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Physical Activity</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li>• 150 minutes moderate exercise weekly</li>
+                      <li>• Strength training 2-3 times per week</li>
+                      <li>• Daily movement and activity</li>
+                      <li>• Progressive fitness goals</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-orange-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-medium mb-3">Lifestyle</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li>• Adequate sleep (7-9 hours)</li>
+                      <li>• Stress management techniques</li>
+                      <li>• Regular health check-ups</li>
+                      <li>• Social support systems</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions About BMI</h2>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Is BMI an accurate measure of health for everyone?
+                </AccordionTrigger>
+                <AccordionContent>
+                  BMI is a useful screening tool but not a perfect measure of individual health. It doesn't account for muscle mass, 
+                  bone density, body composition, or distribution of fat. Athletes, elderly individuals, and certain ethnic groups 
+                  may need alternative assessments. It's best used as one factor among many in evaluating overall health status.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  How often should I calculate my BMI?
+                </AccordionTrigger>
+                <AccordionContent>
+                  For most adults, calculating BMI quarterly (every 3 months) is sufficient for monitoring weight status. 
+                  However, if you're actively trying to lose or gain weight, monthly calculations can help track progress. 
+                  Remember that BMI is just one indicator - focus on overall health improvements rather than just the number.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  What should I do if my BMI indicates I'm overweight or obese?
+                </AccordionTrigger>
+                <AccordionContent>
+                  If your BMI indicates overweight or obesity, consult with a healthcare provider for a comprehensive assessment. 
+                  They can evaluate other health factors and recommend appropriate strategies. Generally, gradual weight loss through 
+                  balanced nutrition and regular physical activity is recommended, aiming for 1-2 pounds per week.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Can BMI be used for children and teenagers?
+                </AccordionTrigger>
+                <AccordionContent>
+                  BMI for children and teens (ages 2-19) is calculated the same way but interpreted differently using age and 
+                  sex-specific percentiles rather than fixed categories. Pediatric BMI considers normal growth and development 
+                  patterns. Always consult with a pediatrician for children's weight assessments rather than using adult BMI categories.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  Does BMI account for different body types and genetics?
+                </AccordionTrigger>
+                <AccordionContent>
+                  BMI doesn't account for individual body types, genetic factors, or natural body composition variations. 
+                  Some people naturally carry more muscle mass or have different fat distribution patterns. Genetic factors 
+                  can influence metabolism, body shape, and weight distribution. Consider BMI alongside other health indicators 
+                  and family history for a complete picture.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  What are some alternatives to BMI for measuring health?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Alternative measurements include waist circumference, waist-to-hip ratio, body fat percentage, and waist-to-height ratio. 
+                  These can provide additional insights into health risks. Laboratory tests like blood pressure, cholesterol levels, 
+                  and blood sugar are also important health indicators that complement BMI measurements.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  How does age affect BMI interpretation?
+                </AccordionTrigger>
+                <AccordionContent>
+                  As people age, muscle mass naturally decreases and fat distribution changes, which can affect BMI interpretation. 
+                  Some research suggests slightly higher BMI ranges might be acceptable for older adults. However, the standard 
+                  BMI categories are still widely used. Older adults should focus on maintaining muscle mass through resistance 
+                  training and adequate protein intake alongside weight management.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </div>
 

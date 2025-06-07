@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, Function, BarChart3 } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
