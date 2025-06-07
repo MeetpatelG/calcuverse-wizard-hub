@@ -1,3 +1,11 @@
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://techgurutools.com/sitemap.xml
+
+# Specific crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +18,9 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Disallow certain paths (none for now, but ready for future use)
+# Disallow: /admin/
+# Disallow: /private/
