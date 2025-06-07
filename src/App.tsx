@@ -18,6 +18,7 @@ import Mathematical from "./pages/categories/Mathematical";
 import Business from "./pages/categories/Business";
 
 // Financial Calculators
+import Budget from "./pages/financial/Budget";
 import LoanEMI from "./pages/financial/LoanEMI";
 import Mortgage from "./pages/financial/Mortgage";
 import Investment from "./pages/financial/Investment";
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/business" element={<Business />} />
           
           {/* Financial Calculator Routes */}
+          <Route path="/financial/budget" element={<Budget />} />
           <Route path="/financial/loan-emi" element={<LoanEMI />} />
           <Route path="/financial/mortgage" element={<Mortgage />} />
           <Route path="/financial/investment" element={<Investment />} />

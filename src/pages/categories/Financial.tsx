@@ -1,5 +1,5 @@
 
-import { Calculator, CreditCard, Home, TrendingUp, Percent } from "lucide-react";
+import { Calculator, CreditCard, Home, TrendingUp, Percent, PiggyBank, Receipt } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +7,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const Financial = () => {
   const calculators = [
+    {
+      title: "Budget Calculator",
+      description: "Plan and track your monthly budget to achieve financial goals",
+      icon: PiggyBank,
+      path: "/financial/budget",
+      color: "text-green-600"
+    },
     {
       title: "Loan EMI Calculator",
       description: "Calculate your Equated Monthly Installment for loans",
@@ -19,21 +26,28 @@ const Financial = () => {
       description: "Calculate your monthly mortgage payments and total interest",
       icon: Home,
       path: "/financial/mortgage",
-      color: "text-green-600"
+      color: "text-purple-600"
     },
     {
       title: "Investment Calculator",
       description: "Calculate the future value of your investments with compound returns",
       icon: TrendingUp,
       path: "/financial/investment",
-      color: "text-purple-600"
+      color: "text-orange-600"
+    },
+    {
+      title: "Tax Calculator",
+      description: "Calculate your income tax and take-home pay accurately",
+      icon: Receipt,
+      path: "/financial/tax",
+      color: "text-red-600"
     },
     {
       title: "Compound Interest Calculator",
       description: "Calculate the power of compound interest on your investments",
       icon: Percent,
       path: "/financial/compound-interest",
-      color: "text-orange-600"
+      color: "text-teal-600"
     }
   ];
 
