@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, Function, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -63,10 +63,34 @@ const Index = () => {
   ];
 
   const featuredCalculators = [
-    { name: "Loan EMI Calculator", description: "Calculate your monthly loan payments", route: "/financial/loan-emi" },
-    { name: "BMI Calculator", description: "Check your body mass index", route: "/personal/bmi" },
-    { name: "Scientific Calculator", description: "Advanced mathematical calculations", route: "/mathematical/scientific" },
-    { name: "Profit Margin Calculator", description: "Calculate business profit margins", route: "/business/profit-margin" }
+    { 
+      name: "Loan EMI Calculator", 
+      description: "Calculate your monthly loan payments", 
+      route: "/financial/loan-emi",
+      icon: DollarSign,
+      color: "bg-green-100 text-green-700"
+    },
+    { 
+      name: "BMI Calculator", 
+      description: "Check your body mass index", 
+      route: "/personal/bmi",
+      icon: Activity,
+      color: "bg-pink-100 text-pink-700"
+    },
+    { 
+      name: "Scientific Calculator", 
+      description: "Advanced mathematical calculations", 
+      route: "/mathematical/scientific",
+      icon: Calculator,
+      color: "bg-blue-100 text-blue-700"
+    },
+    { 
+      name: "Profit Margin Calculator", 
+      description: "Calculate business profit margins", 
+      route: "/business/profit-margin",
+      icon: BarChart3,
+      color: "bg-purple-100 text-purple-700"
+    }
   ];
 
   return (
@@ -137,8 +161,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredCalculators.map((calc, index) => (
               <Link key={index} to={calc.route}>
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
+                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
                   <CardHeader>
+                    <div className={`w-12 h-12 rounded-lg ${calc.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <calc.icon className="h-6 w-6" />
+                    </div>
                     <CardTitle className="text-lg">{calc.name}</CardTitle>
                     <CardDescription>{calc.description}</CardDescription>
                   </CardHeader>
