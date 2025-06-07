@@ -257,7 +257,7 @@ const BMI = () => {
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-blue-50 p-6 rounded-lg">
-                      <h3 className="text-lg font-medium mb-3 text-blue-700">Underweight (BMI < 18.5)</h3>
+                      <h3 className="text-lg font-medium mb-3 text-blue-700">Underweight (BMI &lt; 18.5)</h3>
                       <p className="mb-3">Individuals in this category may have insufficient body weight for their height.</p>
                       <p className="text-sm"><strong>Health risks:</strong> Malnutrition, weakened immune system, osteoporosis, fertility issues</p>
                     </div>
@@ -292,7 +292,7 @@ const BMI = () => {
                 <div className="space-y-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h3 className="font-medium mb-2">Muscle vs. Fat Mass</h3>
-                    <p className="text-sm">BMI doesn't distinguish between muscle and fat. Athletes with high muscle mass may have elevated BMI scores despite low body fat percentages.</p>
+                    <p className="text-sm">BMI doesn&apos;t distinguish between muscle and fat. Athletes with high muscle mass may have elevated BMI scores despite low body fat percentages.</p>
                   </div>
                   
                   <div className="bg-gray-50 p-4 rounded-lg">
@@ -357,9 +357,9 @@ const BMI = () => {
                   Is BMI an accurate measure of health for everyone?
                 </AccordionTrigger>
                 <AccordionContent>
-                  BMI is a useful screening tool but not a perfect measure of individual health. It doesn't account for muscle mass, 
+                  BMI is a useful screening tool but not a perfect measure of individual health. It doesn&apos;t account for muscle mass, 
                   bone density, body composition, or distribution of fat. Athletes, elderly individuals, and certain ethnic groups 
-                  may need alternative assessments. It's best used as one factor among many in evaluating overall health status.
+                  may need alternative assessments. It&apos;s best used as one factor among many in evaluating overall health status.
                 </AccordionContent>
               </AccordionItem>
 
@@ -369,14 +369,14 @@ const BMI = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   For most adults, calculating BMI quarterly (every 3 months) is sufficient for monitoring weight status. 
-                  However, if you're actively trying to lose or gain weight, monthly calculations can help track progress. 
+                  However, if you&apos;re actively trying to lose or gain weight, monthly calculations can help track progress. 
                   Remember that BMI is just one indicator - focus on overall health improvements rather than just the number.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
                 <AccordionTrigger className="text-left">
-                  What should I do if my BMI indicates I'm overweight or obese?
+                  What should I do if my BMI indicates I&apos;m overweight or obese?
                 </AccordionTrigger>
                 <AccordionContent>
                   If your BMI indicates overweight or obesity, consult with a healthcare provider for a comprehensive assessment. 
@@ -392,7 +392,7 @@ const BMI = () => {
                 <AccordionContent>
                   BMI for children and teens (ages 2-19) is calculated the same way but interpreted differently using age and 
                   sex-specific percentiles rather than fixed categories. Pediatric BMI considers normal growth and development 
-                  patterns. Always consult with a pediatrician for children's weight assessments rather than using adult BMI categories.
+                  patterns. Always consult with a pediatrician for children&apos;s weight assessments rather than using adult BMI categories.
                 </AccordionContent>
               </AccordionItem>
 
@@ -401,7 +401,7 @@ const BMI = () => {
                   Does BMI account for different body types and genetics?
                 </AccordionTrigger>
                 <AccordionContent>
-                  BMI doesn't account for individual body types, genetic factors, or natural body composition variations. 
+                  BMI doesn&apos;t account for individual body types, genetic factors, or natural body composition variations. 
                   Some people naturally carry more muscle mass or have different fat distribution patterns. Genetic factors 
                   can influence metabolism, body shape, and weight distribution. Consider BMI alongside other health indicators 
                   and family history for a complete picture.
