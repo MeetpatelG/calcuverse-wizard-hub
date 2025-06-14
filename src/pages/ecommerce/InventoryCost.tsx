@@ -49,7 +49,7 @@ export default function InventoryCost() {
             <div>
               <span className="font-medium">LaTeX Output:</span>
               <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
-                $ \text{{Inventory Cost}} = \text{{Units}} \times \text{{Unit Cost}} $
+                {"$ \\text{Inventory\\ Cost} = \\text{Units} \\times \\text{Unit\\ Cost} $"}
               </div>
             </div>
           </CardContent>

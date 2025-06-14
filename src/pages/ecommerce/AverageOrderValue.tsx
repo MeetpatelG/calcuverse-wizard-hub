@@ -49,7 +49,8 @@ export default function AverageOrderValue() {
             <div>
               <span className="font-medium">LaTeX Output:</span>
               <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
-                $ AOV = \frac{{\text{{Total Revenue}}}}{{\text{{Number of Orders}}}} $
+                {/* Use single braces to prevent JSX parse errors */}
+                {"$ AOV = \\frac{\\text{Total\\ Revenue}}{\\text{Number\\ of\\ Orders}} $"}
               </div>
             </div>
           </CardContent>
