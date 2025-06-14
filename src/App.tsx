@@ -329,7 +329,7 @@ const App = () => (
             <Route path="/pdf/pdf-to-xml" element={<PDFToolPage title="PDF to XML Converter" description="Export PDF data to XML file format." />} />
             <Route path="/pdf/xml-to-pdf" element={<PDFToolPage title="XML to PDF Converter" description="Turn XML files into readable PDF documents." />} />
             <Route path="/pdf/pdf-ocr" element={<PDFToolPage title="PDF OCR Converter" description="Convert scanned images in PDFs to editable/searchable text (OCR)." />} />
-            <Route path="/pdf/pdf-to-csv" element={<PDFToolPage title="PDF to CSV Converter" description="Extract tabular data from PDFs and save to CSV files." />} />
+            <Route path="/pdf/pdf-to-csv" element={<import("./pages/pdf/PDFToCSV").then(mod => <mod.default />)} /> />
             <Route path="/pdf/csv-to-pdf" element={<PDFToolPage title="CSV to PDF Converter" description="Turn CSV files into printable PDF tables." />} />
 
             {/* Catch-all route */}
