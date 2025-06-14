@@ -1,6 +1,18 @@
 
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { 
+  Instagram, 
+  Facebook, 
+  Twitter, 
+  Youtube, 
+  Linkedin, 
+  UserPlus, 
+  BarChart3, 
+  Users, 
+  Hash, 
+  Share2,
+  Video
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,8 +24,70 @@ const calculators = [
     icon: Instagram,
     path: "/social-media/engagement-rate",
     color: "text-pink-600"
-  }
-  // Add more calculators as needed
+  },
+  {
+    title: "Follower Growth Rate Calculator",
+    description: "Analyze your follower growth over time on any platform.",
+    icon: UserPlus,
+    path: "#",
+    color: "text-green-600"
+  },
+  {
+    title: "Reach Calculator",
+    description: "Estimate the potential reach of your social media posts.",
+    icon: BarChart3,
+    path: "#",
+    color: "text-blue-500"
+  },
+  {
+    title: "Impression Calculator",
+    description: "Calculate the number of times your content is displayed to users.",
+    icon: Users,
+    path: "#",
+    color: "text-purple-600"
+  },
+  {
+    title: "Hashtag Performance Calculator",
+    description: "Discover the impact of hashtags on your posts.",
+    icon: Hash,
+    path: "#",
+    color: "text-gray-700"
+  },
+  {
+    title: "Share Rate Calculator",
+    description: "Compute how often your content is shared by your audience.",
+    icon: Share2,
+    path: "#",
+    color: "text-orange-500"
+  },
+  {
+    title: "Facebook Engagement Calculator",
+    description: "Track likes, comments, shares, and post engagement specifically for Facebook.",
+    icon: Facebook,
+    path: "#",
+    color: "text-blue-700"
+  },
+  {
+    title: "Twitter Engagement Calculator",
+    description: "Assess your tweets' performance with Twitter-specific metrics.",
+    icon: Twitter,
+    path: "#",
+    color: "text-sky-400"
+  },
+  {
+    title: "YouTube Video Performance Calculator",
+    description: "Analyze views, likes, comments, and shares for YouTube videos.",
+    icon: Youtube,
+    path: "#",
+    color: "text-red-600"
+  },
+  {
+    title: "LinkedIn Post Engagement Calculator",
+    description: "Measure likes, comments, shares, and reach for LinkedIn posts.",
+    icon: Linkedin,
+    path: "#",
+    color: "text-blue-800"
+  },
 ];
 
 const SocialMedia = () => {
@@ -33,8 +107,8 @@ const SocialMedia = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {calculators.map((calc) => (
-            <Link key={calc.path} to={calc.path}>
-              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
+            <Link key={calc.title} to={calc.path} tabIndex={0}>
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer focus:ring-2 focus:ring-primary focus:outline-none">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
                     <calc.icon className={`h-8 w-8 ${calc.color}`} />
