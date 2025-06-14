@@ -73,7 +73,13 @@ const BBTOvulationCalculator = () => {
         <form className="space-y-4" onSubmit={e => { e.preventDefault(); calculate(); }}>
           <div>
             <label className="block mb-1 font-medium">Basal Body Temperature (°C) readings (8-16 days), comma <span className="text-muted-foreground">or</span> newline separated</label>
-            <Input as="textarea" className="min-h-[72px]" value={bbtReadings} onChange={e => setBbtReadings(e.target.value)} placeholder="36.4,36.5,36.6,36.4,36.3,36.5,36.6..." required />
+            <textarea
+              className="flex min-h-[72px] h-[88px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              value={bbtReadings}
+              onChange={e => setBbtReadings(e.target.value)}
+              placeholder="36.4,36.5,36.6,36.4,36.3,36.5,36.6..."
+              required
+            />
           </div>
           <div>
             <label className="block mb-1 font-medium">Cycle Length (days)</label>
@@ -100,3 +106,4 @@ const BBTOvulationCalculator = () => {
 };
 
 export default BBTOvulationCalculator;
+
