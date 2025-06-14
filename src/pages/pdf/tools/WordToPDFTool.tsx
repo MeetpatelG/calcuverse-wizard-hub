@@ -27,7 +27,7 @@ export default function WordToPDFTool() {
       const pdfBlob = new Blob(
         [
           "%PDF-1.3\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >> endobj\n2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 144] /Contents 4 0 R >> endobj\n4 0 obj\n<< /Length ",
-          text.length,
+          text.length.toString(),
           " >>stream\nBT /F1 18 Tf 40 100 Td (" +
             text
               .replace(/\(|\)/g, "")
