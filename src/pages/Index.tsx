@@ -133,6 +133,42 @@ const Index = () => {
     }
   ];
 
+  // FILTERING LOGIC FOR SEARCH
+  const query = searchQuery.trim().toLowerCase();
+
+  // Filtered categories: only show if any calculator or title/description match the search
+  const filteredCategories = query
+    ? categories
+        .map(cat => {
+          // Filter calculators for this category that match
+          const filteredCalcs = cat.calculators.filter(calc =>
+            calc.toLowerCase().includes(query)
+          );
+          // Match if title/description or ANY calculator match the query
+          if (
+            cat.title.toLowerCase().includes(query) ||
+            (cat.description && cat.description.toLowerCase().includes(query)) ||
+            filteredCalcs.length > 0
+          ) {
+            return {
+              ...cat,
+              calculators: filteredCalcs.length > 0 ? filteredCalcs : cat.calculators
+            };
+          }
+          return null;
+        })
+        .filter(Boolean)
+    : categories;
+
+  // Filtered featured calculators
+  const filteredFeaturedCalcs = query
+    ? featuredCalculators.filter(
+        calc =>
+          calc.name.toLowerCase().includes(query) ||
+          (calc.description && calc.description.toLowerCase().includes(query))
+      )
+    : featuredCalculators;
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -156,7 +192,8 @@ const Index = () => {
                   placeholder="Search calculators..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 py-3 text-lg"
+                  className="pl-10 py-3 text-lg text-black placeholder:text-gray-400 bg-white"
+                  // Note: For dark mode, adjust text color accordingly!
                 />
               </div>
             </div>
@@ -174,31 +211,37 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Calculator Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categories.map((category, index) => (
-              <Link key={index} to={category.route}>
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
-                  <CardHeader>
-                    <div className={`w-12 h-12 rounded-lg ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <category.icon className="h-6 w-6" />
-                    </div>
-                    <CardTitle className="text-xl">{category.title}</CardTitle>
-                    <CardDescription>{category.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {category.calculators.slice(0, 6).map((calc, idx) => (
-                        <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
-                          {calc}
-                        </span>
-                      ))}
-                      {category.calculators.length > 6 && (
-                        <span className="text-xs text-muted-foreground">+{category.calculators.length - 6} more</span>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            {filteredCategories.length === 0 ? (
+              <div className="col-span-full text-center text-muted-foreground py-12">
+                No calculators or categories found.
+              </div>
+            ) : (
+              filteredCategories.map((category, index) => (
+                <Link key={index} to={category.route}>
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
+                    <CardHeader>
+                      <div className={`w-12 h-12 rounded-lg ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                        <category.icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-xl">{category.title}</CardTitle>
+                      <CardDescription>{category.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {category.calculators.slice(0, 6).map((calc, idx) => (
+                          <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
+                            {calc}
+                          </span>
+                        ))}
+                        {category.calculators.length > 6 && (
+                          <span className="text-xs text-muted-foreground">+{category.calculators.length - 6} more</span>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))
+            )}
           </div>
         </div>
       </section>
@@ -208,24 +251,30 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Popular Calculators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredCalculators.map((calc, index) => (
-              <Link key={index} to={calc.route}>
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
-                  <CardHeader>
-                    <div className={`w-12 h-12 rounded-lg ${calc.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <calc.icon className="h-6 w-6" />
-                    </div>
-                    <CardTitle className="text-lg">{calc.name}</CardTitle>
-                    <CardDescription>{calc.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full">
-                      Try Calculator
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            {filteredFeaturedCalcs.length === 0 ? (
+              <div className="col-span-full text-center text-muted-foreground py-12">
+                No calculators found.
+              </div>
+            ) : (
+              filteredFeaturedCalcs.map((calc, index) => (
+                <Link key={index} to={calc.route}>
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
+                    <CardHeader>
+                      <div className={`w-12 h-12 rounded-lg ${calc.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                        <calc.icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-lg">{calc.name}</CardTitle>
+                      <CardDescription>{calc.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button variant="outline" className="w-full">
+                        Try Calculator
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))
+            )}
           </div>
         </div>
       </section>
