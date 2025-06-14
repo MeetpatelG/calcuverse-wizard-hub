@@ -1,5 +1,5 @@
 
-import { FilePdf } from "lucide-react";
+import { File } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,7 +15,7 @@ const PDFToolPage = ({ title, description }: PDFToolPageProps) => (
     <main className="container mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto bg-card rounded-xl shadow-lg p-8 text-center">
         <div className="flex flex-col items-center mb-8">
-          <FilePdf className="h-14 w-14 text-primary mb-4" />
+          <File className="h-14 w-14 text-primary mb-4" />
           <h1 className="text-3xl font-bold mb-2">{title}</h1>
           <p className="text-muted-foreground text-lg mb-2">{description}</p>
         </div>
