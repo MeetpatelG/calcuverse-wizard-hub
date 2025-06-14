@@ -1,135 +1,59 @@
+
+import { Instagram } from "lucide-react";
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
-import ShareRateSEOSection from "./components/ShareRateSEOSection";
 
-const ShareRate = () => {
-  const [shares, setShares] = useState("");
-  const [views, setViews] = useState("");
-  const [result, setResult] = useState<number|null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showFormula, setShowFormula] = useState(false);
+export default function ShareRate() {
+  const [shares, setShares] = useState<number>(100);
+  const [totalViews, setTotalViews] = useState<number>(5000);
+  const [shareRate, setShareRate] = useState<number | null>(2);
 
-  const validate = () => {
-    if (!shares || !views) {
-      setError("Both fields are required.");
-      return false;
+  function calculate() {
+    if (totalViews > 0) {
+      setShareRate(Number(((shares / totalViews) * 100).toFixed(2)));
     }
-    if (isNaN(Number(shares)) || isNaN(Number(views))) {
-      setError("Enter valid numbers for both fields.");
-      return false;
-    }
-    if (Number(views) <= 0) {
-      setError("Views must be greater than 0.");
-      return false;
-    }
-    setError(null);
-    return true;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) {
-      setResult(null);
-      setShowFormula(false);
-      return;
-    }
-    const shareCount = parseFloat(shares);
-    const viewsCount = parseFloat(views);
-    setResult((shareCount / viewsCount) * 100);
-    setShowFormula(true);
-  };
-
-  const handleReset = () => {
-    setShares("");
-    setViews("");
-    setResult(null);
-    setError(null);
-    setShowFormula(false);
-  };
+  }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-xl mx-auto">
-          <Card>
-            <CardHeader>
+    <div className="min-h-screen bg-background py-8">
+      <div className="max-w-xl mx-auto">
+        <Card>
+          <CardHeader>
+            <div className="flex items-center space-x-2">
+              <Instagram className="h-8 w-8 text-orange-500" />
               <CardTitle>Share Rate Calculator</CardTitle>
-              <CardDescription>
-                Calculate how often your content is shared relative to its views.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit} autoComplete="off">
-                <div className="relative group">
-                  <Label htmlFor="shares" className="flex items-center gap-1">Number of Shares
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Amount of times your post was shared.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="shares"
-                    type="number"
-                    min="0"
-                    value={shares}
-                    onChange={e => setShares(e.target.value)}
-                    placeholder="Enter number of shares"
-                  />
+            </div>
+            <CardDescription>
+              Find the percentage of users who shared your post.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-4 mb-4">
+              <div>
+                <label className="text-sm">Number of Shares</label>
+                <Input type="number" value={shares} min={0} onChange={e => setShares(Number(e.target.value))} />
+              </div>
+              <div>
+                <label className="text-sm">Total Views</label>
+                <Input type="number" value={totalViews} min={1} onChange={e => setTotalViews(Number(e.target.value))} />
+              </div>
+              <Button className="w-full" onClick={calculate}>Calculate Share Rate</Button>
+            </div>
+            {shareRate !== null && (
+              <div>
+                <div className="font-medium">Result:</div>
+                <div className="mb-2">Share Rate: <span className="text-orange-700 font-bold">{shareRate}%</span></div>
+                <span className="font-medium">LaTeX Output:</span>
+                <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
+                  {"$ SR = \\frac{S}{V} \\times 100 $"}
                 </div>
-                <div className="relative group">
-                  <Label htmlFor="views" className="flex items-center gap-1">Number of Views
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Number of views on your post or video.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="views"
-                    type="number"
-                    min="1"
-                    value={views}
-                    onChange={e => setViews(e.target.value)}
-                    placeholder="Enter number of views"
-                  />
-                </div>
-                {error && (
-                  <div className="text-destructive text-sm -mt-2">{error}</div>
-                )}
-                <div className="flex gap-2">
-                  <Button type="submit" className="w-full mt-2">Calculate</Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="w-full mt-2">Reset</Button>
-                </div>
-              </form>
-              {result !== null && (
-                <div className="mt-6 p-4 rounded bg-muted text-center font-semibold text-lg">
-                  Share Rate: <span className="text-primary">{result.toFixed(2)}%</span>
-                  {showFormula && (
-                    <div className="text-sm mt-2 font-normal text-muted-foreground">
-                      Formula: (Shares ÷ Views) × 100<br/>
-                      Calculation: ({shares} ÷ {views}) × 100 = {result.toFixed(2)}%
-                    </div>
-                  )}
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
-      <ShareRateSEOSection />
-      <Footer />
     </div>
   );
-};
-
-export default ShareRate;
+}

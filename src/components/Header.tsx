@@ -126,7 +126,16 @@ const homepageCategories = [
     title: "Social Media Calculators",
     route: "/social-media",
     calculators: [
-      { name: "Engagement Rate Calculator", route: "/social-media/engagement-rate" }
+      { name: "Engagement Rate Calculator", route: "/social-media/engagement-rate" },
+      { name: "Follower Growth Rate Calculator", route: "/social-media/follower-growth-rate" },
+      { name: "Reach Calculator", route: "/social-media/reach" },
+      { name: "Impression Calculator", route: "/social-media/impression" },
+      { name: "Hashtag Performance Calculator", route: "/social-media/hashtag-performance" },
+      { name: "Share Rate Calculator", route: "/social-media/share-rate" },
+      { name: "Facebook Engagement Calculator", route: "/social-media/facebook-engagement" },
+      { name: "Twitter Engagement Calculator", route: "/social-media/twitter-engagement" },
+      { name: "YouTube Video Performance Calculator", route: "/social-media/youtube-video-performance" },
+      { name: "LinkedIn Post Engagement Calculator", route: "/social-media/linkedin-post-engagement" }
     ]
   },
   {
@@ -350,7 +359,16 @@ const Header = () => {
     {
       title: t("Social Media"),
       items: [
-        { name: t("Engagement Rate Calculator"), href: "/social-media/engagement-rate" }
+        { name: t("Engagement Rate Calculator"), href: "/social-media/engagement-rate" },
+        { name: t("Follower Growth Rate Calculator"), href: "/social-media/follower-growth-rate" },
+        { name: t("Reach Calculator"), href: "/social-media/reach" },
+        { name: t("Impression Calculator"), href: "/social-media/impression" },
+        { name: t("Hashtag Performance Calculator"), href: "/social-media/hashtag-performance" },
+        { name: t("Share Rate Calculator"), href: "/social-media/share-rate" },
+        { name: t("Facebook Engagement Calculator"), href: "/social-media/facebook-engagement" },
+        { name: t("Twitter Engagement Calculator"), href: "/social-media/twitter-engagement" },
+        { name: t("YouTube Video Performance Calculator"), href: "/social-media/youtube-video-performance" },
+        { name: t("LinkedIn Post Engagement Calculator"), href: "/social-media/linkedin-post-engagement" }
       ]
     }
     // No PDF entry

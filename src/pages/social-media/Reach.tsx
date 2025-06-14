@@ -1,135 +1,60 @@
+
+import { Instagram } from "lucide-react";
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
-import ReachSEOSection from "./components/ReachSEOSection";
 
-const Reach = () => {
-  const [uniqueViewers, setUniqueViewers] = useState("");
-  const [followers, setFollowers] = useState("");
-  const [result, setResult] = useState<number|null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showFormula, setShowFormula] = useState(false);
+export default function Reach() {
+  const [impressions, setImpressions] = useState<number>(10000);
+  const [uniqueUsers, setUniqueUsers] = useState<number>(8000);
 
-  const validate = () => {
-    if (!uniqueViewers || !followers) {
-      setError("Both fields are required.");
-      return false;
-    }
-    if (isNaN(Number(uniqueViewers)) || isNaN(Number(followers))) {
-      setError("Enter valid numbers for both fields.");
-      return false;
-    }
-    if (Number(followers) <= 0) {
-      setError("Followers must be greater than 0.");
-      return false;
-    }
-    setError(null);
-    return true;
-  };
+  const [reach, setReach] = useState<number | null>(80);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) {
-      setResult(null);
-      setShowFormula(false);
-      return;
+  function calculate() {
+    if (impressions && uniqueUsers > 0) {
+      setReach(Number(((uniqueUsers / impressions) * 100).toFixed(2)));
     }
-    const viewers = parseFloat(uniqueViewers);
-    const fols = parseFloat(followers);
-    setResult((viewers / fols) * 100);
-    setShowFormula(true);
-  };
-
-  const handleReset = () => {
-    setUniqueViewers("");
-    setFollowers("");
-    setResult(null);
-    setError(null);
-    setShowFormula(false);
-  };
+  }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-xl mx-auto">
-          <Card>
-            <CardHeader>
+    <div className="min-h-screen bg-background py-8">
+      <div className="max-w-xl mx-auto">
+        <Card>
+          <CardHeader>
+            <div className="flex items-center space-x-2">
+              <Instagram className="h-8 w-8 text-blue-500" />
               <CardTitle>Reach Calculator</CardTitle>
-              <CardDescription>
-                Calculate the reach of your content: unique viewers as % of followers.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit} autoComplete="off">
-                <div className="relative group">
-                  <Label htmlFor="uniqueViewers" className="flex items-center gap-1">Unique Viewers
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        The number of unique users who viewed your content.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="uniqueViewers"
-                    type="number"
-                    min="0"
-                    value={uniqueViewers}
-                    onChange={e => setUniqueViewers(e.target.value)}
-                    placeholder="Enter unique viewers"
-                  />
+            </div>
+            <CardDescription>
+              Estimate your effective reach using impressions and unique users.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-4 mb-4">
+              <div>
+                <label className="text-sm">Total Impressions</label>
+                <Input type="number" value={impressions} min={0} onChange={e => setImpressions(Number(e.target.value))} />
+              </div>
+              <div>
+                <label className="text-sm">Unique Users</label>
+                <Input type="number" value={uniqueUsers} min={0} onChange={e => setUniqueUsers(Number(e.target.value))} />
+              </div>
+              <Button className="w-full" onClick={calculate}>Calculate Reach</Button>
+            </div>
+            {reach !== null && (
+              <div>
+                <div className="font-medium">Result:</div>
+                <div className="mb-2">Reach: <span className="text-blue-700 font-bold">{reach}%</span></div>
+                <span className="font-medium">LaTeX Output:</span>
+                <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
+                  {"$ \\text{Reach} = \\frac{\\text{Unique Users}}{\\text{Impressions}} \\times 100 $"}
                 </div>
-                <div className="relative group">
-                  <Label htmlFor="followers" className="flex items-center gap-1">Followers
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Total number of followers you have.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="followers"
-                    type="number"
-                    min="1"
-                    value={followers}
-                    onChange={e => setFollowers(e.target.value)}
-                    placeholder="Enter number of followers"
-                  />
-                </div>
-                {error && (
-                  <div className="text-destructive text-sm -mt-2">{error}</div>
-                )}
-                <div className="flex gap-2">
-                  <Button type="submit" className="w-full mt-2">Calculate</Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="w-full mt-2">Reset</Button>
-                </div>
-              </form>
-              {result !== null && (
-                <div className="mt-6 p-4 rounded bg-muted text-center font-semibold text-lg">
-                  Reach: <span className="text-primary">{result.toFixed(2)}%</span>
-                  {showFormula && (
-                    <div className="text-sm mt-2 font-normal text-muted-foreground">
-                      Formula: (Unique Viewers ÷ Followers) × 100<br />
-                      Calculation: ({uniqueViewers} ÷ {followers}) × 100 = {result.toFixed(2)}%
-                    </div>
-                  )}
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
-      <ReachSEOSection />
-      <Footer />
     </div>
   );
-};
-
-export default Reach;
+}

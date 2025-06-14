@@ -1,182 +1,61 @@
+
+import { Linkedin } from "lucide-react";
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
-import LinkedinPostEngagementSEOSection from "./components/LinkedinPostEngagementSEOSection";
 
-const LinkedinPostEngagement = () => {
-  const [likes, setLikes] = useState("");
-  const [comments, setComments] = useState("");
-  const [shares, setShares] = useState("");
-  const [reach, setReach] = useState("");
-  const [result, setResult] = useState<number|null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showFormula, setShowFormula] = useState(false);
+export default function LinkedinPostEngagement() {
+  const [likes, setLikes] = useState<number>(67);
+  const [comments, setComments] = useState<number>(15);
+  const [shares, setShares] = useState<number>(6);
+  const [reach, setReach] = useState<number>(3000);
+  const [engagement, setEngagement] = useState<number | null>(2.93);
 
-  const validate = () => {
-    if (!likes || !comments || !shares || !reach) {
-      setError("All fields are required.");
-      return false;
+  function calculate() {
+    if (reach > 0) {
+      setEngagement(Number((((likes + comments + shares) / reach) * 100).toFixed(2)));
     }
-    if (
-      isNaN(Number(likes)) ||
-      isNaN(Number(comments)) ||
-      isNaN(Number(shares)) ||
-      isNaN(Number(reach))
-    ) {
-      setError("Enter valid numbers for all fields.");
-      return false;
-    }
-    if (Number(reach) <= 0) {
-      setError("Reach must be greater than 0.");
-      return false;
-    }
-    setError(null);
-    return true;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) {
-      setResult(null);
-      setShowFormula(false);
-      return;
-    }
-    const l = parseFloat(likes) || 0;
-    const c = parseFloat(comments) || 0;
-    const s = parseFloat(shares) || 0;
-    const r = parseFloat(reach);
-    setResult(((l + c + s) / r) * 100);
-    setShowFormula(true);
-  };
-
-  const handleReset = () => {
-    setLikes("");
-    setComments("");
-    setShares("");
-    setReach("");
-    setResult(null);
-    setError(null);
-    setShowFormula(false);
-  };
+  }
 
   return (
-    <>
-      <Header />
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-xl mx-auto">
-          <Card>
-            <CardHeader>
+    <div className="min-h-screen bg-background py-8">
+      <div className="max-w-xl mx-auto">
+        <Card>
+          <CardHeader>
+            <div className="flex items-center space-x-2">
+              <Linkedin className="h-8 w-8 text-blue-800" />
               <CardTitle>LinkedIn Post Engagement Calculator</CardTitle>
-              <CardDescription>
-                Calculate engagement rate for LinkedIn posts based on reach.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit} autoComplete="off">
-                <div className="relative group">
-                  <Label htmlFor="likes" className="flex items-center gap-1">Likes
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Number of likes on your LinkedIn post.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="likes"
-                    type="number"
-                    min="0"
-                    value={likes}
-                    onChange={e => setLikes(e.target.value)}
-                    placeholder="Number of likes"
-                  />
+            </div>
+            <CardDescription>
+              Evaluate the engagement level of your LinkedIn posts.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-4 mb-4">
+              <div><label className="text-sm">Likes</label>
+                <Input type="number" value={likes} min={0} onChange={e => setLikes(Number(e.target.value))} /></div>
+              <div><label className="text-sm">Comments</label>
+                <Input type="number" value={comments} min={0} onChange={e => setComments(Number(e.target.value))} /></div>
+              <div><label className="text-sm">Shares</label>
+                <Input type="number" value={shares} min={0} onChange={e => setShares(Number(e.target.value))} /></div>
+              <div><label className="text-sm">Reach</label>
+                <Input type="number" value={reach} min={1} onChange={e => setReach(Number(e.target.value))} /></div>
+              <Button className="w-full" onClick={calculate}>Calculate Engagement</Button>
+            </div>
+            {engagement !== null && (
+              <div>
+                <div className="font-medium">Result:</div>
+                <div className="mb-2">Engagement Rate: <span className="font-bold text-blue-900">{engagement}%</span></div>
+                <span className="font-medium">LaTeX Output:</span>
+                <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
+                  {"$ E = \\frac{L + C + S}{R} \\times 100 $"}
                 </div>
-                <div className="relative group">
-                  <Label htmlFor="comments" className="flex items-center gap-1">Comments
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Number of comments on your LinkedIn post.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="comments"
-                    type="number"
-                    min="0"
-                    value={comments}
-                    onChange={e => setComments(e.target.value)}
-                    placeholder="Number of comments"
-                  />
-                </div>
-                <div className="relative group">
-                  <Label htmlFor="shares" className="flex items-center gap-1">Shares
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Number of times your LinkedIn post was shared.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="shares"
-                    type="number"
-                    min="0"
-                    value={shares}
-                    onChange={e => setShares(e.target.value)}
-                    placeholder="Number of shares"
-                  />
-                </div>
-                <div className="relative group">
-                  <Label htmlFor="reach" className="flex items-center gap-1">Reach
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1"/>
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        Total number of people who saw your post (reach).
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="reach"
-                    type="number"
-                    min="1"
-                    value={reach}
-                    onChange={e => setReach(e.target.value)}
-                    placeholder="Post reach"
-                  />
-                </div>
-                {error && (
-                  <div className="text-destructive text-sm -mt-2">{error}</div>
-                )}
-                <div className="flex gap-2">
-                  <Button type="submit" className="w-full mt-2">Calculate</Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="w-full mt-2">Reset</Button>
-                </div>
-              </form>
-              {result !== null && (
-                <div className="mt-6 p-4 rounded bg-muted text-center font-semibold text-lg">
-                  Engagement Rate: <span className="text-primary">{result.toFixed(2)}%</span>
-                  {showFormula && (
-                    <div className="text-sm mt-2 font-normal text-muted-foreground">
-                      Formula: ((Likes + Comments + Shares) ÷ Reach) × 100<br />
-                      Calculation: ({likes || 0} + {comments || 0} + {shares || 0}) ÷ {reach || 0} × 100 = {result.toFixed(2)}%
-                    </div>
-                  )}
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
-      <LinkedinPostEngagementSEOSection />
-      <Footer />
-    </>
+    </div>
   );
-};
-
-export default LinkedinPostEngagement;
+}

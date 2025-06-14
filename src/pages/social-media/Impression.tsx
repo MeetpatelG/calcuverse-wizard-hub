@@ -1,137 +1,57 @@
+
+import { Instagram } from "lucide-react";
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
-import ImpressionSEOSection from "./components/ImpressionSEOSection";
 
-const Impression = () => {
-  const [totalImpressions, setTotalImpressions] = useState("");
-  const [followers, setFollowers] = useState("");
-  const [result, setResult] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showFormula, setShowFormula] = useState(false);
+export default function Impression() {
+  const [reaches, setReaches] = useState<number>(5000);
+  const [avgViewsPerUser, setAvgViewsPerUser] = useState<number>(2);
+  const [impressions, setImpressions] = useState<number | null>(10000);
 
-  const validate = () => {
-    if (!totalImpressions || !followers) {
-      setError("Both fields are required.");
-      return false;
-    }
-    if (isNaN(Number(totalImpressions)) || isNaN(Number(followers))) {
-      setError("Enter valid numbers for both fields.");
-      return false;
-    }
-    if (Number(followers) <= 0) {
-      setError("Followers must be greater than 0.");
-      return false;
-    }
-    setError(null);
-    return true;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) {
-      setResult(null);
-      setShowFormula(false);
-      return;
-    }
-    const imp = parseFloat(totalImpressions);
-    const fols = parseFloat(followers);
-    setResult((imp / fols) * 100);
-    setShowFormula(true);
-  };
-
-  const handleReset = () => {
-    setTotalImpressions("");
-    setFollowers("");
-    setResult(null);
-    setError(null);
-    setShowFormula(false);
-  };
+  function calculate() {
+    setImpressions(Number((reaches * avgViewsPerUser).toFixed(0)));
+  }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-xl mx-auto">
-          <Card>
-            <CardHeader>
+    <div className="min-h-screen bg-background py-8">
+      <div className="max-w-xl mx-auto">
+        <Card>
+          <CardHeader>
+            <div className="flex items-center space-x-2">
+              <Instagram className="h-8 w-8 text-purple-600" />
               <CardTitle>Impression Calculator</CardTitle>
-              <CardDescription>
-                Calculate the impressions your content received as % of followers.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit} autoComplete="off">
-                <div className="relative group">
-                  <Label htmlFor="totalImpressions" className="flex items-center gap-1">Total Impressions
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1" />
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        The total number of times your content was displayed.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="totalImpressions"
-                    type="number"
-                    min="0"
-                    value={totalImpressions}
-                    onChange={e => setTotalImpressions(e.target.value)}
-                    placeholder="Total impressions"
-                    aria-describedby="impressions-help"
-                  />
+            </div>
+            <CardDescription>
+              Estimate total impressions based on reach and average views per user.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-4 mb-4">
+              <div>
+                <label className="text-sm">Reach (unique users)</label>
+                <Input type="number" value={reaches} min={0} onChange={e => setReaches(Number(e.target.value))} />
+              </div>
+              <div>
+                <label className="text-sm">Avg Views per User</label>
+                <Input type="number" value={avgViewsPerUser} min={0} step={0.1} onChange={e => setAvgViewsPerUser(Number(e.target.value))} />
+              </div>
+              <Button className="w-full" onClick={calculate}>Calculate Impressions</Button>
+            </div>
+            {impressions !== null && (
+              <div>
+                <div className="font-medium">Result:</div>
+                <div className="mb-2">Impressions: <span className="text-purple-600 font-bold">{impressions}</span></div>
+                <span className="font-medium">LaTeX Output:</span>
+                <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
+                  {"$ I = R \\times V $"}
                 </div>
-                <div className="relative group">
-                  <Label htmlFor="followers" className="flex items-center gap-1">Followers
-                    <span className="relative">
-                      <HelpCircle size={16} className="text-muted-foreground ml-1" />
-                      <span className="hidden group-hover:block absolute left-5 top-0 whitespace-nowrap bg-muted text-xs rounded px-2 py-1 shadow z-10">
-                        The total number of followers you currently have.
-                      </span>
-                    </span>
-                  </Label>
-                  <Input
-                    id="followers"
-                    type="number"
-                    min="1"
-                    value={followers}
-                    onChange={e => setFollowers(e.target.value)}
-                    placeholder="Number of followers"
-                    aria-describedby="followers-help"
-                  />
-                </div>
-                {error && (
-                  <div className="text-destructive text-sm -mt-2">{error}</div>
-                )}
-                <div className="flex gap-2">
-                  <Button type="submit" className="w-full mt-2">Calculate</Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="w-full mt-2">Reset</Button>
-                </div>
-              </form>
-              {result !== null && (
-                <div className="mt-6 p-4 rounded bg-muted text-center font-semibold text-lg">
-                  Impression Rate: <span className="text-primary">{result.toFixed(2)}%</span>
-                  {showFormula && (
-                    <div className="text-sm mt-2 font-normal text-muted-foreground">
-                      Formula: (Total Impressions ÷ Followers) × 100<br />
-                      Calculation: ({totalImpressions} ÷ {followers}) × 100 = {result.toFixed(2)}%
-                    </div>
-                  )}
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
-      <ImpressionSEOSection />
-      <Footer />
     </div>
   );
-};
-
-export default Impression;
+}
