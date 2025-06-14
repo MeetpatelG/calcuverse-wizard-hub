@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
+import LinkedinPostEngagementSEOSection from "./components/LinkedinPostEngagementSEOSection";
 
 const LinkedinPostEngagement = () => {
   const [likes, setLikes] = useState("");
@@ -65,7 +65,7 @@ const LinkedinPostEngagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Header />
       <div className="container mx-auto px-4 py-10">
         <div className="max-w-xl mx-auto">
@@ -173,8 +173,9 @@ const LinkedinPostEngagement = () => {
           </Card>
         </div>
       </div>
+      <LinkedinPostEngagementSEOSection />
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
+import YouTubeVideoPerformanceSEOSection from "./components/YouTubeVideoPerformanceSEOSection";
 
 const YouTubeVideoPerformance = () => {
   const [views, setViews] = useState("");
@@ -173,6 +173,7 @@ const YouTubeVideoPerformance = () => {
           </Card>
         </div>
       </div>
+      <YouTubeVideoPerformanceSEOSection />
       <Footer />
     </div>
   );
