@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import PregnancyCalculatorArticle from "./PregnancyCalculatorArticle";
 
 const Pregnancy = () => {
   const [lastPeriod, setLastPeriod] = useState("");
@@ -81,7 +82,7 @@ const Pregnancy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-bl from-white via-rose-50 to-blue-50">
       <Header />
       
       <main className="container mx-auto px-4 py-12">
@@ -203,6 +204,9 @@ const Pregnancy = () => {
                 </CardContent>
               </Card>
             )}
+          </div>
+          <div>
+            <PregnancyCalculatorArticle />
           </div>
         </div>
       </main>
