@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Calculator, Baby, Calendar, Heart } from "lucide-react";
 import Header from "@/components/Header";
@@ -204,56 +203,6 @@ const Pregnancy = () => {
                 </CardContent>
               </Card>
             )}
-          </div>
-
-          <div className="mt-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Baby className="h-5 w-5" />
-                  Pregnancy Information & FAQs
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>How accurate is the due date calculation?</AccordionTrigger>
-                    <AccordionContent>
-                      Due date calculations based on LMP are estimates. Only about 5% of babies are born on their exact due date. 
-                      Most babies are born within 2 weeks before or after the estimated due date. An early ultrasound 
-                      (before 20 weeks) can provide a more accurate due date.
-                    </AccordionContent>
-                  </AccordionItem>
-                  
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>What are the three trimesters?</AccordionTrigger>
-                    <AccordionContent>
-                      <strong>First Trimester (1-12 weeks):</strong> Major organ development, morning sickness common.<br/>
-                      <strong>Second Trimester (13-26 weeks):</strong> Often called the "golden period," energy returns, baby's movement felt.<br/>
-                      <strong>Third Trimester (27-40 weeks):</strong> Rapid growth, preparation for birth, increased discomfort.
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger>When should I see a doctor?</AccordionTrigger>
-                    <AccordionContent>
-                      Schedule your first prenatal appointment as soon as you know you're pregnant, ideally by 8-10 weeks. 
-                      If you have irregular periods, chronic conditions, or are over 35, consider seeing a doctor earlier. 
-                      Regular prenatal care is essential for a healthy pregnancy.
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-4">
-                    <AccordionTrigger>What if I don't remember my last period?</AccordionTrigger>
-                    <AccordionContent>
-                      If you can't remember your last menstrual period, your doctor can estimate your due date using 
-                      an early ultrasound (most accurate between 8-13 weeks). Other methods include physical examination 
-                      and asking about when you first felt the baby move (quickening).
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </main>
