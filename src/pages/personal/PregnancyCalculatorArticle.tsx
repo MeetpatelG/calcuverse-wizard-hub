@@ -48,7 +48,7 @@ const PregnancyCalculatorArticle: React.FC = () => (
       </header>
       <figure className="flex justify-center mb-8">
         <img
-          src="/photo-1649972904349-6e44c42644a7"
+          src="/photo-1649972904349-6e44c42644a7.jpg"
           className="rounded-2xl shadow-lg border border-pink-50"
           alt="Woman sitting on a bed using a laptop, positive pregnancy planning"
           width="500"
@@ -90,7 +90,7 @@ const PregnancyCalculatorArticle: React.FC = () => (
       
       <figure className="flex justify-center mb-8">
         <img
-          src="/photo-1581091226825-a6a2a5aee158"
+          src="/photo-1581091226825-a6a2a5aee158.jpg"
           className="rounded-xl shadow border border-pink-100"
           alt="Woman in white shirt using a laptop, planning"
           width="500"
@@ -148,7 +148,7 @@ const PregnancyCalculatorArticle: React.FC = () => (
       </ol>
       <figure className="flex justify-center mb-8">
         <img
-          src="/photo-1518495973542-4542c06a5843"
+          src="/photo-1518495973542-4542c06a5843.jpg"
           className="rounded-2xl shadow border border-teal-100"
           alt="Soft sunlight through leaves, hopeful mood for pregnancy journey"
           width="500"

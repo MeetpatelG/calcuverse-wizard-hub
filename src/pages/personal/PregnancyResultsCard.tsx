@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import { PregnancyData } from "./PregnancyCalculatorForm";
@@ -20,7 +19,7 @@ const PregnancyResultsCard = ({ result }: Props) => (
       {/* Soft decorative image above results */}
       <div className="flex justify-center mb-2">
         <img
-          src="/photo-1581091226825-a6a2a5aee158"
+          src="/photo-1581091226825-a6a2a5aee158.jpg"
           alt="Pregnancy planning visual"
           className="rounded-xl border border-pink-100 shadow-md w-[220px] h-auto"
           width="220"

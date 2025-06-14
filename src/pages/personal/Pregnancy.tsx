@@ -20,7 +20,7 @@ const Pregnancy = () => {
             {/* Featured image for visual appeal */}
             <div className="flex justify-center mb-5">
               <img
-                src="/photo-1649972904349-6e44c42644a7"
+                src="/photo-1649972904349-6e44c42644a7.jpg"
                 alt="Woman sitting on a bed using a laptop"
                 className="rounded-2xl shadow-lg border border-pink-50 max-w-full w-[340px] md:w-[400px] h-auto"
                 width="400"
@@ -50,3 +50,4 @@ const Pregnancy = () => {
 };
 
 export default Pregnancy;
+
