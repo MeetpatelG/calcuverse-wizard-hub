@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Calculator, TrendingUp, DollarSign, Clock, Target, HelpCircle, BarChart3 } from "lucide-react";
+import { Calculator, TrendingUp, DollarSign, Clock, Target, HelpCircle, BarChart3, Image as ImageIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +7,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+  Legend,
+} from "recharts";
 
 const CompoundInterest = () => {
   const [principal, setPrincipal] = useState("");
@@ -106,7 +115,14 @@ const CompoundInterest = () => {
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-6">
+            {/* Infographic image (hero) */}
+            <div className="flex flex-col items-center mb-6">
+              <img 
+                src="https://cdn.pixabay.com/photo/2017/01/10/19/05/chart-1971851_1280.png"
+                alt="Compound Interest Infographic"
+                className="mx-auto w-full max-w-[340px] rounded-lg border shadow-lg mb-4 animate-fade-in"
+                loading="lazy"
+              />
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-4 rounded-full">
                 <TrendingUp className="h-12 w-12 text-white" />
               </div>
@@ -235,6 +251,46 @@ const CompoundInterest = () => {
                     </div>
                   </div>
 
+                  {/* Compound growth chart */}
+                  <div>
+                    <h4 className="font-semibold text-lg flex items-center mb-2">
+                      <BarChart3 className="h-5 w-5 mr-2" />
+                      Compound Growth Over Time
+                    </h4>
+                    <ResponsiveContainer width="100%" height={220}>
+                      <LineChart
+                        data={result.yearlyBreakdown}
+                        margin={{ top: 10, right: 16, left: 0, bottom: 0 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="year" tickFormatter={(y) => `Y${y}`} />
+                        <YAxis tickFormatter={(v) => `$${v.toLocaleString()}`} />
+                        <Tooltip 
+                          formatter={(value, name) => [`$${value.toLocaleString()}`, name === "amount" ? "Amount" : "Interest"]}
+                          labelFormatter={label => `Year ${label}`}
+                        />
+                        <Legend />
+                        <Line
+                          type="monotone"
+                          dataKey="amount"
+                          stroke="#10b981"
+                          strokeWidth={3}
+                          name="Total Amount"
+                          dot={{ r: 3 }}
+                          activeDot={{ r: 6 }}
+                        />
+                        <Line
+                          type="monotone"
+                          dataKey="interest"
+                          stroke="#6366f1"
+                          strokeDasharray="5 5"
+                          name="Cumulative Interest"
+                          dot={false}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+
                   <div className="space-y-3">
                     <h4 className="font-semibold text-lg flex items-center">
                       <BarChart3 className="h-5 w-5 mr-2" />
@@ -268,6 +324,7 @@ const CompoundInterest = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8 prose max-w-none">
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">What Makes Compound Interest So Powerful?</h3>
@@ -282,15 +339,40 @@ const CompoundInterest = () => {
                     giving you $1,166.40. This exponential growth continues indefinitely.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg">
-                  <h4 className="font-semibold mb-3 text-indigo-800">Key Benefits of Understanding Compound Interest:</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start"><span className="text-green-500 mr-2">✓</span>Make informed investment decisions</li>
-                    <li className="flex items-start"><span className="text-green-500 mr-2">✓</span>Understand true cost of debt</li>
-                    <li className="flex items-start"><span className="text-green-500 mr-2">✓</span>Plan for retirement effectively</li>
-                    <li className="flex items-start"><span className="text-green-500 mr-2">✓</span>Compare investment opportunities</li>
-                    <li className="flex items-start"><span className="text-green-500 mr-2">✓</span>Build long-term wealth strategies</li>
-                  </ul>
+                {/* Infographic for educational section */}
+                <div className="flex justify-center items-center">
+                  <div className="relative w-full flex flex-col items-center">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2017/09/22/17/27/money-2779385_1280.png"
+                      alt="Growth Infographic"
+                      className="w-full max-w-[280px] rounded-lg border shadow-lg mb-2 animate-scale-in"
+                      loading="lazy"
+                    />
+                    <span className="inline-block bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full text-xs font-semibold absolute top-3 left-3 shadow">Compound Growth</span>
+                    <span className="inline-flex items-center bg-purple-700 text-white px-2 py-1 rounded-xl text-xs font-semibold absolute bottom-2 right-2 shadow">Infographic</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Insert a simple infographic comparing simple vs compound */}
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
+                <div className="flex items-center gap-2 w-full md:w-1/2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 shadow">
+                  <ImageIcon className="text-blue-400 w-7 h-7" />
+                  <div>
+                    <div className="font-semibold text-blue-700">Simple Interest:</div>
+                    <div className="text-sm text-gray-700">Grows in a straight line.<br />
+                      <span className="font-mono font-semibold text-blue-500">A = P(1 + rt)</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 w-full md:w-1/2 bg-green-50 border border-green-200 rounded-lg px-4 py-3 shadow">
+                  <ImageIcon className="text-green-400 w-7 h-7" />
+                  <div>
+                    <div className="font-semibold text-green-700">Compound Interest:</div>
+                    <div className="text-sm text-gray-700">Grows exponentially over time.<br />
+                      <span className="font-mono font-semibold text-green-600">A = P(1 + r/n)<sup>nt</sup></span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
