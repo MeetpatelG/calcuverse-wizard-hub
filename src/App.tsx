@@ -67,6 +67,8 @@ import GcdLcm from "./pages/mathematical/GcdLcm";
 import PercentageChange from "./pages/mathematical/PercentageChange";
 import Probability from "./pages/mathematical/Probability";
 import Factorial from "./pages/mathematical/Factorial";
+import PrimeFactorization from "./pages/mathematical/PrimeFactorization";
+import ScientificNotation from "./pages/mathematical/ScientificNotation";
 
 // Business Calculators
 import ProfitMargin from "./pages/business/ProfitMargin";
@@ -206,6 +208,8 @@ const App = () => (
             <Route path="/mathematical/percentage-change" element={<PercentageChange />} />
             <Route path="/mathematical/probability" element={<Probability />} />
             <Route path="/mathematical/factorial" element={<Factorial />} />
+            <Route path="/mathematical/prime-factorization" element={<PrimeFactorization />} />
+            <Route path="/mathematical/scientific-notation" element={<ScientificNotation />} />
             
             {/* Business Calculator Routes */}
             <Route path="/business/profit-margin" element={<ProfitMargin />} />

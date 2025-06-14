@@ -1,5 +1,5 @@
 
-import { Calculator, Ruler, SquareDot, PercentCircle, Divide, Plus, Hash, ChevronRight, CircleDashed } from "lucide-react";
+import { Calculator, Ruler, SquareDot, PercentCircle, Divide, Plus, Hash, ChevronRight, CircleDashed, Sigma, Equal } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -61,6 +61,20 @@ const calculators = [
     icon: Plus,
     path: "/mathematical/factorial",
     color: "text-teal-600"
+  },
+  {
+    title: "Prime Factorization Calculator",
+    description: "Break down any integer into its prime factors with step-by-step details.",
+    icon: Sigma,
+    path: "/mathematical/prime-factorization",
+    color: "text-fuchsia-600"
+  },
+  {
+    title: "Scientific Notation Converter",
+    description: "Convert numbers between decimal and scientific notation, with explanations.",
+    icon: Equal,
+    path: "/mathematical/scientific-notation",
+    color: "text-emerald-600"
   }
 ];
 
