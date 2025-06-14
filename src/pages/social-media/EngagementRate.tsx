@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
-import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
+// Removed SEO and FAQ section import
+// import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
 
 const EngagementRate = () => {
   const [likes, setLikes] = useState("");
@@ -151,8 +152,8 @@ const EngagementRate = () => {
             </CardContent>
           </Card>
         </div>
-        {/* SEO content section */}
-        <EngagementRateSEOSection />
+        {/* Removed SEO content section */}
+        {/* <EngagementRateSEOSection /> */}
       </div>
       <Footer />
     </div>
