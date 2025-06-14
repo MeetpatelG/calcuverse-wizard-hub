@@ -84,9 +84,15 @@ const homepageCategories = [
     route: "/business",
     calculators: [
       { name: "Profit Margin", route: "/business/profit-margin" },
-      { name: "Break-even Point", route: "/business/break-even" },
+      { name: "Break-even Point Calculator", route: "/business/break-even" },
       { name: "ROI Calculator", route: "/business/roi" },
-      { name: "Business Valuation", route: "/business/business-valuation" }
+      { name: "Business Valuation Calculator", route: "/business/business-valuation" },
+      { name: "Cash Flow Calculator", route: "/business/cash-flow" },
+      { name: "Startup Burn Rate Calculator", route: "/business/burn-rate" },
+      { name: "Inventory Turnover Calculator", route: "/business/inventory-turnover" },
+      { name: "Employee Cost Calculator", route: "/business/employee-cost" },
+      { name: "Customer Lifetime Value Calculator", route: "/business/customer-lifetime-value" },
+      { name: "Gross Profit Calculator", route: "/business/gross-profit" }
     ]
   },
   {
@@ -291,9 +297,16 @@ const Header = () => {
     {
       title: t("Business"),
       items: [
-        { name: t("Profit Margin"), href: "/business/profit-margin" },
-        { name: t("Break-even Point"), href: "/business/break-even" },
-        { name: t("ROI Calculator"), href: "/business/roi" }
+        { name: t("Profit Margin Calculator"), href: "/business/profit-margin" },
+        { name: t("Break-even Point Calculator"), href: "/business/break-even" },
+        { name: t("ROI Calculator"), href: "/business/roi" },
+        { name: t("Business Valuation Calculator"), href: "/business/business-valuation" },
+        { name: t("Cash Flow Calculator"), href: "/business/cash-flow" },
+        { name: t("Startup Burn Rate Calculator"), href: "/business/burn-rate" },
+        { name: t("Inventory Turnover Calculator"), href: "/business/inventory-turnover" },
+        { name: t("Employee Cost Calculator"), href: "/business/employee-cost" },
+        { name: t("Customer Lifetime Value Calculator"), href: "/business/customer-lifetime-value" },
+        { name: t("Gross Profit Calculator"), href: "/business/gross-profit" }
       ]
     },
     {
