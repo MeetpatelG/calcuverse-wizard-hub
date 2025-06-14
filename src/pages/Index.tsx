@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, Image as ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -71,6 +71,22 @@ const Index = () => {
       color: "bg-yellow-100 text-yellow-700",
       route: "/social-media"
     },
+    {
+      title: "Image Converter",
+      icon: ImageIcon,
+      description: "Convert and optimize your images to different formats in seconds.",
+      calculators: [
+        "JPG to PNG",
+        "PNG to JPG",
+        "WebP Converter",
+        "Compress Image",
+        "Resize Image",
+        "GIF to JPG",
+        "Image Optimizer"
+      ],
+      color: "bg-sky-100 text-sky-700",
+      route: "/image-converter"
+    }
     // PDF Converter category removed
   ];
 
@@ -208,3 +224,4 @@ const Index = () => {
 };
 
 export default Index;
+
