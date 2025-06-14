@@ -1,5 +1,5 @@
 
-import { Calculator, Ruler, SquareRoot, PercentCircle, Divide, Plus, Hash, ChevronRight, CircleDashed } from "lucide-react";
+import { Calculator, Ruler, SquareDot, PercentCircle, Divide, Plus, Hash, ChevronRight, CircleDashed } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,7 +23,7 @@ const calculators = [
   {
     title: "Quadratic Equation Solver",
     description: "Find real roots of ax² + bx + c = 0 with step-by-step solution.",
-    icon: SquareRoot,
+    icon: SquareDot,
     path: "/mathematical/quadratic-equation",
     color: "text-rose-600"
   },
