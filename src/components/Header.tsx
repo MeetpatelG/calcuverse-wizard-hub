@@ -87,32 +87,8 @@ const Header = () => {
         { name: t("Engagement Rate Calculator"), href: "/social-media/engagement-rate" }
         // Add more calculators here in the future
       ]
-    },
-    {
-      title: t("PDF Converter"),
-      items: [
-        { name: "PDF to Word Converter", href: "/pdf/pdf-to-word" },
-        { name: "Word to PDF Converter", href: "/pdf/word-to-pdf" },
-        { name: "PDF to Excel Converter", href: "/pdf/pdf-to-excel" },
-        { name: "Excel to PDF Converter", href: "/pdf/excel-to-pdf" },
-        { name: "PDF to PowerPoint Converter", href: "/pdf/pdf-to-ppt" },
-        { name: "PowerPoint to PDF Converter", href: "/pdf/ppt-to-pdf" },
-        { name: "Merge PDF", href: "/pdf/merge" },
-        { name: "Split PDF", href: "/pdf/split" },
-        { name: "Compress PDF", href: "/pdf/compress" },
-        { name: "PDF Editor", href: "/pdf/editor" },
-        { name: "PDF Reader/Viewer", href: "/pdf/viewer" },
-        { name: "PDF Rotator", href: "/pdf/rotate" },
-        { name: "PDF Page Remover", href: "/pdf/page-remover" },
-        { name: "Add Page Numbers to PDF", href: "/pdf/add-page-numbers" },
-        { name: "Add Watermark to PDF", href: "/pdf/add-watermark" },
-        { name: "PDF Password Protect", href: "/pdf/password-protect" },
-        { name: "Unlock PDF", href: "/pdf/unlock" },
-        { name: "PDF to Image Converter", href: "/pdf/pdf-to-image" },
-        { name: "Image to PDF Converter", href: "/pdf/image-to-pdf" },
-        { name: "OCR PDF", href: "/pdf/ocr" }
-      ]
     }
+    // PDF Converter category removed from navigationItems
   ];
 
   return (
