@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, Image as ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -70,8 +69,36 @@ const Index = () => {
       calculators: ["Engagement Rate Calculator"],
       color: "bg-yellow-100 text-yellow-700",
       route: "/social-media"
+    },
+    {
+      title: "Image Converter",
+      icon: ImageIcon,
+      description: "Convert and optimize your images to different formats in seconds.",
+      calculators: [
+        "JPG to PNG Converter",
+        "PNG to JPG Converter",
+        "WEBP to JPG Converter",
+        "JPG to WEBP Converter",
+        "PNG to WEBP Converter",
+        "GIF to JPG Converter",
+        "GIF to PNG Converter",
+        "BMP to JPG Converter",
+        "TIFF to JPG Converter",
+        "HEIC to JPG Converter",
+        "SVG to PNG Converter",
+        "SVG to JPG Converter",
+        "Image to PDF Converter",
+        "Image Resizer",
+        "Image Compressor",
+        "Image Format Converter",
+        "Image Crop Tool",
+        "Image Rotator",
+        "Batch Image Converter",
+        "Image Color Converter"
+      ],
+      color: "bg-sky-100 text-sky-700",
+      route: "/image-converter"
     }
-    // Removed Image Converter category
   ];
 
   const featuredCalculators = [
@@ -257,4 +284,3 @@ const Index = () => {
 };
 
 export default Index;
-

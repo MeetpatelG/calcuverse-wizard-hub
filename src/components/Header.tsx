@@ -137,6 +137,32 @@ const homepageCategories = [
       { name: "YouTube Video Performance Calculator", route: "/social-media/youtube-video-performance" },
       { name: "LinkedIn Post Engagement Calculator", route: "/social-media/linkedin-post-engagement" }
     ]
+  },
+  {
+    title: "Image Converter",
+    route: "/image-converter",
+    calculators: [
+      { name: "JPG to PNG Converter", route: "/image-converter/jpg-to-png" },
+      { name: "PNG to JPG Converter", route: "/image-converter/png-to-jpg" },
+      { name: "WEBP to JPG Converter", route: "/image-converter/webp-to-jpg" },
+      { name: "JPG to WEBP Converter", route: "/image-converter/jpg-to-webp" },
+      { name: "PNG to WEBP Converter", route: "/image-converter/png-to-webp" },
+      { name: "GIF to JPG Converter", route: "/image-converter/gif-to-jpg" },
+      { name: "GIF to PNG Converter", route: "/image-converter/gif-to-png" },
+      { name: "BMP to JPG Converter", route: "/image-converter/bmp-to-jpg" },
+      { name: "TIFF to JPG Converter", route: "/image-converter/tiff-to-jpg" },
+      { name: "HEIC to JPG Converter", route: "/image-converter/heic-to-jpg" },
+      { name: "SVG to PNG Converter", route: "/image-converter/svg-to-png" },
+      { name: "SVG to JPG Converter", route: "/image-converter/svg-to-jpg" },
+      { name: "Image to PDF Converter", route: "/image-converter/image-to-pdf" },
+      { name: "Image Resizer", route: "/image-converter/image-resizer" },
+      { name: "Image Compressor", route: "/image-converter/image-compressor" },
+      { name: "Image Format Converter", route: "/image-converter/image-format-converter" },
+      { name: "Image Crop Tool", route: "/image-converter/image-crop" },
+      { name: "Image Rotator", route: "/image-converter/image-rotator" },
+      { name: "Batch Image Converter", route: "/image-converter/batch-image-converter" },
+      { name: "Image Color Converter", route: "/image-converter/image-color-converter" }
+    ]
   }
 ];
 
@@ -343,6 +369,31 @@ const Header = () => {
         { name: t("Twitter Engagement Calculator"), href: "/social-media/twitter-engagement" },
         { name: t("YouTube Video Performance Calculator"), href: "/social-media/youtube-video-performance" },
         { name: t("LinkedIn Post Engagement Calculator"), href: "/social-media/linkedin-post-engagement" }
+      ]
+    },
+    {
+      title: t("Image Converter"),
+      items: [
+        { name: t("JPG to PNG Converter"), href: "/image-converter/jpg-to-png" },
+        { name: t("PNG to JPG Converter"), href: "/image-converter/png-to-jpg" },
+        { name: t("WEBP to JPG Converter"), href: "/image-converter/webp-to-jpg" },
+        { name: t("JPG to WEBP Converter"), href: "/image-converter/jpg-to-webp" },
+        { name: t("PNG to WEBP Converter"), href: "/image-converter/png-to-webp" },
+        { name: t("GIF to JPG Converter"), href: "/image-converter/gif-to-jpg" },
+        { name: t("GIF to PNG Converter"), href: "/image-converter/gif-to-png" },
+        { name: t("BMP to JPG Converter"), href: "/image-converter/bmp-to-jpg" },
+        { name: t("TIFF to JPG Converter"), href: "/image-converter/tiff-to-jpg" },
+        { name: t("HEIC to JPG Converter"), href: "/image-converter/heic-to-jpg" },
+        { name: t("SVG to PNG Converter"), href: "/image-converter/svg-to-png" },
+        { name: t("SVG to JPG Converter"), href: "/image-converter/svg-to-jpg" },
+        { name: t("Image to PDF Converter"), href: "/image-converter/image-to-pdf" },
+        { name: t("Image Resizer"), href: "/image-converter/image-resizer" },
+        { name: t("Image Compressor"), href: "/image-converter/image-compressor" },
+        { name: t("Image Format Converter"), href: "/image-converter/image-format-converter" },
+        { name: t("Image Crop Tool"), href: "/image-converter/image-crop" },
+        { name: t("Image Rotator"), href: "/image-converter/image-rotator" },
+        { name: t("Batch Image Converter"), href: "/image-converter/batch-image-converter" },
+        { name: t("Image Color Converter"), href: "/image-converter/image-color-converter" }
       ]
     }
     // No PDF entry
