@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import LanguageSelector from "./LanguageSelector";
+// Removed LanguageSelector import
 import { useI18n } from "../i18n/I18nProvider";
 
 const Header = () => {
@@ -140,10 +140,10 @@ const Header = () => {
             />
           </div>
 
-          {/* Language Toggle */}
-          <div className="hidden md:flex">
+          {/* REMOVED Language Toggle Section */}
+          {/* <div className="hidden md:flex">
             <LanguageSelector />
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <Button
@@ -172,10 +172,10 @@ const Header = () => {
                 />
               </div>
 
-              {/* Language Selector */}
-              <div className="flex justify-end">
+              {/* REMOVED Language Selector for Mobile */}
+              {/* <div className="flex justify-end">
                 <LanguageSelector />
-              </div>
+              </div> */}
 
               {/* Mobile Navigation */}
               {navigationItems.map((category) => (
@@ -204,3 +204,4 @@ const Header = () => {
 };
 
 export default Header;
+
