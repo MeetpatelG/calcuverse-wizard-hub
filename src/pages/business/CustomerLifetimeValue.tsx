@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
@@ -6,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Info } from "lucide-react";
-import { BarChart, XAxis, YAxis, Tooltip as ChartTooltip, CartesianGrid, Legend, ResponsiveContainer, Line, LineChart as ReLineChart } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip as ChartTooltip, CartesianGrid, Legend, ResponsiveContainer, Line, LineChart as ReLineChart } from "recharts";
 
 const CustomerLifetimeValue = () => {
   const [avgPurchase, setAvgPurchase] = useState("");
@@ -159,7 +158,7 @@ const CustomerLifetimeValue = () => {
                         <Legend />
                         <CartesianGrid strokeDasharray="3 3" />
                         <ChartTooltip />
-                        <BarChart.Bar dataKey="CLV" fill="#4f46e5" />
+                        <Bar dataKey="CLV" fill="#4f46e5" />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>

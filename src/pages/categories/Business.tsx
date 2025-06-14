@@ -1,4 +1,5 @@
-import { BarChart3, LineChart, DollarSign, Briefcase, TrendingUp, Activity, Calculator, Users2, Repeat2, DollarCircle, UserCheck } from "lucide-react";
+
+import { BarChart3, LineChart, DollarSign, Briefcase, TrendingUp, Activity, Calculator, Users2, Repeat2, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -71,7 +72,7 @@ const calculators = [
   {
     title: "Gross Profit Calculator",
     description: "Calculate your gross profit based on revenue and cost of goods sold.",
-    icon: DollarCircle,
+    icon: DollarSign, // Changed from DollarCircle to DollarSign (supported icon)
     path: "/business/gross-profit",
     color: "text-fuchsia-600"
   }
@@ -115,3 +116,4 @@ const Business = () => {
 };
 
 export default Business;
+
