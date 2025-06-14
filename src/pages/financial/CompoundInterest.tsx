@@ -118,9 +118,9 @@ const CompoundInterest = () => {
             {/* Infographic image (hero) */}
             <div className="flex flex-col items-center mb-6">
               <img 
-                src="/placeholder.svg"
+                src="/photo-1488590528505-98d2b5aba04b.jpg"
                 alt="Compound Interest Infographic"
-                className="mx-auto w-full max-w-[340px] rounded-lg border shadow-lg mb-4 animate-fade-in bg-gray-100"
+                className="mx-auto w-full max-w-[340px] h-[210px] rounded-lg border shadow-lg mb-4 animate-fade-in bg-gray-100 object-cover"
                 loading="lazy"
               />
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-4 rounded-full">
@@ -343,9 +343,9 @@ const CompoundInterest = () => {
                 <div className="flex justify-center items-center">
                   <div className="relative w-full flex flex-col items-center">
                     <img
-                      src="/placeholder.svg"
+                      src="/photo-1498050108023-c5249f4df085.jpg"
                       alt="Growth Infographic"
-                      className="w-full max-w-[280px] rounded-lg border shadow-lg mb-2 animate-scale-in bg-gray-100"
+                      className="w-full max-w-[280px] h-[160px] rounded-lg border shadow-lg mb-2 animate-scale-in bg-gray-100 object-cover"
                       loading="lazy"
                     />
                     <span className="inline-block bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full text-xs font-semibold absolute top-3 left-3 shadow">Compound Growth</span>
@@ -370,7 +370,7 @@ const CompoundInterest = () => {
                   <div>
                     <div className="font-semibold text-green-700">Compound Interest:</div>
                     <div className="text-sm text-gray-700">Grows exponentially over time.<br />
-                      <span className="font-mono font-semibold text-green-600">A = P(1 + r/n)<sup>nt</sup></span>
+                      <span className="font-mono font-semibold text-green-600">A = P(1 + r/n)^(nt)</span>
                     </div>
                   </div>
                 </div>
