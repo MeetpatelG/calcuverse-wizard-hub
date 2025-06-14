@@ -1,4 +1,3 @@
-
 import { ShoppingBag, Info } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ export default function CouponDiscount() {
             <div>
               <span className="font-medium">LaTeX Output:</span>
               <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
-                $ P = A \times (1 - \frac{{D}}{{100}}) $
+                {"$ P = A \\times (1 - \\frac{D}{100}) $"}
               </div>
             </div>
           </CardContent>

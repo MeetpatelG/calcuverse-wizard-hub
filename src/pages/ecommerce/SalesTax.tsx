@@ -1,4 +1,3 @@
-
 import { Store, Info } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,7 @@ export default function SalesTax() {
             <div>
               <span className="font-medium">LaTeX Output:</span>
               <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
-                $ P_{total} = P_{base} \times \left(1 + \frac{{T}}{{100}}\right) $
+                {"$ P_{total} = P_{base} \\times \\left(1 + \\frac{T}{100}\\right) $"}
               </div>
             </div>
           </CardContent>
