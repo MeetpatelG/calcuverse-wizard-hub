@@ -69,8 +69,14 @@ const homepageCategories = [
     calculators: [
       { name: "Scientific Calculator", route: "/mathematical/scientific" },
       { name: "Unit Converter", route: "/mathematical/unit-converter" },
-      { name: "Percentage", route: "/mathematical/percentage" },
-      { name: "Date Difference", route: "/mathematical/date" }
+      { name: "Quadratic Equation Solver", route: "/mathematical/quadratic-equation" },
+      { name: "Prime Number Checker", route: "/mathematical/prime-checker" },
+      { name: "GCD & LCM Calculator", route: "/mathematical/gcd-lcm" },
+      { name: "Percentage Change Calculator", route: "/mathematical/percentage-change" },
+      { name: "Probability Calculator", route: "/mathematical/probability" },
+      { name: "Factorial Calculator", route: "/mathematical/factorial" },
+      { name: "Prime Factorization Calculator", route: "/mathematical/prime-factorization" },
+      { name: "Scientific Notation Converter", route: "/mathematical/scientific-notation" }
     ]
   },
   {
@@ -272,8 +278,14 @@ const Header = () => {
       items: [
         { name: t("Scientific Calculator"), href: "/mathematical/scientific" },
         { name: t("Unit Converter"), href: "/mathematical/unit-converter" },
-        { name: t("Percentage Calculator"), href: "/mathematical/percentage" },
-        { name: t("Date Calculator"), href: "/mathematical/date" }
+        { name: t("Quadratic Equation Solver"), href: "/mathematical/quadratic-equation" },
+        { name: t("Prime Number Checker"), href: "/mathematical/prime-checker" },
+        { name: t("GCD & LCM Calculator"), href: "/mathematical/gcd-lcm" },
+        { name: t("Percentage Change Calculator"), href: "/mathematical/percentage-change" },
+        { name: t("Probability Calculator"), href: "/mathematical/probability" },
+        { name: t("Factorial Calculator"), href: "/mathematical/factorial" },
+        { name: t("Prime Factorization Calculator"), href: "/mathematical/prime-factorization" },
+        { name: t("Scientific Notation Converter"), href: "/mathematical/scientific-notation" }
       ]
     },
     {
