@@ -99,10 +99,17 @@ const homepageCategories = [
     title: "E-commerce Calculators",
     route: "/ecommerce",
     calculators: [
-      { name: "Shipping Cost", route: "/ecommerce/shipping-cost" },
-      { name: "Product Pricing", route: "/ecommerce/product-pricing" },
-      { name: "Profit Calculator", route: "/ecommerce/profit-calculator" },
-      { name: "Conversion Rate", route: "/ecommerce/conversion-rate" }
+      { name: "Shipping Cost Calculator", route: "/ecommerce/shipping-cost" },
+      { name: "Product Pricing Calculator", route: "/ecommerce/product-pricing" },
+      { name: "E-commerce Profit Calculator", route: "/ecommerce/profit-calculator" },
+      { name: "Conversion Rate Calculator", route: "/ecommerce/conversion-rate" },
+      // New tools
+      { name: "Coupon Discount Calculator", route: "/ecommerce/coupon-discount" },
+      { name: "Sales Tax Calculator", route: "/ecommerce/sales-tax" },
+      { name: "Average Order Value Calculator", route: "/ecommerce/average-order-value" },
+      { name: "Cart Abandonment Rate Calculator", route: "/ecommerce/cart-abandonment" },
+      { name: "Return on Ad Spend (ROAS) Calculator", route: "/ecommerce/roas" },
+      { name: "Inventory Cost Calculator", route: "/ecommerce/inventory-cost" },
     ]
   },
   {
@@ -312,10 +319,17 @@ const Header = () => {
     {
       title: t("E-commerce"),
       items: [
-        { name: t("Shipping Cost"), href: "/ecommerce/shipping-cost" },
-        { name: t("Product Pricing"), href: "/ecommerce/product-pricing" },
-        { name: t("Profit Calculator"), href: "/ecommerce/profit-calculator" },
-        { name: t("Conversion Rate"), href: "/ecommerce/conversion-rate" }
+        { name: t("Shipping Cost Calculator"), href: "/ecommerce/shipping-cost" },
+        { name: t("Product Pricing Calculator"), href: "/ecommerce/product-pricing" },
+        { name: t("E-commerce Profit Calculator"), href: "/ecommerce/profit-calculator" },
+        { name: t("Conversion Rate Calculator"), href: "/ecommerce/conversion-rate" },
+        // New tools
+        { name: "Coupon Discount Calculator", href: "/ecommerce/coupon-discount" },
+        { name: "Sales Tax Calculator", href: "/ecommerce/sales-tax" },
+        { name: "Average Order Value Calculator", href: "/ecommerce/average-order-value" },
+        { name: "Cart Abandonment Rate Calculator", href: "/ecommerce/cart-abandonment" },
+        { name: "Return on Ad Spend (ROAS) Calculator", href: "/ecommerce/roas" },
+        { name: "Inventory Cost Calculator", href: "/ecommerce/inventory-cost" },
       ]
     },
     {

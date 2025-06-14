@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -88,6 +87,12 @@ import ShippingCost from "./pages/ecommerce/ShippingCost";
 import ProductPricing from "./pages/ecommerce/ProductPricing";
 import ProfitCalculator from "./pages/ecommerce/ProfitCalculator";
 import ConversionRate from "./pages/ecommerce/ConversionRate";
+import CouponDiscount from "./pages/ecommerce/CouponDiscount";
+import SalesTax from "./pages/ecommerce/SalesTax";
+import AverageOrderValue from "./pages/ecommerce/AverageOrderValue";
+import CartAbandonment from "./pages/ecommerce/CartAbandonment";
+import ROAS from "./pages/ecommerce/ROAS";
+import InventoryCost from "./pages/ecommerce/InventoryCost";
 
 // Real Estate Calculators
 import PropertyValue from "./pages/real-estate/PropertyValue";
@@ -238,6 +243,12 @@ const App = () => (
             <Route path="/ecommerce/product-pricing" element={<ProductPricing />} />
             <Route path="/ecommerce/profit-calculator" element={<ProfitCalculator />} />
             <Route path="/ecommerce/conversion-rate" element={<ConversionRate />} />
+            <Route path="/ecommerce/coupon-discount" element={<CouponDiscount />} />
+            <Route path="/ecommerce/sales-tax" element={<SalesTax />} />
+            <Route path="/ecommerce/average-order-value" element={<AverageOrderValue />} />
+            <Route path="/ecommerce/cart-abandonment" element={<CartAbandonment />} />
+            <Route path="/ecommerce/roas" element={<ROAS />} />
+            <Route path="/ecommerce/inventory-cost" element={<InventoryCost />} />
             
             {/* Real Estate Calculator Routes */}
             <Route path="/real-estate/property-value" element={<PropertyValue />} />
