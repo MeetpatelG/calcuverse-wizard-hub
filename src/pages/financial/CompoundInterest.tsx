@@ -118,9 +118,9 @@ const CompoundInterest = () => {
             {/* Infographic image (hero) */}
             <div className="flex flex-col items-center mb-6">
               <img 
-                src="/photo-1488590528505-98d2b5aba04b.jpg"
-                alt="Compound Interest Infographic"
-                className="mx-auto w-full max-w-[340px] h-[210px] rounded-lg border shadow-lg mb-4 animate-fade-in bg-gray-100 object-cover"
+                src="/placeholder.svg"
+                alt="Image failed to load? This is a placeholder image. If you see this, an asset is missing or the /public directory is not correctly configured."
+                className="mx-auto w-full max-w-[340px] h-[210px] rounded-lg border-4 border-dashed border-red-500 shadow-lg mb-4 animate-fade-in bg-gray-100 object-cover"
                 loading="lazy"
               />
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-4 rounded-full">
@@ -324,7 +324,6 @@ const CompoundInterest = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8 prose max-w-none">
-              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">What Makes Compound Interest So Powerful?</h3>
@@ -343,9 +342,9 @@ const CompoundInterest = () => {
                 <div className="flex justify-center items-center">
                   <div className="relative w-full flex flex-col items-center">
                     <img
-                      src="/photo-1498050108023-c5249f4df085.jpg"
-                      alt="Growth Infographic"
-                      className="w-full max-w-[280px] h-[160px] rounded-lg border shadow-lg mb-2 animate-scale-in bg-gray-100 object-cover"
+                      src="/placeholder.svg"
+                      alt="Image failed to load? This is a placeholder image. If you see this, an asset is missing or the /public directory is not correctly configured."
+                      className="w-full max-w-[280px] h-[160px] rounded-lg border-4 border-dashed border-red-500 shadow-lg mb-2 animate-scale-in bg-gray-100 object-cover"
                       loading="lazy"
                     />
                     <span className="inline-block bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full text-xs font-semibold absolute top-3 left-3 shadow">Compound Growth</span>
