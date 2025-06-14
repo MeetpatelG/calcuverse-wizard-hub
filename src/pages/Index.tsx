@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, Image as ImageIcon } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, Image as ImageIcon, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -98,6 +98,35 @@ const Index = () => {
       ],
       color: "bg-sky-100 text-sky-700",
       route: "/image-converter"
+    },
+    {
+      title: "PDF Converter",
+      icon: FileText,
+      description: "Convert, extract, and create PDFs with advanced PDF tools.",
+      calculators: [
+        "PDF to Word Converter",
+        "Word to PDF Converter",
+        "PDF to Excel Converter",
+        "Excel to PDF Converter",
+        "PDF to PowerPoint Converter",
+        "PowerPoint to PDF Converter",
+        "PDF to Image Converter",
+        "Image to PDF Converter",
+        "PDF to Text Converter",
+        "Text to PDF Converter",
+        "HTML to PDF Converter",
+        "PDF to EPUB Converter",
+        "EPUB to PDF Converter",
+        "PDF to MOBI Converter",
+        "MOBI to PDF Converter",
+        "PDF to XML Converter",
+        "XML to PDF Converter",
+        "PDF OCR Converter",
+        "PDF to CSV Converter",
+        "CSV to PDF Converter"
+      ],
+      color: "bg-red-100 text-red-700",
+      route: "/pdf"
     }
   ];
 

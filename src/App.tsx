@@ -150,6 +150,8 @@ import ImageCrop from "./pages/image-converter/ImageCrop";
 import ImageRotator from "./pages/image-converter/ImageRotator";
 import BatchImageConverter from "./pages/image-converter/BatchImageConverter";
 import ImageColorConverter from "./pages/image-converter/ImageColorConverter";
+import PDFConverterIndex from "./pages/pdf/Index";
+import PDFToolPage from "./pages/pdf/PDFToolPage";
 
 const queryClient = new QueryClient();
 
@@ -307,6 +309,29 @@ const App = () => (
             <Route path="/image-converter/batch-image-converter" element={<BatchImageConverter />} />
             <Route path="/image-converter/image-color-converter" element={<ImageColorConverter />} />
             
+            {/* Add PDF Converter Section */}
+            <Route path="/pdf" element={<PDFConverterIndex />} />
+            <Route path="/pdf/pdf-to-word" element={<PDFToolPage title="PDF to Word Converter" description="Convert PDF files to editable Word documents." />} />
+            <Route path="/pdf/word-to-pdf" element={<PDFToolPage title="Word to PDF Converter" description="Convert Microsoft Word documents (.doc, .docx) to PDF." />} />
+            <Route path="/pdf/pdf-to-excel" element={<PDFToolPage title="PDF to Excel Converter" description="Extract tabular data by converting PDF files to Excel format." />} />
+            <Route path="/pdf/excel-to-pdf" element={<PDFToolPage title="Excel to PDF Converter" description="Convert Excel spreadsheets (.xls, .xlsx) to PDF files." />} />
+            <Route path="/pdf/pdf-to-ppt" element={<PDFToolPage title="PDF to PowerPoint Converter" description="Convert PDF files into editable PowerPoint presentations." />} />
+            <Route path="/pdf/ppt-to-pdf" element={<PDFToolPage title="PowerPoint to PDF Converter" description="Convert PowerPoint presentations (.ppt, .pptx) to PDF files." />} />
+            <Route path="/pdf/pdf-to-image" element={<PDFToolPage title="PDF to Image Converter" description="Convert PDF file pages to images (JPEG, PNG)." />} />
+            <Route path="/pdf/image-to-pdf" element={<PDFToolPage title="Image to PDF Converter" description="Combine images into a single PDF file." />} />
+            <Route path="/pdf/pdf-to-text" element={<PDFToolPage title="PDF to Text Converter" description="Extract text from PDF files." />} />
+            <Route path="/pdf/text-to-pdf" element={<PDFToolPage title="Text to PDF Converter" description="Convert plain text files into PDF documents." />} />
+            <Route path="/pdf/html-to-pdf" element={<PDFToolPage title="HTML to PDF Converter" description="Turn web pages or HTML files into PDFs." />} />
+            <Route path="/pdf/pdf-to-epub" element={<PDFToolPage title="PDF to EPUB Converter" description="Convert PDFs to EPUB ebook format." />} />
+            <Route path="/pdf/epub-to-pdf" element={<PDFToolPage title="EPUB to PDF Converter" description="Convert EPUB ebooks to standard PDF files." />} />
+            <Route path="/pdf/pdf-to-mobi" element={<PDFToolPage title="PDF to MOBI Converter" description="Convert PDF files to MOBI format for Kindle devices." />} />
+            <Route path="/pdf/mobi-to-pdf" element={<PDFToolPage title="MOBI to PDF Converter" description="Convert MOBI ebooks to PDF format." />} />
+            <Route path="/pdf/pdf-to-xml" element={<PDFToolPage title="PDF to XML Converter" description="Export PDF data to XML file format." />} />
+            <Route path="/pdf/xml-to-pdf" element={<PDFToolPage title="XML to PDF Converter" description="Turn XML files into readable PDF documents." />} />
+            <Route path="/pdf/pdf-ocr" element={<PDFToolPage title="PDF OCR Converter" description="Convert scanned images in PDFs to editable/searchable text (OCR)." />} />
+            <Route path="/pdf/pdf-to-csv" element={<PDFToolPage title="PDF to CSV Converter" description="Extract tabular data from PDFs and save to CSV files." />} />
+            <Route path="/pdf/csv-to-pdf" element={<PDFToolPage title="CSV to PDF Converter" description="Turn CSV files into printable PDF tables." />} />
+
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>

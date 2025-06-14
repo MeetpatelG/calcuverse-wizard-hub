@@ -163,6 +163,32 @@ const homepageCategories = [
       { name: "Batch Image Converter", route: "/image-converter/batch-image-converter" },
       { name: "Image Color Converter", route: "/image-converter/image-color-converter" }
     ]
+  },
+  {
+    title: "PDF Converter",
+    route: "/pdf",
+    calculators: [
+      { name: "PDF to Word Converter", route: "/pdf/pdf-to-word" },
+      { name: "Word to PDF Converter", route: "/pdf/word-to-pdf" },
+      { name: "PDF to Excel Converter", route: "/pdf/pdf-to-excel" },
+      { name: "Excel to PDF Converter", route: "/pdf/excel-to-pdf" },
+      { name: "PDF to PowerPoint Converter", route: "/pdf/pdf-to-ppt" },
+      { name: "PowerPoint to PDF Converter", route: "/pdf/ppt-to-pdf" },
+      { name: "PDF to Image Converter", route: "/pdf/pdf-to-image" },
+      { name: "Image to PDF Converter", route: "/pdf/image-to-pdf" },
+      { name: "PDF to Text Converter", route: "/pdf/pdf-to-text" },
+      { name: "Text to PDF Converter", route: "/pdf/text-to-pdf" },
+      { name: "HTML to PDF Converter", route: "/pdf/html-to-pdf" },
+      { name: "PDF to EPUB Converter", route: "/pdf/pdf-to-epub" },
+      { name: "EPUB to PDF Converter", route: "/pdf/epub-to-pdf" },
+      { name: "PDF to MOBI Converter", route: "/pdf/pdf-to-mobi" },
+      { name: "MOBI to PDF Converter", route: "/pdf/mobi-to-pdf" },
+      { name: "PDF to XML Converter", route: "/pdf/pdf-to-xml" },
+      { name: "XML to PDF Converter", route: "/pdf/xml-to-pdf" },
+      { name: "PDF OCR Converter", route: "/pdf/pdf-ocr" },
+      { name: "PDF to CSV Converter", route: "/pdf/pdf-to-csv" },
+      { name: "CSV to PDF Converter", route: "/pdf/csv-to-pdf" }
+    ]
   }
 ];
 
@@ -394,6 +420,31 @@ const Header = () => {
         { name: t("Image Rotator"), href: "/image-converter/image-rotator" },
         { name: t("Batch Image Converter"), href: "/image-converter/batch-image-converter" },
         { name: t("Image Color Converter"), href: "/image-converter/image-color-converter" }
+      ]
+    },
+    {
+      title: t("PDF Converter"),
+      items: [
+        { name: t("PDF to Word Converter"), href: "/pdf/pdf-to-word" },
+        { name: t("Word to PDF Converter"), href: "/pdf/word-to-pdf" },
+        { name: t("PDF to Excel Converter"), href: "/pdf/pdf-to-excel" },
+        { name: t("Excel to PDF Converter"), href: "/pdf/excel-to-pdf" },
+        { name: t("PDF to PowerPoint Converter"), href: "/pdf/pdf-to-ppt" },
+        { name: t("PowerPoint to PDF Converter"), href: "/pdf/ppt-to-pdf" },
+        { name: t("PDF to Image Converter"), href: "/pdf/pdf-to-image" },
+        { name: t("Image to PDF Converter"), href: "/pdf/image-to-pdf" },
+        { name: t("PDF to Text Converter"), href: "/pdf/pdf-to-text" },
+        { name: t("Text to PDF Converter"), href: "/pdf/text-to-pdf" },
+        { name: t("HTML to PDF Converter"), href: "/pdf/html-to-pdf" },
+        { name: t("PDF to EPUB Converter"), href: "/pdf/pdf-to-epub" },
+        { name: t("EPUB to PDF Converter"), href: "/pdf/epub-to-pdf" },
+        { name: t("PDF to MOBI Converter"), href: "/pdf/pdf-to-mobi" },
+        { name: t("MOBI to PDF Converter"), href: "/pdf/mobi-to-pdf" },
+        { name: t("PDF to XML Converter"), href: "/pdf/pdf-to-xml" },
+        { name: t("XML to PDF Converter"), href: "/pdf/xml-to-pdf" },
+        { name: t("PDF OCR Converter"), href: "/pdf/pdf-ocr" },
+        { name: t("PDF to CSV Converter"), href: "/pdf/pdf-to-csv" },
+        { name: t("CSV to PDF Converter"), href: "/pdf/csv-to-pdf" }
       ]
     }
     // No PDF entry
