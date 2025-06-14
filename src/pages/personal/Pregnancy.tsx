@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Calculator, Baby, Calendar, Heart } from "lucide-react";
 import Header from "@/components/Header";
@@ -89,6 +90,17 @@ const Pregnancy = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <Baby className="h-16 w-16 text-primary mx-auto mb-4" />
+            {/* Featured image for visual appeal */}
+            <div className="flex justify-center mb-5">
+              <img
+                src="/photo-1649972904349-6e44c42644a7"
+                alt="Woman sitting on a bed using a laptop"
+                className="rounded-2xl shadow-lg border border-pink-50 max-w-full w-[340px] md:w-[400px] h-auto"
+                width="400"
+                height="256"
+                loading="lazy"
+              />
+            </div>
             <h1 className="text-4xl font-bold mb-4">Pregnancy Calculator</h1>
             <p className="text-xl text-muted-foreground">
               Calculate your due date and track your pregnancy progress
@@ -157,6 +169,17 @@ const Pregnancy = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  {/* Soft decorative image above results */}
+                  <div className="flex justify-center mb-2">
+                    <img
+                      src="/photo-1581091226825-a6a2a5aee158"
+                      alt="Pregnancy planning visual"
+                      className="rounded-xl border border-pink-100 shadow-md w-[220px] h-auto"
+                      width="220"
+                      height="140"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="text-center p-6 bg-pink-50 dark:bg-pink-900/20 rounded-lg border-2 border-pink-200 dark:border-pink-700">
                     <p className="text-sm text-muted-foreground mb-2">Estimated Due Date</p>
                     <p className="text-2xl font-bold text-pink-600 dark:text-pink-400">
@@ -185,7 +208,6 @@ const Pregnancy = () => {
                       <p className="text-xs text-muted-foreground">Estimated</p>
                     </div>
                   </div>
-
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
                     <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">
                       {getTrimesterInfo(result.trimester)?.name} ({getTrimesterInfo(result.trimester)?.weeks} weeks)
@@ -194,7 +216,6 @@ const Pregnancy = () => {
                       {getTrimesterInfo(result.trimester)?.description}
                     </p>
                   </div>
-
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
                     <p className="text-sm text-yellow-800 dark:text-yellow-200">
                       <strong>Important:</strong> This is an estimate based on your last menstrual period. 
@@ -217,3 +238,4 @@ const Pregnancy = () => {
 };
 
 export default Pregnancy;
+
