@@ -115,14 +115,8 @@ const CompoundInterest = () => {
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            {/* Infographic image (hero) */}
+            {/* Removed the infographic image (hero) */}
             <div className="flex flex-col items-center mb-6">
-              <img 
-                src="/placeholder.svg"
-                alt="Image failed to load? This is a placeholder image. If you see this, an asset is missing or the /public directory is not correctly configured."
-                className="mx-auto w-full max-w-[340px] h-[210px] rounded-lg border-4 border-dashed border-red-500 shadow-lg mb-4 animate-fade-in bg-gray-100 object-cover"
-                loading="lazy"
-              />
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-4 rounded-full">
                 <TrendingUp className="h-12 w-12 text-white" />
               </div>
@@ -338,43 +332,10 @@ const CompoundInterest = () => {
                     giving you $1,166.40. This exponential growth continues indefinitely.
                   </p>
                 </div>
-                {/* Infographic for educational section */}
-                <div className="flex justify-center items-center">
-                  <div className="relative w-full flex flex-col items-center">
-                    <img
-                      src="/placeholder.svg"
-                      alt="Image failed to load? This is a placeholder image. If you see this, an asset is missing or the /public directory is not correctly configured."
-                      className="w-full max-w-[280px] h-[160px] rounded-lg border-4 border-dashed border-red-500 shadow-lg mb-2 animate-scale-in bg-gray-100 object-cover"
-                      loading="lazy"
-                    />
-                    <span className="inline-block bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full text-xs font-semibold absolute top-3 left-3 shadow">Compound Growth</span>
-                    <span className="inline-flex items-center bg-purple-700 text-white px-2 py-1 rounded-xl text-xs font-semibold absolute bottom-2 right-2 shadow">Infographic</span>
-                  </div>
-                </div>
+                {/* Removed the infographic for educational section */}
               </div>
 
-              {/* Insert a simple infographic comparing simple vs compound */}
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
-                <div className="flex items-center gap-2 w-full md:w-1/2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 shadow">
-                  <ImageIcon className="text-blue-400 w-7 h-7" />
-                  <div>
-                    <div className="font-semibold text-blue-700">Simple Interest:</div>
-                    <div className="text-sm text-gray-700">Grows in a straight line.<br />
-                      <span className="font-mono font-semibold text-blue-500">A = P(1 + rt)</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 w-full md:w-1/2 bg-green-50 border border-green-200 rounded-lg px-4 py-3 shadow">
-                  <ImageIcon className="text-green-400 w-7 h-7" />
-                  <div>
-                    <div className="font-semibold text-green-700">Compound Interest:</div>
-                    <div className="text-sm text-gray-700">Grows exponentially over time.<br />
-                      <span className="font-mono font-semibold text-green-600">A = P(1 + r/n)^(nt)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              {/* Removed simple vs compound infographics */}
               <h3 className="text-xl font-semibold mb-4 text-green-600">How to Use This Compound Interest Calculator</h3>
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg mb-6 border-l-4 border-green-500">
                 <p className="text-gray-700 leading-relaxed mb-4">
