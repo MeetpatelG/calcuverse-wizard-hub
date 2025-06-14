@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,8 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
-// Removed SEO and FAQ section import
-// import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
+import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
 
 const EngagementRate = () => {
   const [likes, setLikes] = useState("");
@@ -152,8 +150,11 @@ const EngagementRate = () => {
             </CardContent>
           </Card>
         </div>
-        {/* Removed SEO content section */}
-        {/* <EngagementRateSEOSection /> */}
+        {/* SEO and educational guide content */}
+        <div>
+          {/* Modern SEO-article and visual FAQ below */}
+          <EngagementRateSEOSection />
+        </div>
       </div>
       <Footer />
     </div>
