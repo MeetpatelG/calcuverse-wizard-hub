@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { I18nProvider } from "./i18n/I18nProvider";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
@@ -83,84 +84,86 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          
-          {/* Legal Pages */}
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          
-          {/* Blog Pages */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/financial-planning-tools-2024" element={<BlogPost />} />
-          <Route path="/blog/budget-calculator-guide" element={<BudgetCalculatorGuide />} />
-          <Route path="/blog/investment-calculator-strategies" element={<InvestmentCalculatorStrategies />} />
-          
-          {/* Category Overview Routes */}
-          <Route path="/financial" element={<Financial />} />
-          <Route path="/personal" element={<Personal />} />
-          <Route path="/mathematical" element={<Mathematical />} />
-          <Route path="/business" element={<Business />} />
-          <Route path="/ecommerce" element={<Ecommerce />} />
-          <Route path="/real-estate" element={<RealEstate />} />
-          <Route path="/social-media" element={<SocialMedia />} />
-          <Route path="/social-media/engagement-rate" element={<EngagementRate />} />
-          <Route path="/social-media/follower-growth-rate" element={<FollowerGrowthRate />} />
-          <Route path="/social-media/reach" element={<Reach />} />
-          <Route path="/social-media/impression" element={<Impression />} />
-          <Route path="/social-media/hashtag-performance" element={<HashtagPerformance />} />
-          <Route path="/social-media/share-rate" element={<ShareRate />} />
-          <Route path="/social-media/facebook-engagement" element={<FacebookEngagement />} />
-          <Route path="/social-media/twitter-engagement" element={<TwitterEngagement />} />
-          <Route path="/social-media/youtube-video-performance" element={<YouTubeVideoPerformance />} />
-          <Route path="/social-media/linkedin-post-engagement" element={<LinkedinPostEngagement />} />
-          
-          {/* Financial Calculator Routes */}
-          <Route path="/financial/budget" element={<Budget />} />
-          <Route path="/financial/loan-emi" element={<LoanEMI />} />
-          <Route path="/financial/mortgage" element={<Mortgage />} />
-          <Route path="/financial/investment" element={<Investment />} />
-          <Route path="/financial/tax" element={<Tax />} />
-          <Route path="/financial/compound-interest" element={<CompoundInterest />} />
-          
-          {/* Personal Calculator Routes */}
-          <Route path="/personal/bmi" element={<BMI />} />
-          <Route path="/personal/age" element={<Age />} />
-          <Route path="/personal/calorie" element={<Calorie />} />
-          <Route path="/personal/pregnancy" element={<Pregnancy />} />
-          
-          {/* Mathematical Calculator Routes */}
-          <Route path="/mathematical/scientific" element={<Scientific />} />
-          <Route path="/mathematical/unit-converter" element={<UnitConverter />} />
-          <Route path="/mathematical/percentage" element={<Percentage />} />
-          <Route path="/mathematical/date" element={<DateCalculator />} />
-          
-          {/* Business Calculator Routes */}
-          <Route path="/business/profit-margin" element={<ProfitMargin />} />
-          
-          {/* E-commerce Calculator Routes */}
-          <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
-          <Route path="/ecommerce/product-pricing" element={<ProductPricing />} />
-          <Route path="/ecommerce/profit-calculator" element={<ProfitCalculator />} />
-          <Route path="/ecommerce/conversion-rate" element={<ConversionRate />} />
-          
-          {/* Real Estate Calculator Routes */}
-          <Route path="/real-estate/property-value" element={<PropertyValue />} />
-          <Route path="/real-estate/rent-affordability" element={<RentAffordability />} />
-          <Route path="/real-estate/mortgage-payment" element={<MortgagePayment />} />
-          <Route path="/real-estate/investment-analysis" element={<InvestmentAnalysis />} />
-          <Route path="/real-estate/down-payment" element={<DownPayment />} />
-          <Route path="/real-estate/closing-costs" element={<ClosingCosts />} />
-          <Route path="/real-estate/cap-rate" element={<CapRate />} />
-          <Route path="/real-estate/rental-yield" element={<RentalYield />} />
-          <Route path="/real-estate/refinance" element={<Refinance />} />
-          <Route path="/real-estate/amortization" element={<Amortization />} />
-          
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <I18nProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            
+            {/* Legal Pages */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            
+            {/* Blog Pages */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/financial-planning-tools-2024" element={<BlogPost />} />
+            <Route path="/blog/budget-calculator-guide" element={<BudgetCalculatorGuide />} />
+            <Route path="/blog/investment-calculator-strategies" element={<InvestmentCalculatorStrategies />} />
+            
+            {/* Category Overview Routes */}
+            <Route path="/financial" element={<Financial />} />
+            <Route path="/personal" element={<Personal />} />
+            <Route path="/mathematical" element={<Mathematical />} />
+            <Route path="/business" element={<Business />} />
+            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/real-estate" element={<RealEstate />} />
+            <Route path="/social-media" element={<SocialMedia />} />
+            <Route path="/social-media/engagement-rate" element={<EngagementRate />} />
+            <Route path="/social-media/follower-growth-rate" element={<FollowerGrowthRate />} />
+            <Route path="/social-media/reach" element={<Reach />} />
+            <Route path="/social-media/impression" element={<Impression />} />
+            <Route path="/social-media/hashtag-performance" element={<HashtagPerformance />} />
+            <Route path="/social-media/share-rate" element={<ShareRate />} />
+            <Route path="/social-media/facebook-engagement" element={<FacebookEngagement />} />
+            <Route path="/social-media/twitter-engagement" element={<TwitterEngagement />} />
+            <Route path="/social-media/youtube-video-performance" element={<YouTubeVideoPerformance />} />
+            <Route path="/social-media/linkedin-post-engagement" element={<LinkedinPostEngagement />} />
+            
+            {/* Financial Calculator Routes */}
+            <Route path="/financial/budget" element={<Budget />} />
+            <Route path="/financial/loan-emi" element={<LoanEMI />} />
+            <Route path="/financial/mortgage" element={<Mortgage />} />
+            <Route path="/financial/investment" element={<Investment />} />
+            <Route path="/financial/tax" element={<Tax />} />
+            <Route path="/financial/compound-interest" element={<CompoundInterest />} />
+            
+            {/* Personal Calculator Routes */}
+            <Route path="/personal/bmi" element={<BMI />} />
+            <Route path="/personal/age" element={<Age />} />
+            <Route path="/personal/calorie" element={<Calorie />} />
+            <Route path="/personal/pregnancy" element={<Pregnancy />} />
+            
+            {/* Mathematical Calculator Routes */}
+            <Route path="/mathematical/scientific" element={<Scientific />} />
+            <Route path="/mathematical/unit-converter" element={<UnitConverter />} />
+            <Route path="/mathematical/percentage" element={<Percentage />} />
+            <Route path="/mathematical/date" element={<DateCalculator />} />
+            
+            {/* Business Calculator Routes */}
+            <Route path="/business/profit-margin" element={<ProfitMargin />} />
+            
+            {/* E-commerce Calculator Routes */}
+            <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
+            <Route path="/ecommerce/product-pricing" element={<ProductPricing />} />
+            <Route path="/ecommerce/profit-calculator" element={<ProfitCalculator />} />
+            <Route path="/ecommerce/conversion-rate" element={<ConversionRate />} />
+            
+            {/* Real Estate Calculator Routes */}
+            <Route path="/real-estate/property-value" element={<PropertyValue />} />
+            <Route path="/real-estate/rent-affordability" element={<RentAffordability />} />
+            <Route path="/real-estate/mortgage-payment" element={<MortgagePayment />} />
+            <Route path="/real-estate/investment-analysis" element={<InvestmentAnalysis />} />
+            <Route path="/real-estate/down-payment" element={<DownPayment />} />
+            <Route path="/real-estate/closing-costs" element={<ClosingCosts />} />
+            <Route path="/real-estate/cap-rate" element={<CapRate />} />
+            <Route path="/real-estate/rental-yield" element={<RentalYield />} />
+            <Route path="/real-estate/refinance" element={<Refinance />} />
+            <Route path="/real-estate/amortization" element={<Amortization />} />
+            
+            {/* Catch-all route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </I18nProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

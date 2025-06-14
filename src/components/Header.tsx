@@ -1,6 +1,7 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Calculator, Menu, X, Search, Globe } from "lucide-react";
+import { Calculator, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,83 +12,80 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import LanguageSelector from "./LanguageSelector";
+import { useI18n } from "../i18n/I18nProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { t } = useI18n();
 
   const navigationItems = [
     {
-      title: "Financial",
+      title: t("Financial"),
       items: [
-        { name: "Loan EMI Calculator", href: "/financial/loan-emi" },
-        { name: "Mortgage Calculator", href: "/financial/mortgage" },
-        { name: "Investment Calculator", href: "/financial/investment" },
-        { name: "Tax Calculator", href: "/financial/tax" },
-        { name: "Budget Planner", href: "/financial/budget" },
-        { name: "Compound Interest", href: "/financial/compound-interest" }
+        { name: t("Loan EMI Calculator"), href: "/financial/loan-emi" },
+        { name: t("Mortgage Calculator"), href: "/financial/mortgage" },
+        { name: t("Investment Calculator"), href: "/financial/investment" },
+        { name: t("Tax Calculator"), href: "/financial/tax" },
+        { name: t("Budget Planner"), href: "/financial/budget" },
+        { name: t("Compound Interest"), href: "/financial/compound-interest" }
       ]
     },
     {
-      title: "Personal",
+      title: t("Personal"),
       items: [
-        { name: "Age Calculator", href: "/personal/age" },
-        { name: "BMI Calculator", href: "/personal/bmi" },
-        { name: "Calorie Calculator", href: "/personal/calorie" },
-        { name: "Pregnancy Calculator", href: "/personal/pregnancy" }
+        { name: t("Age Calculator"), href: "/personal/age" },
+        { name: t("BMI Calculator"), href: "/personal/bmi" },
+        { name: t("Calorie Calculator"), href: "/personal/calorie" },
+        { name: t("Pregnancy Calculator"), href: "/personal/pregnancy" }
       ]
     },
     {
-      title: "Mathematical",
+      title: t("Mathematical"),
       items: [
-        { name: "Scientific Calculator", href: "/mathematical/scientific" },
-        { name: "Unit Converter", href: "/mathematical/unit-converter" },
-        { name: "Percentage Calculator", href: "/mathematical/percentage" },
-        { name: "Date Calculator", href: "/mathematical/date" }
+        { name: t("Scientific Calculator"), href: "/mathematical/scientific" },
+        { name: t("Unit Converter"), href: "/mathematical/unit-converter" },
+        { name: t("Percentage Calculator"), href: "/mathematical/percentage" },
+        { name: t("Date Calculator"), href: "/mathematical/date" }
       ]
     },
     {
-      title: "Business",
+      title: t("Business"),
       items: [
-        { name: "Profit Margin", href: "/business/profit-margin" },
-        { name: "Break-even Point", href: "/business/break-even" },
-        { name: "ROI Calculator", href: "/business/roi" }
+        { name: t("Profit Margin"), href: "/business/profit-margin" },
+        { name: t("Break-even Point"), href: "/business/break-even" },
+        { name: t("ROI Calculator"), href: "/business/roi" }
       ]
     },
     {
-      title: "E-commerce",
+      title: t("E-commerce"),
       items: [
-        { name: "Shipping Cost", href: "/ecommerce/shipping-cost" },
-        { name: "Product Pricing", href: "/ecommerce/product-pricing" },
-        { name: "Profit Calculator", href: "/ecommerce/profit-calculator" },
-        { name: "Conversion Rate", href: "/ecommerce/conversion-rate" }
+        { name: t("Shipping Cost"), href: "/ecommerce/shipping-cost" },
+        { name: t("Product Pricing"), href: "/ecommerce/product-pricing" },
+        { name: t("Profit Calculator"), href: "/ecommerce/profit-calculator" },
+        { name: t("Conversion Rate"), href: "/ecommerce/conversion-rate" }
       ]
     },
     {
-      title: "Real Estate",
+      title: t("Real Estate"),
       items: [
-        { name: "Property Value", href: "/real-estate/property-value" },
-        { name: "Rent Affordability", href: "/real-estate/rent-affordability" },
-        { name: "Mortgage Payment", href: "/real-estate/mortgage-payment" },
-        { name: "Investment Analysis", href: "/real-estate/investment-analysis" },
-        { name: "Down Payment", href: "/real-estate/down-payment" },
-        { name: "Closing Costs", href: "/real-estate/closing-costs" },
-        { name: "Cap Rate", href: "/real-estate/cap-rate" },
-        { name: "Rental Yield", href: "/real-estate/rental-yield" },
-        { name: "Refinance", href: "/real-estate/refinance" },
-        { name: "Amortization", href: "/real-estate/amortization" }
+        { name: t("Property Value"), href: "/real-estate/property-value" },
+        { name: t("Rent Affordability"), href: "/real-estate/rent-affordability" },
+        { name: t("Mortgage Payment"), href: "/real-estate/mortgage-payment" },
+        { name: t("Investment Analysis"), href: "/real-estate/investment-analysis" },
+        { name: t("Down Payment"), href: "/real-estate/down-payment" },
+        { name: t("Closing Costs"), href: "/real-estate/closing-costs" },
+        { name: t("Cap Rate"), href: "/real-estate/cap-rate" },
+        { name: t("Rental Yield"), href: "/real-estate/rental-yield" },
+        { name: t("Refinance"), href: "/real-estate/refinance" },
+        { name: t("Amortization"), href: "/real-estate/amortization" }
       ]
     },
     {
-      title: "Social Media",
+      title: t("Social Media"),
       items: [
-        { name: "Engagement Rate Calculator", href: "/social-media/engagement-rate" }
+        { name: t("Engagement Rate Calculator"), href: "/social-media/engagement-rate" }
         // Add more calculators here in the future
       ]
     }
@@ -100,7 +98,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <Calculator className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">TECHGURUTOOLS</span>
+            <span className="text-xl font-bold">{t("site.title")}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -135,7 +133,7 @@ const Header = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
               type="text"
-              placeholder="Search calculators..."
+              placeholder={t("search.placeholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -143,20 +141,9 @@ const Header = () => {
           </div>
 
           {/* Language Toggle */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="hidden md:flex">
-                <Globe className="h-4 w-4 mr-2" />
-                EN
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>English</DropdownMenuItem>
-              <DropdownMenuItem>Español</DropdownMenuItem>
-              <DropdownMenuItem>Français</DropdownMenuItem>
-              <DropdownMenuItem>Deutsch</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="hidden md:flex">
+            <LanguageSelector />
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
@@ -178,11 +165,16 @@ const Header = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                 <Input
                   type="text"
-                  placeholder="Search calculators..."
+                  placeholder={t("search.placeholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10"
                 />
+              </div>
+
+              {/* Language Selector */}
+              <div className="flex justify-end">
+                <LanguageSelector />
               </div>
 
               {/* Mobile Navigation */}
