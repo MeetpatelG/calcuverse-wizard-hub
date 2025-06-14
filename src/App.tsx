@@ -71,7 +71,13 @@ import PrimeFactorization from "./pages/mathematical/PrimeFactorization";
 import ScientificNotation from "./pages/mathematical/ScientificNotation";
 
 // Business Calculators
-import ProfitMargin from "./pages/business/ProfitMargin";
+import BreakEven from "./pages/business/BreakEven";
+import ROI from "./pages/business/ROI";
+import BusinessValuation from "./pages/business/BusinessValuation";
+import CashFlow from "./pages/business/CashFlow";
+import BurnRate from "./pages/business/BurnRate";
+import InventoryTurnover from "./pages/business/InventoryTurnover";
+import EmployeeCost from "./pages/business/EmployeeCost";
 
 // E-commerce Calculators
 import ShippingCost from "./pages/ecommerce/ShippingCost";
@@ -213,6 +219,13 @@ const App = () => (
             
             {/* Business Calculator Routes */}
             <Route path="/business/profit-margin" element={<ProfitMargin />} />
+            <Route path="/business/break-even" element={<BreakEven />} />
+            <Route path="/business/roi" element={<ROI />} />
+            <Route path="/business/business-valuation" element={<BusinessValuation />} />
+            <Route path="/business/cash-flow" element={<CashFlow />} />
+            <Route path="/business/burn-rate" element={<BurnRate />} />
+            <Route path="/business/inventory-turnover" element={<InventoryTurnover />} />
+            <Route path="/business/employee-cost" element={<EmployeeCost />} />
             
             {/* E-commerce Calculator Routes */}
             <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
