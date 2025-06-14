@@ -137,32 +137,6 @@ const homepageCategories = [
       { name: "YouTube Video Performance Calculator", route: "/social-media/youtube-video-performance" },
       { name: "LinkedIn Post Engagement Calculator", route: "/social-media/linkedin-post-engagement" }
     ]
-  },
-  {
-    title: "Image Converter",
-    route: "/image-converter",
-    calculators: [
-      { name: "JPG to PNG Converter", route: "/image-converter/jpg-to-png" },
-      { name: "PNG to JPG Converter", route: "/image-converter/png-to-jpg" },
-      { name: "WEBP to JPG Converter", route: "/image-converter/webp-to-jpg" },
-      { name: "JPG to WEBP Converter", route: "/image-converter/jpg-to-webp" },
-      { name: "PNG to WEBP Converter", route: "/image-converter/png-to-webp" },
-      { name: "GIF to JPG Converter", route: "/image-converter/gif-to-jpg" },
-      { name: "GIF to PNG Converter", route: "/image-converter/gif-to-png" },
-      { name: "BMP to JPG Converter", route: "/image-converter/bmp-to-jpg" },
-      { name: "TIFF to JPG Converter", route: "/image-converter/tiff-to-jpg" },
-      { name: "HEIC to JPG Converter", route: "/image-converter/heic-to-jpg" },
-      { name: "SVG to PNG Converter", route: "/image-converter/svg-to-png" },
-      { name: "SVG to JPG Converter", route: "/image-converter/svg-to-jpg" },
-      { name: "Image to PDF Converter", route: "/image-converter/image-to-pdf" },
-      { name: "Image Resizer", route: "/image-converter/image-resizer" },
-      { name: "Image Compressor", route: "/image-converter/image-compressor" },
-      { name: "Image Format Converter", route: "/image-converter/image-format-converter" },
-      { name: "Image Crop Tool", route: "/image-converter/image-crop" },
-      { name: "Image Rotator", route: "/image-converter/image-rotator" },
-      { name: "Batch Image Converter", route: "/image-converter/batch-image-converter" },
-      { name: "Image Color Converter", route: "/image-converter/image-color-converter" }
-    ]
   }
 ];
 

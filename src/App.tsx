@@ -285,7 +285,8 @@ const App = () => (
             <Route path="/pdf/ocr" element={<OCR />} />
             
             {/* Image Converter Category and Tool Routes */}
-            <Route path="/image-converter" element={<ImageConverterIndex />} />
+            {/* Removed: <Route path="/image-converter" element={<ImageConverterIndex />} /> */}
+            {/* Removed category overview route. INDIVIDUAL image routes remain, in case they are needed elsewhere, but are not part of main category nav. */}
             <Route path="/image-converter/jpg-to-png" element={<JpgToPng />} />
             <Route path="/image-converter/png-to-jpg" element={<PngToJpg />} />
             <Route path="/image-converter/webp-to-jpg" element={<WebpToJpg />} />
