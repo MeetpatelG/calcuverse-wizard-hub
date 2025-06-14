@@ -90,9 +90,9 @@ const PregnancyCalculatorArticle: React.FC = () => (
       
       <figure className="flex justify-center mb-8">
         <img
-          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80"
+          src="/photo-1581091226825-a6a2a5aee158"
           className="rounded-xl shadow border border-pink-100"
-          alt="Pregnancy calendar, weeks and trimesters visual illustration"
+          alt="Woman in white shirt using a laptop, planning"
           width="500"
           height="320"
           loading="lazy"
@@ -148,9 +148,9 @@ const PregnancyCalculatorArticle: React.FC = () => (
       </ol>
       <figure className="flex justify-center mb-8">
         <img
-          src="https://images.unsplash.com/photo-1519864600265-abb2b4305bc9?auto=format&fit=crop&w=800&q=80"
+          src="/photo-1518495973542-4542c06a5843"
           className="rounded-2xl shadow border border-teal-100"
-          alt="Pregnant woman using a health app on a tablet"
+          alt="Soft sunlight through leaves, hopeful mood for pregnancy journey"
           width="500"
           height="320"
           loading="lazy"
