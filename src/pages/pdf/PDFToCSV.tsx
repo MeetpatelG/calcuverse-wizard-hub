@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 // @ts-ignore
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
-import "pdfjs-dist/build/pdf.worker.entry";
+// Set the worker source using CDN (important for vite/parcel/react setups)
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
 
 // Simple utility: extract text (not perfect for all table formats)
 function parseTableFromText(text: string): string[][] {
@@ -148,3 +149,4 @@ export default function PDFToCSV() {
     </div>
   );
 }
+
