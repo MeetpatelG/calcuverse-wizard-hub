@@ -1,5 +1,5 @@
 
-import { User, Calendar } from "lucide-react";
+import { User, Calendar, Flame, HeartPulse, Scale, Droplet, GlassWater, Gauge, Egg } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,6 +20,48 @@ const Personal = () => {
       icon: Calendar,
       path: "/personal/age",
       color: "text-green-600"
+    },
+    {
+      title: "Calorie Calculator",
+      description: "Estimate your daily calorie needs based on activity and goals",
+      icon: Flame,
+      path: "/personal/calorie",
+      color: "text-orange-500"
+    },
+    {
+      title: "Pregnancy Due Date Calculator",
+      description: "Find your expected delivery date and pregnancy schedule",
+      icon: Egg,
+      path: "/personal/pregnancy",
+      color: "text-pink-400"
+    },
+    {
+      title: "Body Fat Calculator",
+      description: "Estimate your body fat percentage using measurements",
+      icon: HeartPulse,
+      path: "/personal/body-fat",
+      color: "text-red-500"
+    },
+    {
+      title: "Ideal Weight Calculator",
+      description: "Calculate your ideal body weight using several formulas",
+      icon: Scale,
+      path: "/personal/ideal-weight",
+      color: "text-indigo-500"
+    },
+    {
+      title: "BMR Calculator",
+      description: "Calculate your Basal Metabolic Rate to understand your metabolism",
+      icon: Gauge,
+      path: "/personal/bmr",
+      color: "text-fuchsia-500"
+    },
+    {
+      title: "Water Intake Calculator",
+      description: "Find how much water you should drink daily for health",
+      icon: GlassWater,
+      path: "/personal/water-intake",
+      color: "text-sky-500"
     }
   ];
 

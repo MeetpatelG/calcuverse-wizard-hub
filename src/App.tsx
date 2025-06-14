@@ -49,6 +49,10 @@ import BMI from "./pages/personal/BMI";
 import Age from "./pages/personal/Age";
 import Calorie from "./pages/personal/Calorie";
 import Pregnancy from "./pages/personal/Pregnancy";
+import BodyFat from "./pages/personal/BodyFat";
+import IdealWeight from "./pages/personal/IdealWeight";
+import BMR from "./pages/personal/BMR";
+import WaterIntake from "./pages/personal/WaterIntake";
 
 // Mathematical Calculators
 import Scientific from "./pages/mathematical/Scientific";
@@ -176,6 +180,10 @@ const App = () => (
             <Route path="/personal/age" element={<Age />} />
             <Route path="/personal/calorie" element={<Calorie />} />
             <Route path="/personal/pregnancy" element={<Pregnancy />} />
+            <Route path="/personal/body-fat" element={<BodyFat />} />
+            <Route path="/personal/ideal-weight" element={<IdealWeight />} />
+            <Route path="/personal/bmr" element={<BMR />} />
+            <Route path="/personal/water-intake" element={<WaterIntake />} />
             
             {/* Mathematical Calculator Routes */}
             <Route path="/mathematical/scientific" element={<Scientific />} />
