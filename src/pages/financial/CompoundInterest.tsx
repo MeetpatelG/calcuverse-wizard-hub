@@ -118,9 +118,9 @@ const CompoundInterest = () => {
             {/* Infographic image (hero) */}
             <div className="flex flex-col items-center mb-6">
               <img 
-                src="https://cdn.pixabay.com/photo/2017/01/10/19/05/chart-1971851_1280.png"
+                src="/placeholder.svg"
                 alt="Compound Interest Infographic"
-                className="mx-auto w-full max-w-[340px] rounded-lg border shadow-lg mb-4 animate-fade-in"
+                className="mx-auto w-full max-w-[340px] rounded-lg border shadow-lg mb-4 animate-fade-in bg-gray-100"
                 loading="lazy"
               />
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-4 rounded-full">
@@ -343,9 +343,9 @@ const CompoundInterest = () => {
                 <div className="flex justify-center items-center">
                   <div className="relative w-full flex flex-col items-center">
                     <img
-                      src="https://cdn.pixabay.com/photo/2017/09/22/17/27/money-2779385_1280.png"
+                      src="/placeholder.svg"
                       alt="Growth Infographic"
-                      className="w-full max-w-[280px] rounded-lg border shadow-lg mb-2 animate-scale-in"
+                      className="w-full max-w-[280px] rounded-lg border shadow-lg mb-2 animate-scale-in bg-gray-100"
                       loading="lazy"
                     />
                     <span className="inline-block bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full text-xs font-semibold absolute top-3 left-3 shadow">Compound Growth</span>
