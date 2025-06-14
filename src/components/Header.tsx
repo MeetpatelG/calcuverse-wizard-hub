@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Calculator, Menu, X, Search } from "lucide-react";
@@ -47,7 +46,11 @@ const homepageCategories = [
       { name: "Investment Returns", route: "/financial/investment" },
       { name: "Tax", route: "/financial/tax" },
       { name: "Budget Planner", route: "/financial/budget" },
-      { name: "Compound Interest", route: "/financial/compound-interest" }
+      { name: "Compound Interest", route: "/financial/compound-interest" },
+      { name: "Savings Goal Calculator", route: "/financial/savings-goal" },
+      { name: "Debt Payoff Calculator", route: "/financial/debt-payoff" },
+      { name: "Retirement Calculator", route: "/financial/retirement" },
+      { name: "Net Worth Calculator", route: "/financial/net-worth" }
     ]
   },
   {
@@ -242,7 +245,11 @@ const Header = () => {
         { name: t("Investment Calculator"), href: "/financial/investment" },
         { name: t("Tax Calculator"), href: "/financial/tax" },
         { name: t("Budget Planner"), href: "/financial/budget" },
-        { name: t("Compound Interest"), href: "/financial/compound-interest" }
+        { name: t("Compound Interest"), href: "/financial/compound-interest" },
+        { name: t("Savings Goal Calculator"), href: "/financial/savings-goal" },
+        { name: t("Debt Payoff Calculator"), href: "/financial/debt-payoff" },
+        { name: t("Retirement Calculator"), href: "/financial/retirement" },
+        { name: t("Net Worth Calculator"), href: "/financial/net-worth" }
       ]
     },
     {
@@ -501,4 +508,3 @@ const Header = () => {
 };
 
 export default Header;
-

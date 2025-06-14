@@ -48,6 +48,35 @@ const Financial = () => {
       icon: Percent,
       path: "/financial/compound-interest",
       color: "text-teal-600"
+    },
+    // -------------- NEW TOOLS ---------------
+    {
+      title: "Savings Goal Calculator",
+      description: "Calculate required monthly savings to achieve a financial goal",
+      icon: PiggyBank,
+      path: "/financial/savings-goal",
+      color: "text-lime-600"
+    },
+    {
+      title: "Debt Payoff Calculator",
+      description: "Plan your debt repayment timeline and total interest paid",
+      icon: CreditCard,
+      path: "/financial/debt-payoff",
+      color: "text-pink-700"
+    },
+    {
+      title: "Retirement Calculator",
+      description: "Estimate your future retirement savings and plan accordingly",
+      icon: TrendingUp,
+      path: "/financial/retirement",
+      color: "text-amber-900"
+    },
+    {
+      title: "Net Worth Calculator",
+      description: "Compute your total assets minus liabilities (net worth)",
+      icon: DollarSign,
+      path: "/financial/net-worth",
+      color: "text-gray-900"
     }
   ];
 
