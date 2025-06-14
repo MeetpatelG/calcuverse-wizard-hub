@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
+import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
 
 const EngagementRate = () => {
   const [likes, setLikes] = useState("");
@@ -63,7 +64,6 @@ const EngagementRate = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
       <div className="container mx-auto px-4 py-10">
         <div className="max-w-xl mx-auto">
           <Card>
@@ -151,6 +151,8 @@ const EngagementRate = () => {
             </CardContent>
           </Card>
         </div>
+        {/* SEO content section */}
+        <EngagementRateSEOSection />
       </div>
       <Footer />
     </div>
