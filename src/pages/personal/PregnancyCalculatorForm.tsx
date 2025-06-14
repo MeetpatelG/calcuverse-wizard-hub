@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, Droplet, Clock } from "lucide-react";
 
 export interface PregnancyData {
   dueDate: Date;
@@ -61,33 +61,40 @@ const PregnancyCalculatorForm = ({ onCalculate }: Props) => {
   };
 
   return (
-    <Card>
+    <Card className="shadow-xl border-2 border-pink-100 bg-gradient-to-tr from-white via-rose-50 to-pink-50 animate-fade-in">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Calendar className="h-5 w-5" />
+        <CardTitle className="flex items-center gap-3 text-pink-600">
+          <Calendar className="h-6 w-6" />
           Pregnancy Information
         </CardTitle>
         <CardDescription>
-          Enter your last menstrual period date
+          Enter your last menstrual period date and cycle length
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="last-period">Last Menstrual Period (LMP)</Label>
+          <Label htmlFor="last-period" className="flex items-center gap-2">
+            <Droplet className="h-4 w-4 text-blue-500" />
+            Last Menstrual Period (LMP)
+          </Label>
           <Input
             id="last-period"
             type="date"
             value={lastPeriod}
             onChange={(e) => setLastPeriod(e.target.value)}
             max={new Date().toISOString().split('T')[0]}
+            className="bg-white/60 border-pink-200 shadow-sm focus:ring-pink-400"
           />
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             First day of your last menstrual period
           </p>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="cycle-length">Average Cycle Length (days)</Label>
+          <Label htmlFor="cycle-length" className="flex items-center gap-2">
+            <Clock className="h-4 w-4 text-yellow-500" />
+            Average Cycle Length (days)
+          </Label>
           <Input
             id="cycle-length"
             type="number"
@@ -96,17 +103,27 @@ const PregnancyCalculatorForm = ({ onCalculate }: Props) => {
             onChange={(e) => setCycleLength(e.target.value)}
             min="21"
             max="35"
+            className="bg-white/60 border-pink-200 shadow-sm focus:ring-pink-400"
           />
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             Typical range: 21-35 days (average is 28 days)
           </p>
         </div>
 
-        <div className="flex gap-4">
-          <Button onClick={calculatePregnancy} className="flex-1" disabled={!lastPeriod}>
+        <div className="flex gap-3 mt-2">
+          <Button
+            onClick={calculatePregnancy}
+            className="flex-1 bg-gradient-to-r from-pink-500 to-pink-400 hover:from-pink-400 hover:to-pink-500 text-white shadow-lg transition-all"
+            disabled={!lastPeriod}
+          >
             Calculate Due Date
           </Button>
-          <Button onClick={reset} variant="outline">
+          <Button
+            onClick={reset}
+            variant="outline"
+            className="flex-1 border-pink-200 text-pink-600 hover:border-pink-300"
+            type="button"
+          >
             Reset
           </Button>
         </div>
@@ -116,3 +133,4 @@ const PregnancyCalculatorForm = ({ onCalculate }: Props) => {
 };
 
 export default PregnancyCalculatorForm;
+
