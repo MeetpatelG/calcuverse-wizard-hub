@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +23,8 @@ import Mathematical from "./pages/categories/Mathematical";
 import Business from "./pages/categories/Business";
 import Ecommerce from "./pages/categories/Ecommerce";
 import RealEstate from "./pages/categories/RealEstate";
+import SocialMedia from "./pages/categories/SocialMedia";
+import EngagementRate from "./pages/social-media/EngagementRate";
 
 // Financial Calculators
 import Budget from "./pages/financial/Budget";
@@ -94,6 +95,8 @@ const App = () => (
           <Route path="/business" element={<Business />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
           <Route path="/real-estate" element={<RealEstate />} />
+          <Route path="/social-media" element={<SocialMedia />} />
+          <Route path="/social-media/engagement-rate" element={<EngagementRate />} />
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/budget" element={<Budget />} />

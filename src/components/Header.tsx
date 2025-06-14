@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Calculator, Menu, X, Search, Globe } from "lucide-react";
@@ -83,6 +82,13 @@ const Header = () => {
         { name: "Rental Yield", href: "/real-estate/rental-yield" },
         { name: "Refinance", href: "/real-estate/refinance" },
         { name: "Amortization", href: "/real-estate/amortization" }
+      ]
+    },
+    {
+      title: "Social Media",
+      items: [
+        { name: "Engagement Rate Calculator", href: "/social-media/engagement-rate" }
+        // Add more calculators here in the future
       ]
     }
   ];

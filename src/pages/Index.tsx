@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3 } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -59,6 +59,14 @@ const Index = () => {
       calculators: ["Property Value", "Rent Affordability", "Mortgage Payment", "Investment Analysis"],
       color: "bg-orange-100 text-orange-700",
       route: "/real-estate"
+    },
+    {
+      title: "Social Media Calculators",
+      icon: Instagram,
+      description: "Track and analyze your social media growth and engagement.",
+      calculators: ["Engagement Rate Calculator"],
+      color: "bg-yellow-100 text-yellow-700",
+      route: "/social-media"
     }
   ];
 
