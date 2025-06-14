@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -229,8 +230,8 @@ const App = () => (
             <Route path="/business/burn-rate" element={<BurnRate />} />
             <Route path="/business/inventory-turnover" element={<InventoryTurnover />} />
             <Route path="/business/employee-cost" element={<EmployeeCost />} />
-            <Route path="/business/customer-lifetime-value" element={<(await import('./pages/business/CustomerLifetimeValue')).default />} />
-            <Route path="/business/gross-profit" element={<(await import('./pages/business/GrossProfit')).default />} />
+            <Route path="/business/customer-lifetime-value" element={<CustomerLifetimeValue />} />
+            <Route path="/business/gross-profit" element={<GrossProfit />} />
             
             {/* E-commerce Calculator Routes */}
             <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
