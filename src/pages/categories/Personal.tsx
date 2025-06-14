@@ -1,4 +1,3 @@
-
 import { User, Calendar, Flame, HeartPulse, Scale, Droplet, GlassWater, Gauge, Egg } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -62,7 +61,21 @@ const Personal = () => {
       icon: GlassWater,
       path: "/personal/water-intake",
       color: "text-sky-500"
-    }
+    },
+    {
+      title: "BBT Ovulation Calculator",
+      description: "Estimate your ovulation and fertile window from your basal body temperature trend.",
+      icon: Flame,
+      path: "/personal/bbt-ovulation",
+      color: "text-pink-600"
+    },
+    {
+      title: "Waist-to-Hip Ratio Calculator",
+      description: "Assess your health risk by calculating your waist-to-hip ratio.",
+      icon: HeartPulse,
+      path: "/personal/waist-hip-ratio",
+      color: "text-lime-600"
+    },
   ];
 
   return (

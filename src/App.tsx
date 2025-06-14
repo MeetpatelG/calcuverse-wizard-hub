@@ -53,6 +53,8 @@ import BodyFat from "./pages/personal/BodyFat";
 import IdealWeight from "./pages/personal/IdealWeight";
 import BMR from "./pages/personal/BMR";
 import WaterIntake from "./pages/personal/WaterIntake";
+import BBTOvulation from "./pages/personal/BBTOvulation";
+import WaistHipRatio from "./pages/personal/WaistHipRatio";
 
 // Mathematical Calculators
 import Scientific from "./pages/mathematical/Scientific";
@@ -184,6 +186,8 @@ const App = () => (
             <Route path="/personal/ideal-weight" element={<IdealWeight />} />
             <Route path="/personal/bmr" element={<BMR />} />
             <Route path="/personal/water-intake" element={<WaterIntake />} />
+            <Route path="/personal/bbt-ovulation" element={<BBTOvulation />} />
+            <Route path="/personal/waist-hip-ratio" element={<WaistHipRatio />} />
             
             {/* Mathematical Calculator Routes */}
             <Route path="/mathematical/scientific" element={<Scientific />} />
