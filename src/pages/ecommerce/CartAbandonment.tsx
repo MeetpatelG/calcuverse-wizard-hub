@@ -49,7 +49,7 @@ export default function CartAbandonment() {
             <div>
               <span className="font-medium">LaTeX Output:</span>
               <div className="bg-gray-50 rounded px-2 py-1 mt-1 text-xs text-gray-700">
-                $ \text{{Abandonment}} = \left(1 - \frac{{C}}{{A}}\right) \times 100 $
+                {"$ \\text{Abandonment} = \\left(1 - \\frac{C}{A}\\right) \\times 100 $"}
               </div>
             </div>
           </CardContent>
