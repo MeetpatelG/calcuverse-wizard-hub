@@ -255,10 +255,16 @@ const Header = () => {
     {
       title: t("Personal"),
       items: [
-        { name: t("Age Calculator"), href: "/personal/age" },
         { name: t("BMI Calculator"), href: "/personal/bmi" },
+        { name: t("Age Calculator"), href: "/personal/age" },
         { name: t("Calorie Calculator"), href: "/personal/calorie" },
-        { name: t("Pregnancy Calculator"), href: "/personal/pregnancy" }
+        { name: t("Pregnancy Due Date Calculator"), href: "/personal/pregnancy" },
+        { name: t("Body Fat Calculator"), href: "/personal/body-fat" },
+        { name: t("Ideal Weight Calculator"), href: "/personal/ideal-weight" },
+        { name: t("BMR Calculator"), href: "/personal/bmr" },
+        { name: t("Water Intake Calculator"), href: "/personal/water-intake" },
+        { name: t("BBT Ovulation Calculator"), href: "/personal/bbt-ovulation" },
+        { name: t("Waist-to-Hip Ratio Calculator"), href: "/personal/waist-hip-ratio" },
       ]
     },
     {
