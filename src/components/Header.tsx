@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Calculator, Menu, X, Search } from "lucide-react";
@@ -104,6 +103,18 @@ const Header = () => {
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
+              {/* Home Link */}
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    to="/"
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+                  >
+                    {t("Home") || "Home"}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              {/* Existing category dropdowns */}
               {navigationItems.map((category) => (
                 <NavigationMenuItem key={category.title}>
                   <NavigationMenuTrigger className="text-sm font-medium">
@@ -177,6 +188,17 @@ const Header = () => {
                 <LanguageSelector />
               </div> */}
 
+              {/* Home Link for Mobile */}
+              <div>
+                <Link
+                  to="/"
+                  className="block text-base font-semibold py-2 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("Home") || "Home"}
+                </Link>
+              </div>
+
               {/* Mobile Navigation */}
               {navigationItems.map((category) => (
                 <div key={category.title}>
@@ -204,4 +226,3 @@ const Header = () => {
 };
 
 export default Header;
-
