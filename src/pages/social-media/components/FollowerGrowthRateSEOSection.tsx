@@ -1,5 +1,4 @@
-
-import { UserPlus, UserCheck, TrendingUp, Info, Image } from "lucide-react";
+import { UserPlus, UserCheck, TrendingUp, Info, Image, HelpCircle } from "lucide-react";
 const faqs = [
   { q: "What is follower growth rate?", a: "It’s the percent increase or decrease in your social media followers over a defined time period." },
   { q: "How do I calculate growth rate?", a: "((Ending Followers – Starting Followers) ÷ Starting Followers) × 100. This tool does the work for you!" },

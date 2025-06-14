@@ -1,5 +1,4 @@
-
-import { Linkedin, ThumbsUp, MessageCircle, Share2, Info, Image } from "lucide-react";
+import { Linkedin, ThumbsUp, MessageCircle, Share2, Info, Image, HelpCircle } from "lucide-react";
 const faqs = [
   { q: "How is LinkedIn engagement rate calculated?", a: "It’s ((Likes + Comments + Shares) ÷ Reach) × 100—'Reach' being how many people actually saw your post." },
   { q: "Why use reach instead of followers?", a: "Reach shows your content’s real exposure; only people who saw the post can interact!" },
