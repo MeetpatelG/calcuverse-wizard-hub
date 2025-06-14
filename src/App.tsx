@@ -155,6 +155,15 @@ import BatchImageConverter from "./pages/image-converter/BatchImageConverter";
 import ImageColorConverter from "./pages/image-converter/ImageColorConverter";
 import PDFConverterIndex from "./pages/pdf/Index";
 import PDFToolPage from "./pages/pdf/PDFToolPage";
+import PDFToWordTool from "./pages/pdf/tools/PDFToWordTool";
+import WordToPDFTool from "./pages/pdf/tools/WordToPDFTool";
+import PDFToExcelTool from "./pages/pdf/PDFToExcel"; // If desired, can write a new tool version
+import ExcelToPDFTool from "./pages/pdf/ExcelToPDF"; // If desired, can write a new tool version
+import PDFToPPTTool from "./pages/pdf/PDFToPPT"; // Or new
+import PPTToPDFTool from "./pages/pdf/PPTToPDF"; // Or new
+import PDFToImageTool from "./pages/pdf/tools/PDFToImageTool";
+import ImageToPDFTool from "./pages/pdf/ImageToPDF"; // Or new
+import PDFToTextTool from "./pages/pdf/tools/PDFToTextTool";
 
 const queryClient = new QueryClient();
 
@@ -268,12 +277,15 @@ const App = () => (
             <Route path="/real-estate/amortization" element={<Amortization />} />
             
             {/* PDF Tool Routes */}
-            <Route path="/pdf/pdf-to-word" element={<PDFToWord />} />
-            <Route path="/pdf/word-to-pdf" element={<WordToPDF />} />
-            <Route path="/pdf/pdf-to-excel" element={<PDFToExcel />} />
-            <Route path="/pdf/excel-to-pdf" element={<ExcelToPDF />} />
-            <Route path="/pdf/pdf-to-ppt" element={<PDFToPPT />} />
-            <Route path="/pdf/ppt-to-pdf" element={<PPTToPDF />} />
+            <Route path="/pdf/pdf-to-word" element={<PDFToWordTool />} />
+            <Route path="/pdf/word-to-pdf" element={<WordToPDFTool />} />
+            <Route path="/pdf/pdf-to-excel" element={<PDFToExcelTool />} />
+            <Route path="/pdf/excel-to-pdf" element={<ExcelToPDFTool />} />
+            <Route path="/pdf/pdf-to-ppt" element={<PDFToPPTTool />} />
+            <Route path="/pdf/ppt-to-pdf" element={<PPTToPDFTool />} />
+            <Route path="/pdf/pdf-to-image" element={<PDFToImageTool />} />
+            <Route path="/pdf/image-to-pdf" element={<ImageToPDFTool />} />
+            <Route path="/pdf/pdf-to-text" element={<PDFToTextTool />} />
             <Route path="/pdf/merge" element={<Merge />} />
             <Route path="/pdf/split" element={<Split />} />
             <Route path="/pdf/compress" element={<Compress />} />
@@ -285,8 +297,6 @@ const App = () => (
             <Route path="/pdf/add-watermark" element={<AddWatermark />} />
             <Route path="/pdf/password-protect" element={<PasswordProtect />} />
             <Route path="/pdf/unlock" element={<Unlock />} />
-            <Route path="/pdf/pdf-to-image" element={<PDFToImage />} />
-            <Route path="/pdf/image-to-pdf" element={<ImageToPDF />} />
             <Route path="/pdf/ocr" element={<OCR />} />
             
             {/* Image Converter Category and Tool Routes */}
