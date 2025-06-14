@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, File } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -67,6 +68,35 @@ const Index = () => {
       calculators: ["Engagement Rate Calculator"],
       color: "bg-yellow-100 text-yellow-700",
       route: "/social-media"
+    },
+    {
+      title: "PDF Converter",
+      icon: File,
+      description: "Convert, edit, and manage PDF files with various tools.",
+      calculators: [
+        "PDF to Word Converter",
+        "Word to PDF Converter",
+        "PDF to Excel Converter",
+        "Excel to PDF Converter",
+        "PDF to PowerPoint Converter",
+        "PowerPoint to PDF Converter",
+        "Merge PDF",
+        "Split PDF",
+        "Compress PDF",
+        "PDF Editor",
+        "PDF Reader/Viewer",
+        "PDF Rotator",
+        "PDF Page Remover",
+        "Add Page Numbers to PDF",
+        "Add Watermark to PDF",
+        "PDF Password Protect",
+        "Unlock PDF",
+        "PDF to Image Converter",
+        "Image to PDF Converter",
+        "OCR PDF"
+      ],
+      color: "bg-red-100 text-red-700",
+      route: "/pdf/pdf-to-word"
     }
   ];
 
@@ -204,3 +234,4 @@ const Index = () => {
 };
 
 export default Index;
+
