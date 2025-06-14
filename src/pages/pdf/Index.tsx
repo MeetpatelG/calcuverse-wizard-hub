@@ -2,8 +2,8 @@
 import { Link } from "react-router-dom";
 import {
   FileText,
-  FileTextPlus,
-  FileTextMinus,
+  FilePlus,
+  FileMinus,
   FileDown,
   FileUp,
   FileImage,
@@ -18,11 +18,11 @@ import Footer from "@/components/Footer";
 // PDF tools list, each with a matching available lucide-react icon
 const pdfTools = [
   { name: "PDF to Word Converter", route: "/pdf/pdf-to-word", desc: "Convert PDF files to editable Word documents.", icon: FileText },
-  { name: "Word to PDF Converter", route: "/pdf/word-to-pdf", desc: "Convert Microsoft Word documents (.doc, .docx) to PDF.", icon: FileTextPlus },
+  { name: "Word to PDF Converter", route: "/pdf/word-to-pdf", desc: "Convert Microsoft Word documents (.doc, .docx) to PDF.", icon: FilePlus },
   { name: "PDF to Excel Converter", route: "/pdf/pdf-to-excel", desc: "Extract tabular data by converting PDF files to Excel format.", icon: FileDown },
   { name: "Excel to PDF Converter", route: "/pdf/excel-to-pdf", desc: "Convert Excel spreadsheets (.xls, .xlsx) to PDF files.", icon: FileUp },
-  { name: "PDF to PowerPoint Converter", route: "/pdf/pdf-to-ppt", desc: "Convert PDF files into editable PowerPoint presentations.", icon: FileTextPlus },
-  { name: "PowerPoint to PDF Converter", route: "/pdf/ppt-to-pdf", desc: "Convert PowerPoint presentations (.ppt, .pptx) to PDF files.", icon: FileTextMinus },
+  { name: "PDF to PowerPoint Converter", route: "/pdf/pdf-to-ppt", desc: "Convert PDF files into editable PowerPoint presentations.", icon: FilePlus },
+  { name: "PowerPoint to PDF Converter", route: "/pdf/ppt-to-pdf", desc: "Convert PowerPoint presentations (.ppt, .pptx) to PDF files.", icon: FileMinus },
   { name: "PDF to Image Converter", route: "/pdf/pdf-to-image", desc: "Convert PDF file pages to images (JPEG, PNG).", icon: FileImage },
   { name: "Image to PDF Converter", route: "/pdf/image-to-pdf", desc: "Combine images into a single PDF file.", icon: FileImage },
   { name: "PDF to Text Converter", route: "/pdf/pdf-to-text", desc: "Extract text from PDF files.", icon: FileSearch },
