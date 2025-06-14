@@ -61,6 +61,12 @@ import Scientific from "./pages/mathematical/Scientific";
 import UnitConverter from "./pages/mathematical/UnitConverter";
 import Percentage from "./pages/mathematical/Percentage";
 import DateCalculator from "./pages/mathematical/Date";
+import QuadraticEquation from "./pages/mathematical/QuadraticEquation";
+import PrimeChecker from "./pages/mathematical/PrimeChecker";
+import GcdLcm from "./pages/mathematical/GcdLcm";
+import PercentageChange from "./pages/mathematical/PercentageChange";
+import Probability from "./pages/mathematical/Probability";
+import Factorial from "./pages/mathematical/Factorial";
 
 // Business Calculators
 import ProfitMargin from "./pages/business/ProfitMargin";
@@ -194,6 +200,12 @@ const App = () => (
             <Route path="/mathematical/unit-converter" element={<UnitConverter />} />
             <Route path="/mathematical/percentage" element={<Percentage />} />
             <Route path="/mathematical/date" element={<DateCalculator />} />
+            <Route path="/mathematical/quadratic-equation" element={<QuadraticEquation />} />
+            <Route path="/mathematical/prime-checker" element={<PrimeChecker />} />
+            <Route path="/mathematical/gcd-lcm" element={<GcdLcm />} />
+            <Route path="/mathematical/percentage-change" element={<PercentageChange />} />
+            <Route path="/mathematical/probability" element={<Probability />} />
+            <Route path="/mathematical/factorial" element={<Factorial />} />
             
             {/* Business Calculator Routes */}
             <Route path="/business/profit-margin" element={<ProfitMargin />} />

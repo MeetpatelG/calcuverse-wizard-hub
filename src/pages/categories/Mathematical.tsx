@@ -1,32 +1,73 @@
 
-import { Calculator, Ruler } from "lucide-react";
+import { Calculator, Ruler, SquareRoot, PercentCircle, Divide, Plus, Hash, ChevronRight, CircleDashed } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-const Mathematical = () => {
-  const calculators = [
-    {
-      title: "Scientific Calculator",
-      description: "Perform advanced mathematical calculations with scientific functions",
-      icon: Calculator,
-      path: "/mathematical/scientific",
-      color: "text-blue-600"
-    },
-    {
-      title: "Unit Converter",
-      description: "Convert between different units of measurement",
-      icon: Ruler,
-      path: "/mathematical/unit-converter",
-      color: "text-green-600"
-    }
-  ];
+const calculators = [
+  {
+    title: "Scientific Calculator",
+    description: "Perform advanced mathematical calculations with scientific functions",
+    icon: Calculator,
+    path: "/mathematical/scientific",
+    color: "text-blue-600"
+  },
+  {
+    title: "Unit Converter",
+    description: "Convert between different units of measurement",
+    icon: Ruler,
+    path: "/mathematical/unit-converter",
+    color: "text-green-600"
+  },
+  {
+    title: "Quadratic Equation Solver",
+    description: "Find real roots of ax² + bx + c = 0 with step-by-step solution.",
+    icon: SquareRoot,
+    path: "/mathematical/quadratic-equation",
+    color: "text-rose-600"
+  },
+  {
+    title: "Prime Number Checker",
+    description: "Check if a number is prime quickly and efficiently.",
+    icon: Hash,
+    path: "/mathematical/prime-checker",
+    color: "text-yellow-600"
+  },
+  {
+    title: "GCD & LCM Calculator",
+    description: "Find Greatest Common Divisor and Lowest Common Multiple.",
+    icon: Divide,
+    path: "/mathematical/gcd-lcm",
+    color: "text-sky-600"
+  },
+  {
+    title: "Percentage Change Calculator",
+    description: "Calculate percentage increase or decrease between two values.",
+    icon: PercentCircle,
+    path: "/mathematical/percentage-change",
+    color: "text-orange-600"
+  },
+  {
+    title: "Probability Calculator",
+    description: "Find the probability of an event (simple calculator).",
+    icon: CircleDashed,
+    path: "/mathematical/probability",
+    color: "text-indigo-600"
+  },
+  {
+    title: "Factorial Calculator",
+    description: "Compute factorial values for integers up to 170.",
+    icon: Plus,
+    path: "/mathematical/factorial",
+    color: "text-teal-600"
+  }
+];
 
+const Mathematical = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       <div className="container mx-auto px-4 py-8">
         <div className="text-sm text-muted-foreground mb-6">
           <Link to="/" className="hover:text-foreground">Home</Link> / <span className="text-foreground">Mathematical Calculators</span>
@@ -59,7 +100,6 @@ const Mathematical = () => {
           ))}
         </div>
       </div>
-
       <Footer />
     </div>
   );
