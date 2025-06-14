@@ -128,6 +128,8 @@ import Unlock from "./pages/pdf/Unlock";
 import PDFToImage from "./pages/pdf/PDFToImage";
 import ImageToPDF from "./pages/pdf/ImageToPDF";
 import OCR from "./pages/pdf/OCR";
+import PDFToCSV from "./pages/pdf/PDFToCSV";
+import PDFToXML from "./pages/pdf/PDFToXML";
 
 // Placeholder tool pages
 import ImageConverterIndex from "./pages/image-converter/Index";
@@ -153,8 +155,6 @@ import BatchImageConverter from "./pages/image-converter/BatchImageConverter";
 import ImageColorConverter from "./pages/image-converter/ImageColorConverter";
 import PDFConverterIndex from "./pages/pdf/Index";
 import PDFToolPage from "./pages/pdf/PDFToolPage";
-
-const PDFToCSV = React.lazy(() => import("./pages/pdf/PDFToCSV"));
 
 const queryClient = new QueryClient();
 
@@ -337,6 +337,14 @@ const App = () => (
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <PDFToCSV />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/pdf/pdf-to-xml"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <PDFToXML />
                 </Suspense>
               }
             />
