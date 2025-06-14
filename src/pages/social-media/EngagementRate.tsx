@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -5,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, Calculator } from "lucide-react";
 import EngagementRateSEOSection from "./components/EngagementRateSEOSection";
 
 const EngagementRate = () => {
@@ -61,19 +62,23 @@ const EngagementRate = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 transition-colors duration-300">
       <Header />
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-2 py-10">
         <div className="max-w-xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle>Social Media Engagement Rate Calculator</CardTitle>
-              <CardDescription>
+          <div className="rounded-2xl shadow-xl border border-blue-100 bg-white/95 backdrop-blur-md p-0 sm:p-0 transition-all">
+            {/* Card Decorative Header */}
+            <div className="flex flex-col items-center gap-2 pt-8 pb-2">
+              <span className="rounded-full bg-blue-100 p-3 shadow w-16 h-16 flex items-center justify-center animate-fade-in">
+                <Calculator size={32} className="text-blue-700" aria-label="Calculator icon" />
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-blue-800 tracking-tight pt-2 px-3 text-center">Social Media Engagement Rate Calculator</h1>
+              <p className="text-base text-muted-foreground text-center max-w-md pb-2 px-3">
                 Find your engagement rate based on likes, comments, and followers.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={calculateEngagement} className="space-y-4" autoComplete="off">
+              </p>
+            </div>
+            <CardContent className="pt-0">
+              <form onSubmit={calculateEngagement} className="space-y-4 mt-2" autoComplete="off">
                 <div className="relative group">
                   <Label htmlFor="likes" className="flex items-center gap-1">Likes
                     <span className="relative">
@@ -90,6 +95,7 @@ const EngagementRate = () => {
                     value={likes}
                     onChange={e => setLikes(e.target.value)}
                     placeholder="Enter number of likes"
+                    className="mt-1 bg-blue-50 focus:bg-white transition-colors"
                   />
                 </div>
                 <div className="relative group">
@@ -108,6 +114,7 @@ const EngagementRate = () => {
                     value={comments}
                     onChange={e => setComments(e.target.value)}
                     placeholder="Enter number of comments"
+                    className="mt-1 bg-blue-50 focus:bg-white transition-colors"
                   />
                 </div>
                 <div className="relative group">
@@ -126,33 +133,36 @@ const EngagementRate = () => {
                     value={followers}
                     onChange={e => setFollowers(e.target.value)}
                     placeholder="Enter number of followers"
+                    className="mt-1 bg-blue-50 focus:bg-white transition-colors"
                   />
                 </div>
                 {error && (
                   <div className="text-destructive text-sm -mt-2">{error}</div>
                 )}
-                <div className="flex gap-2">
-                  <Button type="submit" className="w-full mt-2">Calculate</Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="w-full mt-2">Reset</Button>
+                <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                  <Button type="submit" className="w-full rounded-lg shadow hover:scale-105 transition-transform duration-150 mt-2">Calculate</Button>
+                  <Button type="button" variant="outline" onClick={handleReset} className="w-full rounded-lg border-blue-200 mt-2">Reset</Button>
                 </div>
               </form>
               {result !== null && (
-                <div className="mt-6 p-4 rounded bg-muted text-center font-semibold text-lg">
+                <div
+                  className="mt-6 p-4 rounded-xl bg-gradient-to-tr from-blue-50 to-indigo-100/70 text-center font-semibold text-lg shadow animate-fade-in"
+                  style={{ animationDuration: '400ms' }}
+                >
                   Engagement Rate: <span className="text-primary">{result.toFixed(2)}%</span>
                   {showFormula && (
                     <div className="text-sm mt-2 font-normal text-muted-foreground">
-                      Formula: {(<> (Likes + Comments) ÷ Followers × 100 </>)}<br/>
+                      Formula: (Likes + Comments) ÷ Followers × 100 <br/>
                       Calculation: ({likes || 0} + {comments || 0}) ÷ {followers || 0} × 100 = {result.toFixed(2)}%
                     </div>
                   )}
                 </div>
               )}
             </CardContent>
-          </Card>
+          </div>
         </div>
         {/* SEO and educational guide content */}
         <div>
-          {/* Modern SEO-article and visual FAQ below */}
           <EngagementRateSEOSection />
         </div>
       </div>
@@ -162,3 +172,4 @@ const EngagementRate = () => {
 };
 
 export default EngagementRate;
+
