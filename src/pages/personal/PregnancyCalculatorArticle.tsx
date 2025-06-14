@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Baby, CalendarCheck2, HeartPulse, ShieldCheck, Star, Bookmark, Info } from "lucide-react";
 
@@ -49,9 +48,9 @@ const PregnancyCalculatorArticle: React.FC = () => (
       </header>
       <figure className="flex justify-center mb-8">
         <img
-          src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
+          src="/photo-1649972904349-6e44c42644a7"
           className="rounded-2xl shadow-lg border border-pink-50"
-          alt="Happy couple looking at pregnancy ultrasound and using a digital pregnancy calculator"
+          alt="Woman sitting on a bed using a laptop, positive pregnancy planning"
           width="500"
           height="320"
           loading="lazy"
