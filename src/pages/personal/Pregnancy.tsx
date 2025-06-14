@@ -11,10 +11,10 @@ const Pregnancy = () => {
   const [result, setResult] = useState<PregnancyData | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-white via-rose-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-bl from-white via-rose-50 to-blue-50 flex flex-col">
       <Header />
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+      <main className="flex flex-1 items-center justify-center px-4 py-12">
+        <div className="w-full max-w-4xl mx-auto animate-fade-in">
           <div className="text-center mb-10 animate-scale-in">
             <Baby className="h-16 w-16 text-primary mx-auto mb-4 bg-pink-50 p-2 rounded-full shadow-sm" />
             {/* Featured image for visual appeal */}
