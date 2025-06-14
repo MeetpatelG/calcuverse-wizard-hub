@@ -99,6 +99,29 @@ import PDFToImage from "./pages/pdf/PDFToImage";
 import ImageToPDF from "./pages/pdf/ImageToPDF";
 import OCR from "./pages/pdf/OCR";
 
+// Placeholder tool pages
+import ImageConverterIndex from "./pages/image-converter/Index";
+import JpgToPng from "./pages/image-converter/JpgToPng";
+import PngToJpg from "./pages/image-converter/PngToJpg";
+import WebpToJpg from "./pages/image-converter/WebpToJpg";
+import JpgToWebp from "./pages/image-converter/JpgToWebp";
+import PngToWebp from "./pages/image-converter/PngToWebp";
+import GifToJpg from "./pages/image-converter/GifToJpg";
+import GifToPng from "./pages/image-converter/GifToPng";
+import BmpToJpg from "./pages/image-converter/BmpToJpg";
+import TiffToJpg from "./pages/image-converter/TiffToJpg";
+import HeicToJpg from "./pages/image-converter/HeicToJpg";
+import SvgToPng from "./pages/image-converter/SvgToPng";
+import SvgToJpg from "./pages/image-converter/SvgToJpg";
+import ImageToPdf from "./pages/image-converter/ImageToPdf";
+import ImageResizer from "./pages/image-converter/ImageResizer";
+import ImageCompressor from "./pages/image-converter/ImageCompressor";
+import ImageFormatConverter from "./pages/image-converter/ImageFormatConverter";
+import ImageCrop from "./pages/image-converter/ImageCrop";
+import ImageRotator from "./pages/image-converter/ImageRotator";
+import BatchImageConverter from "./pages/image-converter/BatchImageConverter";
+import ImageColorConverter from "./pages/image-converter/ImageColorConverter";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -202,6 +225,29 @@ const App = () => (
             <Route path="/pdf/pdf-to-image" element={<PDFToImage />} />
             <Route path="/pdf/image-to-pdf" element={<ImageToPDF />} />
             <Route path="/pdf/ocr" element={<OCR />} />
+            
+            {/* Image Converter Category and Tool Routes */}
+            <Route path="/image-converter" element={<ImageConverterIndex />} />
+            <Route path="/image-converter/jpg-to-png" element={<JpgToPng />} />
+            <Route path="/image-converter/png-to-jpg" element={<PngToJpg />} />
+            <Route path="/image-converter/webp-to-jpg" element={<WebpToJpg />} />
+            <Route path="/image-converter/jpg-to-webp" element={<JpgToWebp />} />
+            <Route path="/image-converter/png-to-webp" element={<PngToWebp />} />
+            <Route path="/image-converter/gif-to-jpg" element={<GifToJpg />} />
+            <Route path="/image-converter/gif-to-png" element={<GifToPng />} />
+            <Route path="/image-converter/bmp-to-jpg" element={<BmpToJpg />} />
+            <Route path="/image-converter/tiff-to-jpg" element={<TiffToJpg />} />
+            <Route path="/image-converter/heic-to-jpg" element={<HeicToJpg />} />
+            <Route path="/image-converter/svg-to-png" element={<SvgToPng />} />
+            <Route path="/image-converter/svg-to-jpg" element={<SvgToJpg />} />
+            <Route path="/image-converter/image-to-pdf" element={<ImageToPdf />} />
+            <Route path="/image-converter/image-resizer" element={<ImageResizer />} />
+            <Route path="/image-converter/image-compressor" element={<ImageCompressor />} />
+            <Route path="/image-converter/image-format-converter" element={<ImageFormatConverter />} />
+            <Route path="/image-converter/image-crop" element={<ImageCrop />} />
+            <Route path="/image-converter/image-rotator" element={<ImageRotator />} />
+            <Route path="/image-converter/batch-image-converter" element={<BatchImageConverter />} />
+            <Route path="/image-converter/image-color-converter" element={<ImageColorConverter />} />
             
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />

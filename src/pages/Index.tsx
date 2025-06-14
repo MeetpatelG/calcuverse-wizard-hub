@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, Image as ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -76,13 +75,26 @@ const Index = () => {
       icon: ImageIcon,
       description: "Convert and optimize your images to different formats in seconds.",
       calculators: [
-        "JPG to PNG",
-        "PNG to JPG",
-        "WebP Converter",
-        "Compress Image",
-        "Resize Image",
-        "GIF to JPG",
-        "Image Optimizer"
+        "JPG to PNG Converter",
+        "PNG to JPG Converter",
+        "WEBP to JPG Converter",
+        "JPG to WEBP Converter",
+        "PNG to WEBP Converter",
+        "GIF to JPG Converter",
+        "GIF to PNG Converter",
+        "BMP to JPG Converter",
+        "TIFF to JPG Converter",
+        "HEIC to JPG Converter",
+        "SVG to PNG Converter",
+        "SVG to JPG Converter",
+        "Image to PDF Converter",
+        "Image Resizer",
+        "Image Compressor",
+        "Image Format Converter",
+        "Image Crop Tool",
+        "Image Rotator",
+        "Batch Image Converter",
+        "Image Color Converter"
       ],
       color: "bg-sky-100 text-sky-700",
       route: "/image-converter"
@@ -174,13 +186,13 @@ const Index = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {category.calculators.slice(0, 4).map((calc, idx) => (
+                      {category.calculators.slice(0, 6).map((calc, idx) => (
                         <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
                           {calc}
                         </span>
                       ))}
-                      {category.calculators.length > 4 && (
-                        <span className="text-xs text-muted-foreground">+{category.calculators.length - 4} more</span>
+                      {category.calculators.length > 6 && (
+                        <span className="text-xs text-muted-foreground">+{category.calculators.length - 6} more</span>
                       )}
                     </div>
                   </CardContent>
@@ -224,4 +236,3 @@ const Index = () => {
 };
 
 export default Index;
-
