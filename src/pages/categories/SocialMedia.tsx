@@ -10,8 +10,7 @@ import {
   BarChart3, 
   Users, 
   Hash, 
-  Share2,
-  Video
+  Share2
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -29,65 +28,65 @@ const calculators = [
     title: "Follower Growth Rate Calculator",
     description: "Analyze your follower growth over time on any platform.",
     icon: UserPlus,
-    path: "#",
+    path: "/social-media/follower-growth-rate",
     color: "text-green-600"
   },
   {
     title: "Reach Calculator",
     description: "Estimate the potential reach of your social media posts.",
     icon: BarChart3,
-    path: "#",
+    path: "/social-media/reach",
     color: "text-blue-500"
   },
   {
     title: "Impression Calculator",
     description: "Calculate the number of times your content is displayed to users.",
     icon: Users,
-    path: "#",
+    path: "/social-media/impression",
     color: "text-purple-600"
   },
   {
     title: "Hashtag Performance Calculator",
     description: "Discover the impact of hashtags on your posts.",
     icon: Hash,
-    path: "#",
+    path: "/social-media/hashtag-performance",
     color: "text-gray-700"
   },
   {
     title: "Share Rate Calculator",
     description: "Compute how often your content is shared by your audience.",
     icon: Share2,
-    path: "#",
+    path: "/social-media/share-rate",
     color: "text-orange-500"
   },
   {
     title: "Facebook Engagement Calculator",
     description: "Track likes, comments, shares, and post engagement specifically for Facebook.",
     icon: Facebook,
-    path: "#",
+    path: "/social-media/facebook-engagement",
     color: "text-blue-700"
   },
   {
     title: "Twitter Engagement Calculator",
     description: "Assess your tweets' performance with Twitter-specific metrics.",
     icon: Twitter,
-    path: "#",
+    path: "/social-media/twitter-engagement",
     color: "text-sky-400"
   },
   {
     title: "YouTube Video Performance Calculator",
     description: "Analyze views, likes, comments, and shares for YouTube videos.",
     icon: Youtube,
-    path: "#",
+    path: "/social-media/youtube-video-performance",
     color: "text-red-600"
   },
   {
     title: "LinkedIn Post Engagement Calculator",
     description: "Measure likes, comments, shares, and reach for LinkedIn posts.",
     icon: Linkedin,
-    path: "#",
+    path: "/social-media/linkedin-post-engagement",
     color: "text-blue-800"
-  },
+  }
 ];
 
 const SocialMedia = () => {
@@ -131,3 +130,4 @@ const SocialMedia = () => {
 };
 
 export default SocialMedia;
+

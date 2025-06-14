@@ -25,6 +25,15 @@ import Ecommerce from "./pages/categories/Ecommerce";
 import RealEstate from "./pages/categories/RealEstate";
 import SocialMedia from "./pages/categories/SocialMedia";
 import EngagementRate from "./pages/social-media/EngagementRate";
+import FollowerGrowthRate from "./pages/social-media/FollowerGrowthRate";
+import Reach from "./pages/social-media/Reach";
+import Impression from "./pages/social-media/Impression";
+import HashtagPerformance from "./pages/social-media/HashtagPerformance";
+import ShareRate from "./pages/social-media/ShareRate";
+import FacebookEngagement from "./pages/social-media/FacebookEngagement";
+import TwitterEngagement from "./pages/social-media/TwitterEngagement";
+import YouTubeVideoPerformance from "./pages/social-media/YouTubeVideoPerformance";
+import LinkedinPostEngagement from "./pages/social-media/LinkedinPostEngagement";
 
 // Financial Calculators
 import Budget from "./pages/financial/Budget";
@@ -97,6 +106,15 @@ const App = () => (
           <Route path="/real-estate" element={<RealEstate />} />
           <Route path="/social-media" element={<SocialMedia />} />
           <Route path="/social-media/engagement-rate" element={<EngagementRate />} />
+          <Route path="/social-media/follower-growth-rate" element={<FollowerGrowthRate />} />
+          <Route path="/social-media/reach" element={<Reach />} />
+          <Route path="/social-media/impression" element={<Impression />} />
+          <Route path="/social-media/hashtag-performance" element={<HashtagPerformance />} />
+          <Route path="/social-media/share-rate" element={<ShareRate />} />
+          <Route path="/social-media/facebook-engagement" element={<FacebookEngagement />} />
+          <Route path="/social-media/twitter-engagement" element={<TwitterEngagement />} />
+          <Route path="/social-media/youtube-video-performance" element={<YouTubeVideoPerformance />} />
+          <Route path="/social-media/linkedin-post-engagement" element={<LinkedinPostEngagement />} />
           
           {/* Financial Calculator Routes */}
           <Route path="/financial/budget" element={<Budget />} />
