@@ -1,5 +1,4 @@
-
-import { BarChart3, LineChart, DollarSign, Briefcase, TrendingUp, Activity, Calculator, Users2, Repeat2 } from "lucide-react";
+import { BarChart3, LineChart, DollarSign, Briefcase, TrendingUp, Activity, Calculator, Users2, Repeat2, DollarCircle, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -61,6 +60,20 @@ const calculators = [
     icon: Users2,
     path: "/business/employee-cost",
     color: "text-emerald-600"
+  },
+  {
+    title: "Customer Lifetime Value Calculator",
+    description: "Estimate how much revenue a business can expect from a customer over their lifecycle.",
+    icon: UserCheck,
+    path: "/business/customer-lifetime-value",
+    color: "text-indigo-600"
+  },
+  {
+    title: "Gross Profit Calculator",
+    description: "Calculate your gross profit based on revenue and cost of goods sold.",
+    icon: DollarCircle,
+    path: "/business/gross-profit",
+    color: "text-fuchsia-600"
   }
 ];
 

@@ -78,6 +78,9 @@ import CashFlow from "./pages/business/CashFlow";
 import BurnRate from "./pages/business/BurnRate";
 import InventoryTurnover from "./pages/business/InventoryTurnover";
 import EmployeeCost from "./pages/business/EmployeeCost";
+import ProfitMargin from "./pages/business/ProfitMargin";
+import CustomerLifetimeValue from "./pages/business/CustomerLifetimeValue";
+import GrossProfit from "./pages/business/GrossProfit";
 
 // E-commerce Calculators
 import ShippingCost from "./pages/ecommerce/ShippingCost";
@@ -226,6 +229,8 @@ const App = () => (
             <Route path="/business/burn-rate" element={<BurnRate />} />
             <Route path="/business/inventory-turnover" element={<InventoryTurnover />} />
             <Route path="/business/employee-cost" element={<EmployeeCost />} />
+            <Route path="/business/customer-lifetime-value" element={<(await import('./pages/business/CustomerLifetimeValue')).default />} />
+            <Route path="/business/gross-profit" element={<(await import('./pages/business/GrossProfit')).default />} />
             
             {/* E-commerce Calculator Routes */}
             <Route path="/ecommerce/shipping-cost" element={<ShippingCost />} />
