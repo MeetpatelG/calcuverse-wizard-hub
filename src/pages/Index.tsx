@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram, File } from "lucide-react";
+import { Search, Calculator, TrendingUp, Heart, Building, ShoppingCart, Home as HomeIcon, DollarSign, Activity, BarChart3, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,28 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-const pdfTools = [
-  { name: "PDF to Word Converter", route: "/pdf/pdf-to-word" },
-  { name: "Word to PDF Converter", route: "/pdf/word-to-pdf" },
-  { name: "PDF to Excel Converter", route: "/pdf/pdf-to-excel" },
-  { name: "Excel to PDF Converter", route: "/pdf/excel-to-pdf" },
-  { name: "PDF to PowerPoint Converter", route: "/pdf/pdf-to-ppt" },
-  { name: "PowerPoint to PDF Converter", route: "/pdf/ppt-to-pdf" },
-  { name: "Merge PDF", route: "/pdf/merge" },
-  { name: "Split PDF", route: "/pdf/split" },
-  { name: "Compress PDF", route: "/pdf/compress" },
-  { name: "PDF Editor", route: "/pdf/editor" },
-  { name: "PDF Reader/Viewer", route: "/pdf/viewer" },
-  { name: "PDF Rotator", route: "/pdf/rotate" },
-  { name: "PDF Page Remover", route: "/pdf/page-remover" },
-  { name: "Add Page Numbers to PDF", route: "/pdf/add-page-numbers" },
-  { name: "Add Watermark to PDF", route: "/pdf/add-watermark" },
-  { name: "PDF Password Protect", route: "/pdf/password-protect" },
-  { name: "Unlock PDF", route: "/pdf/unlock" },
-  { name: "PDF to Image Converter", route: "/pdf/pdf-to-image" },
-  { name: "Image to PDF Converter", route: "/pdf/image-to-pdf" },
-  { name: "OCR PDF", route: "/pdf/ocr" }
-];
+// Removed pdfTools and PDF category logic
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -91,14 +71,7 @@ const Index = () => {
       color: "bg-yellow-100 text-yellow-700",
       route: "/social-media"
     },
-    {
-      title: "PDF Converter",
-      icon: File,
-      description: "Convert, edit, and manage PDF files with various tools.",
-      calculators: pdfTools.map(t => t.name),
-      color: "bg-red-100 text-red-700",
-      route: "/pdf/pdf-to-word"
-    }
+    // PDF Converter category removed
   ];
 
   const featuredCalculators = [
@@ -184,30 +157,16 @@ const Index = () => {
                     <CardDescription>{category.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {category.title === "PDF Converter" ? (
-                      <div className="flex flex-wrap gap-2">
-                        {pdfTools.map((tool, idx) => (
-                          <Link
-                            key={tool.route}
-                            to={tool.route}
-                            className="text-xs bg-muted px-2 py-1 rounded hover:bg-red-200 hover:text-red-900 transition-all"
-                          >
-                            {tool.name}
-                          </Link>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="flex flex-wrap gap-2">
-                        {category.calculators.slice(0, 4).map((calc, idx) => (
-                          <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
-                            {calc}
-                          </span>
-                        ))}
-                        {category.calculators.length > 4 && (
-                          <span className="text-xs text-muted-foreground">+{category.calculators.length - 4} more</span>
-                        )}
-                      </div>
-                    )}
+                    <div className="flex flex-wrap gap-2">
+                      {category.calculators.slice(0, 4).map((calc, idx) => (
+                        <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
+                          {calc}
+                        </span>
+                      ))}
+                      {category.calculators.length > 4 && (
+                        <span className="text-xs text-muted-foreground">+{category.calculators.length - 4} more</span>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
