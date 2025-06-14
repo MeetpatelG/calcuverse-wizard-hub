@@ -322,36 +322,6 @@ const Header = () => {
       ]
     },
     {
-      title: t("Mathematical"),
-      items: [
-        { name: t("Scientific Calculator"), href: "/mathematical/scientific" },
-        { name: t("Unit Converter"), href: "/mathematical/unit-converter" },
-        { name: t("Quadratic Equation Solver"), href: "/mathematical/quadratic-equation" },
-        { name: t("Prime Number Checker"), href: "/mathematical/prime-checker" },
-        { name: t("GCD & LCM Calculator"), href: "/mathematical/gcd-lcm" },
-        { name: t("Percentage Change Calculator"), href: "/mathematical/percentage-change" },
-        { name: t("Probability Calculator"), href: "/mathematical/probability" },
-        { name: t("Factorial Calculator"), href: "/mathematical/factorial" },
-        { name: t("Prime Factorization Calculator"), href: "/mathematical/prime-factorization" },
-        { name: t("Scientific Notation Converter"), href: "/mathematical/scientific-notation" }
-      ]
-    },
-    {
-      title: t("Business"),
-      items: [
-        { name: t("Profit Margin Calculator"), href: "/business/profit-margin" },
-        { name: t("Break-even Point Calculator"), href: "/business/break-even" },
-        { name: t("ROI Calculator"), href: "/business/roi" },
-        { name: t("Business Valuation Calculator"), href: "/business/business-valuation" },
-        { name: t("Cash Flow Calculator"), href: "/business/cash-flow" },
-        { name: t("Startup Burn Rate Calculator"), href: "/business/burn-rate" },
-        { name: t("Inventory Turnover Calculator"), href: "/business/inventory-turnover" },
-        { name: t("Employee Cost Calculator"), href: "/business/employee-cost" },
-        { name: t("Customer Lifetime Value Calculator"), href: "/business/customer-lifetime-value" },
-        { name: t("Gross Profit Calculator"), href: "/business/gross-profit" }
-      ]
-    },
-    {
       title: t("E-commerce"),
       items: [
         { name: t("Shipping Cost Calculator"), href: "/ecommerce/shipping-cost" },
