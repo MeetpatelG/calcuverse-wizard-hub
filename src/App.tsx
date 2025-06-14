@@ -77,6 +77,28 @@ import RentalYield from "./pages/real-estate/RentalYield";
 import Refinance from "./pages/real-estate/Refinance";
 import Amortization from "./pages/real-estate/Amortization";
 
+// PDF Tools
+import PDFToWord from "./pages/pdf/PDFToWord";
+import WordToPDF from "./pages/pdf/WordToPDF";
+import PDFToExcel from "./pages/pdf/PDFToExcel";
+import ExcelToPDF from "./pages/pdf/ExcelToPDF";
+import PDFToPPT from "./pages/pdf/PDFToPPT";
+import PPTToPDF from "./pages/pdf/PPTToPDF";
+import Merge from "./pages/pdf/Merge";
+import Split from "./pages/pdf/Split";
+import Compress from "./pages/pdf/Compress";
+import Editor from "./pages/pdf/Editor";
+import Viewer from "./pages/pdf/Viewer";
+import Rotate from "./pages/pdf/Rotate";
+import PageRemover from "./pages/pdf/PageRemover";
+import AddPageNumbers from "./pages/pdf/AddPageNumbers";
+import AddWatermark from "./pages/pdf/AddWatermark";
+import PasswordProtect from "./pages/pdf/PasswordProtect";
+import Unlock from "./pages/pdf/Unlock";
+import PDFToImage from "./pages/pdf/PDFToImage";
+import ImageToPDF from "./pages/pdf/ImageToPDF";
+import OCR from "./pages/pdf/OCR";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -158,6 +180,28 @@ const App = () => (
             <Route path="/real-estate/rental-yield" element={<RentalYield />} />
             <Route path="/real-estate/refinance" element={<Refinance />} />
             <Route path="/real-estate/amortization" element={<Amortization />} />
+            
+            {/* PDF Tool Routes */}
+            <Route path="/pdf/pdf-to-word" element={<PDFToWord />} />
+            <Route path="/pdf/word-to-pdf" element={<WordToPDF />} />
+            <Route path="/pdf/pdf-to-excel" element={<PDFToExcel />} />
+            <Route path="/pdf/excel-to-pdf" element={<ExcelToPDF />} />
+            <Route path="/pdf/pdf-to-ppt" element={<PDFToPPT />} />
+            <Route path="/pdf/ppt-to-pdf" element={<PPTToPDF />} />
+            <Route path="/pdf/merge" element={<Merge />} />
+            <Route path="/pdf/split" element={<Split />} />
+            <Route path="/pdf/compress" element={<Compress />} />
+            <Route path="/pdf/editor" element={<Editor />} />
+            <Route path="/pdf/viewer" element={<Viewer />} />
+            <Route path="/pdf/rotate" element={<Rotate />} />
+            <Route path="/pdf/page-remover" element={<PageRemover />} />
+            <Route path="/pdf/add-page-numbers" element={<AddPageNumbers />} />
+            <Route path="/pdf/add-watermark" element={<AddWatermark />} />
+            <Route path="/pdf/password-protect" element={<PasswordProtect />} />
+            <Route path="/pdf/unlock" element={<Unlock />} />
+            <Route path="/pdf/pdf-to-image" element={<PDFToImage />} />
+            <Route path="/pdf/image-to-pdf" element={<ImageToPDF />} />
+            <Route path="/pdf/ocr" element={<OCR />} />
             
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
